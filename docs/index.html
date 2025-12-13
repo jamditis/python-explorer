@@ -154,6 +154,44 @@
                     </div>
                 </div>
 
+                <!-- Natural Language Search -->
+                <div class="mt-8 space-y-4">
+                    <h3 class="text-xs text-gray-500 font-mono uppercase tracking-widest">FIND YOUR LIBRARY</h3>
+
+                    <!-- Template Selection -->
+                    <div class="flex gap-3">
+                        <button id="searchTemplate1" class="px-4 py-2 bg-transparent border border-white/20 text-gray-400 font-mono text-xs hover:border-acid transition-all">
+                            I have
+                        </button>
+                        <button id="searchTemplate2" class="px-4 py-2 bg-acid text-black border border-acid font-mono text-xs font-bold transition-all">
+                            I want to
+                        </button>
+                    </div>
+
+                    <!-- Dropdown Containers -->
+                    <div id="dropdown1Container" class="hidden">
+                        <label class="block text-xs text-gray-500 font-mono mb-2">I have</label>
+                        <select id="dropdown1" class="w-full bg-void border border-white/20 text-gray-300 font-mono py-2 px-3 focus:outline-none focus:border-acid">
+                            <option value="">Select...</option>
+                        </select>
+                    </div>
+
+                    <div id="dropdown2Container" class="hidden">
+                        <label id="dropdown2Label" class="block text-xs text-gray-500 font-mono mb-2">I want to</label>
+                        <select id="dropdown2" class="w-full bg-void border border-white/20 text-gray-300 font-mono py-2 px-3 focus:outline-none focus:border-acid">
+                            <option value="">Select...</option>
+                        </select>
+                    </div>
+
+                    <!-- Quick Searches -->
+                    <div>
+                        <p class="text-xs text-gray-500 font-mono mb-3">OR BROWSE BY CATEGORY:</p>
+                        <div id="quickSearchButtons" class="flex flex-wrap gap-2">
+                            <!-- Populated by JS -->
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Disclaimer -->
                 <div class="mt-6 p-4 bg-signal/10 border border-signal/30 text-xs font-mono text-gray-400">
                     <span class="text-signal font-bold">DISCLAIMER:</span> This tool is for exploration and discovery only. Joe Amditis does not endorse, maintain, or have any involvement with the libraries listed here. Always review documentation and assess security before using any external library in your projects.
