@@ -4,177 +4,334 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-**Python Explorer** is a modular static web application that provides an interactive directory of Python libraries across various domains (Web, Data Science, Machine Learning, DevOps, Automation, Design, Media, Visualization). Built with vanilla JavaScript ES6 modules, TailwindCSS CDN, and Chart.js.
+**Python Explorer** is a modular static web application that provides an interactive directory of Python libraries across various domains (Web, Data Science, Machine Learning, DevOps, Automation, Design, Media, Visualization). Built with vanilla JavaScript ES6 modules, TailwindCSS CDN, Chart.js, and Fuse.js for fuzzy search.
 
-## Architecture
+**Live Site**: https://jamditis.github.io/python-explorer/
+**Repository**: https://github.com/jamditis/python-explorer
 
-### Modular Structure (Recommended: index-v2.html)
-- **Separation of concerns** - HTML, CSS, and JS properly separated
-- **ES6 Modules** - JavaScript split into logical modules (app.js, charts.js, comparator.js, modal.js)
-- **No build process** - Direct ES6 module imports, works in modern browsers
-- **External data** - Library data in separate file (assets/data/libraries.js)
-- **CDN dependencies** - TailwindCSS, Chart.js, Lucide icons, Google Fonts
-
-### File Structure
-```
-assets/
-  css/styles.css      - Custom cyberpunk styles and animations
-  js/
-    app.js           - Main application logic, state management, grid rendering
-    charts.js        - Chart.js initialization for analytics dashboard
-    comparator.js    - Side-by-side library comparison functionality
-    modal.js         - Library detail modal
-  data/
-    libraries.js     - Python libraries data array (exported as ES6 module)
-```
-
-### Legacy Version (index.html)
-- **Single-file** - All code embedded in one HTML file
-- **Kept for reference** - Original monolithic version
-- **Use index-v2.html** for new development
-
-### Data Structure
-The application uses a hardcoded array of library objects (`rawLibraries`) embedded in the JavaScript. Each library has:
-- `n`: Name
-- `c`: Category (e.g., "Web Frameworks", "Data Analysis")
-- `d`: Description
-- `l`: Link to documentation/repository
-
-At runtime, this is processed into a richer structure with:
-- `domain`: Higher-level grouping (Web, Data Science, etc.) mapped via `domainMap`
-- `popularity`: Calculated score (60-100 range) based on description keywords
-- `install`: Generated pip install command
-- `snippet`: Basic import code example
-
-### Key Components
-
-**State Management** (line ~627):
-```javascript
-let state = {
-    search: "",              // Global search term
-    activeCategories: [],    // Selected category filters
-    sortBy: "relevance"      // Sort mode (not fully implemented)
-}
-```
-
-**Main Functions**:
-- `renderGrid()` (~719): Filters and displays library cards based on state
-- `renderFilters()` (~676): Generates category checkboxes in sidebar
-- `initCharts()` (~771): Creates Chart.js visualizations (domain distribution pie chart, popularity bar chart)
-- `initComparator()` (~833): Powers side-by-side library comparison tool
-- `openModal(id)` (~910): Shows detailed library information in modal overlay
-
-### UI Features
-- **Global search**: Filters by name, description, or domain (keyboard shortcut: `/`)
-- **Category filters**: Multi-select sidebar with live counts
-- **Dashboard**: Visual analytics with Chart.js (domain distribution, top frameworks)
-- **Comparison matrix**: Side-by-side library comparison tool
-- **Modal system**: Detailed view with install instructions and code snippets
-
-### Design System
-Custom cyberpunk aesthetic with:
-- **Color Palette**:
-  - `acid` (#ccff00) - primary accent
-  - `signal` (#ff2a2a) - secondary accent
-  - `ice` (#00f0ff) - tertiary accent
-  - `void`/`panel`/`surface` - dark backgrounds
-- **Custom Elements**: Notched corners (clip-path), CRT scanline overlay, glitch text animations
-- **Typography**: "Chakra Petch" display font, "Share Tech Mono" monospace
-
-**IMPORTANT DESIGN RULES:**
-- **NO custom cursors** - Always use default browser cursors (never override cursor style)
-- Keep effects subtle (CRT scanline opacity: 0.12 max)
-- Maintain high contrast for accessibility
-
-## Development
+## Quick Start
 
 ### Local Development
 ```bash
-# Serve the application locally
 python3 -m http.server 3000
-
-# Then open http://localhost:3000/index-v2.html
+# Open http://localhost:3000/docs/index.html
 ```
 
-### Testing Changes
-Modular structure allows targeted updates:
-1. **Styling changes**: Edit `assets/css/styles.css`
-2. **Data updates**: Edit `assets/data/libraries.js`
-3. **Logic changes**: Edit relevant JS module in `assets/js/`
-4. Refresh browser to see changes (browsers cache ES6 modules, may need hard refresh)
+### Key Files to Know
+- `docs/index.html` - Main entry point (deployed to GitHub Pages)
+- `docs/assets/js/app.js` - Core application logic and state management
+- `docs/assets/js/charts.js` - Dynamic Chart.js visualizations
+- `docs/assets/data/libraries.js` - Main library database (345+ entries)
+- `docs/assets/data/collections.js` - Curated featured collections
+- `.clinerules` - Comprehensive development rules and patterns
+- `.clinerules-lessons` - Lessons learned during development
 
-### Adding New Libraries
+**IMPORTANT**: Always read `.clinerules` and `.clinerules-lessons` before making changes!
 
-#### Option 1: Manual Addition
-Edit `assets/data/libraries.js` and add entries to the `rawLibraries` array:
+## Architecture
+
+### GitHub Pages Structure
+- **All public files live in `/docs`** for GitHub Pages deployment
+- Entry point: `docs/index.html`
+- No build process - static ES6 modules served directly
+- Works immediately on push to main branch
+
+### ES6 Module System
+JavaScript split into logical modules:
+- `app.js` - State management, grid rendering, filtering, search
+- `charts.js` - Chart.js initialization and dynamic updates
+- `comparator.js` - Side-by-side library comparison
+- `modal.js` - Library detail modal with install instructions
+- `natural-search.js` - Natural language search processing
+
+### Data Files
+- `libraries.js` - Array of 345+ libraries with metadata
+- `collections.js` - 10 curated collections (e.g., "DATA JOURNALISM TOOLKIT")
+
+## Design System
+
+### Color Palette & Domain Mapping
 ```javascript
-{
-    n: "LibraryName",
-    c: "Category Name",  // Must match existing category or update domainMap
-    d: "Description text",
-    l: "https://link-to-docs.com/"
+// Primary colors
+acid: #ccff00    (yellow/lime)
+signal: #ff2a2a  (red)
+ice: #00f0ff     (cyan)
+chrome: #e5e5e5  (light gray)
+
+// Domain-to-color mapping
+Web → acid
+Data Science → ice
+Machine Learning → signal
+DevOps → signal
+Visualization → ice
+```
+
+**Color coding is applied to:**
+- Library card borders and icons
+- Chart bars
+- Hover states
+- Domain labels
+
+### Typography Rules
+- **ALL CAPS**: Section headers, subheads, buttons, labels
+  - Examples: "PYTHON_ECOSYSTEM", "FEATURED COLLECTIONS", "BROWSE THE ECOSYSTEM"
+- **Sentence case**: Body text, descriptions
+- **NEVER title case**: Don't Use This Style
+
+### Design Constraints
+- ❌ **NO custom cursors** - Always use browser defaults
+- ✅ Subtle effects (CRT scanline max opacity: 0.12)
+- ✅ High contrast for accessibility
+- ✅ Notched corners via clip-path
+- ✅ Color-coded visual hierarchy
+
+## State Management
+
+### Application State Object
+```javascript
+state = {
+    search: "",              // Global search term (fuzzy search via Fuse.js)
+    activeCategories: [],    // Multi-select category filters
+    sortBy: "relevance",     // Sort mode
+    journalismFilter: false, // Special journalism toolkit filter
+    activeCollection: null   // Currently selected featured collection
 }
 ```
 
-Update `domainMap` (line ~498) if adding a new category to assign it to a domain.
+### Critical State Rules
+When changing filters, **always clear conflicting state**:
 
-#### Option 2: Bulk Import from awesome-python
-Use the provided Python tools:
-```bash
-# Extract all libraries from awesome-python-collection.md
-python3 tools/extract_from_awesome.py
+```javascript
+// Search input changes
+state.search = newValue;
+state.activeCollection = null;
+state.journalismFilter = false;
 
-# Compare with existing and generate integration snippets
-python3 tools/integrate_libraries.py
+// Category filter toggles
+state.activeCategories.push(category);
+state.activeCollection = null;
+state.journalismFilter = false;
 
-# Review integration_report.md for recommendations
-# Copy from new_libraries_snippet.txt to assets/data/libraries.js
+// Journalism filter activates
+state.journalismFilter = true;
+state.search = "";
+state.activeCollection = null;
+state.activeCategories = [];
 ```
 
-### Modifying UI Behavior
-- **Search logic**: `assets/js/app.js` - `renderGrid()` function
-- **Filter behavior**: `assets/js/app.js` - `toggleFilter()` and `renderActiveFilters()`
-- **Modal content**: `assets/js/modal.js` - `openModal()` function
-- **Chart configuration**: `assets/js/charts.js` - `initCharts()` function
-- **Comparison tool**: `assets/js/comparator.js` - `initComparator()` function
+## Data Structure
 
-## Data Source
+### Raw Library Format
+```javascript
+{
+    n: "LibraryName",           // Name
+    c: "Category Name",         // Category (maps to domain)
+    d: "Description [JOURNALISM]", // Description (may contain hidden tags)
+    l: "https://link.com/"      // Documentation/repo link
+}
+```
 
-The project includes `awesome-python-collection.md` - a curated list of Python libraries from the [awesome-python](https://github.com/vinta/awesome-python) repository. This serves as a reference but is **not dynamically loaded** by the application. The `assets/data/libraries.js` contains a manually curated subset of libraries.
+### Runtime Enhancement
+Processed at runtime to add:
+- `domain` - Higher-level grouping (Web, Data Science, etc.)
+- `popularity` - Calculated score (60-100)
+- `install` - Generated pip install command
+- `snippet` - Basic import example
+- `id` - Unique identifier
 
-## Tools
+### Hidden Tags
+- Use `[JOURNALISM]` in descriptions for filtering
+- **MUST strip tags before displaying to users**:
+  ```javascript
+  const cleanDescription = lib.description.replace(/\[JOURNALISM\]\s*/g, '');
+  ```
+- Tags exist only for internal filtering logic
 
-### Python Utilities (in root directory)
-- **extract_from_awesome.py** - Parses awesome-python-collection.md and extracts library data
-- **integrate_libraries.py** - Compares extracted data with existing libraries, generates integration snippets
-- **pypi_simple_scraper.py** - Experimental PyPI scraper (requires requests, beautifulsoup4)
+## Key Features
 
-### Workflow for Adding Libraries
-1. Run `extract_from_awesome.py` to parse the awesome-python markdown
-2. Run `integrate_libraries.py` to identify new libraries
-3. Review `integration_report.md` for recommended additions
-4. Copy relevant entries from `new_libraries_snippet.txt`
-5. Paste into `assets/data/libraries.js` rawLibraries array
+### Filtering System
+1. **Fuzzy Search** (Fuse.js) - Threshold 0.4, searches name/description/domain/category
+2. **Category Filters** - Multi-select checkboxes in sidebar
+3. **Featured Collections** - Accordion-style curated sets
+4. **Journalism Toolkit** - Direct tag matching (NOT fuzzy search)
 
-## Deployment
+### Dynamic Charts
+- **Domain Distribution** - Doughnut chart showing library counts by domain
+- **Category Breakdown** - Color-coded bar chart of top 10 categories
+- **Updates automatically** when filters change via `updateCharts(filteredLibraries)`
 
-### GitHub Pages
-This project is designed for GitHub Pages deployment:
+### User Actions
+- **Browse ecosystem** - Scrolls to explorer grid
+- **Submit library** - Links to GitHub issue creation
+- **View toolkit** - Filters journalism-tagged libraries
+- **Export requirements.txt** - Downloads pip requirements for filtered set
+- **Compare libraries** - Side-by-side comparison tool
 
-1. Rename `index-v2.html` to `index.html` (or configure GitHub Pages to use index-v2.html)
-2. Push to `gh-pages` branch or configure from main branch
-3. No build process required - works immediately
+## Development Patterns
 
-### Integration with jamditis/tools
-To add as a tool in the existing tools repository:
-- Ensure design consistency with AMDITIS design library (already implemented)
-- Create entry point following tools repo conventions
-- Add navigation link in tools repo index
+### Adding New Libraries
 
-## Notes
+#### Manual Addition
+Edit `docs/assets/data/libraries.js`:
+```javascript
+{
+    n: "NewLibrary",
+    c: "Existing Category",  // Must exist in domainMap
+    d: "Brief description of what it does.",
+    l: "https://docs.url/"
+}
+```
 
-- **Browser compatibility**: Requires ES6 module support (all modern browsers)
-- **Dependencies**: All loaded from CDNs - requires internet connection
-- **No backend**: Purely client-side application
-- **Performance**: Handles 300+ libraries without performance issues
-- **Module caching**: Browsers cache ES6 modules aggressively; use hard refresh (Cmd+Shift+R) during development
+Add `[JOURNALISM]` tag if relevant for journalism/media work.
+
+#### Bulk Import
+```bash
+python3 tools/extract_from_awesome.py
+python3 tools/integrate_libraries.py
+# Review integration_report.md
+# Copy from new_libraries_snippet.txt to libraries.js
+```
+
+### Creating New Collections
+Edit `docs/assets/data/collections.js`:
+```javascript
+{
+    "name": "COLLECTION NAME",  // ALL CAPS
+    "description": "Brief description.",
+    "icon": "lucide-icon-name",
+    "color": "acid|ice|signal",
+    "libraries": ["lib1", "lib2", "lib3"]
+}
+```
+
+### Modifying UI
+- **Search logic**: `docs/assets/js/app.js` → `renderGrid()`
+- **Filter toggles**: `docs/assets/js/app.js` → `toggleFilter()`
+- **Chart config**: `docs/assets/js/charts.js` → `initCharts()` and `updateCharts()`
+- **Modal content**: `docs/assets/js/modal.js` → `openModal()`
+
+### Updating Charts
+Charts MUST update with filtered data:
+```javascript
+function renderGrid() {
+    // ... filtering logic ...
+    updateCharts(filtered);  // Always call this!
+}
+```
+
+## Common Pitfalls (Read .clinerules-lessons for details)
+
+1. ❌ Don't use fuzzy search for tag-based filtering
+2. ❌ Don't show `[JOURNALISM]` tags to users
+3. ❌ Don't forget to clear conflicting state flags
+4. ❌ Don't use title case for headings
+5. ❌ Don't create static charts that don't update
+6. ❌ Don't hardcode colors - use domain color mapping
+7. ❌ Don't skip `target="_blank" rel="noopener noreferrer"` on external links
+8. ❌ Don't forget hard refresh (Cmd+Shift+R) when testing ES6 module changes
+
+## Dependencies (All CDN)
+
+- **TailwindCSS 3.x** - Utility-first CSS framework
+- **Chart.js** - Data visualization
+- **Fuse.js** - Fuzzy search
+- **Lucide Icons** - Icon library
+- **Google Fonts** - Chakra Petch (display), Share Tech Mono (monospace)
+
+## Git Workflow
+
+### Commit Format
+```
+Brief imperative summary
+
+- Bullet point changes
+- Another change
+- More details
+
+🤖 Generated with [Claude Code](https://claude.com/claude-code)
+
+Co-Authored-By: Claude <noreply@anthropic.com>
+```
+
+### Deployment
+- Push directly to `main` branch
+- GitHub Pages automatically deploys from `/docs`
+- Changes go live within 1-2 minutes
+
+## External Links
+
+- **Submit Library**: https://github.com/jamditis/python-explorer/issues/new
+- **awesome-python source**: https://github.com/vinta/awesome-python
+
+## Testing Checklist
+
+Before pushing changes:
+
+- [ ] Test all filter combinations (search + categories + collections + journalism)
+- [ ] Verify charts update when filters change
+- [ ] Check that `[JOURNALISM]` tags are hidden from users
+- [ ] Confirm color coding appears correctly
+- [ ] Test on mobile (responsive design)
+- [ ] Hard refresh to clear module cache
+- [ ] Verify external links open in new tab with security attributes
+- [ ] Check that ALL CAPS is used for section headers
+- [ ] Ensure descriptions use sentence case
+
+## Performance Notes
+
+- Handles 345+ libraries smoothly
+- Fuzzy search is efficient with threshold 0.4
+- Charts update without full page re-render
+- No build step = fast deployment
+- Aggressive browser caching of ES6 modules (use hard refresh in dev)
+
+## Accessibility
+
+- High contrast color scheme (WCAG AA compliant)
+- Semantic HTML structure
+- Keyboard navigation (/ key opens search)
+- Clear focus states
+- Screen reader friendly labels
+
+## Content Guidelines
+
+### Writing Descriptions
+- Beginner-friendly language
+- Focus on practical use cases
+- 1-3 sentences maximum
+- Avoid marketing fluff
+- No superlatives ("best", "amazing", etc.)
+
+### Disclaimer
+Project maintains disclaimer that Joe Amditis does not endorse any libraries - this is purely an exploration tool.
+
+## Next Steps / TODO
+
+Potential future enhancements (see `.clinerules-lessons` for full list):
+- Library version tracking
+- "Recently updated" filter
+- URL-based saved filter states
+- Library comparison matrix expansion
+- Community ratings/reviews
+- Analytics tracking (most viewed domains)
+- "Related libraries" suggestions
+
+## Support
+
+For issues or feature requests:
+- Create GitHub issue: https://github.com/jamditis/python-explorer/issues/new
+- Review `.clinerules` for development patterns
+- Check `.clinerules-lessons` for common solutions
+
+## Project Stats
+
+- **345+ libraries** across 9 domains
+- **10 curated collections** including journalism toolkit
+- **Zero build process** - pure static site
+- **Mobile responsive** via TailwindCSS
+- **Fast load times** - CDN dependencies only
+- **Active development** - continuously updated
+
+---
+
+**Remember**: Always read `.clinerules` and `.clinerules-lessons` before making changes. They contain critical patterns and lessons learned that will save you time and prevent bugs!
