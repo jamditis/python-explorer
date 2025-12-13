@@ -127,9 +127,15 @@
             <section class="border-b border-white/10 pb-12 relative overflow-hidden animate-fade-in">
                 <h2 class="font-display text-4xl md:text-6xl text-chrome mb-4 glitch-text" data-text="PYTHON_ECOSYSTEM">PYTHON_ECOSYSTEM</h2>
                 <div class="flex flex-col md:flex-row gap-8 items-start">
-                    <p class="text-gray-400 max-w-2xl text-lg font-mono border-l-2 border-acid pl-4">
-                        Full-spectrum directory of Python libraries. Covers Web, Data, Automation, Design, and Visualization modules.
-                    </p>
+                    <div class="flex-1">
+                        <p class="text-gray-400 max-w-2xl text-lg font-mono border-l-2 border-acid pl-4 mb-6">
+                            Full-spectrum directory of Python libraries. Covers Web, Data, Automation, Design, and Visualization modules.
+                        </p>
+                        <button onclick="scrollToSection('explorer')" class="px-6 py-3 bg-acid text-black font-mono text-xs hover:bg-white transition-all font-bold flex items-center gap-2">
+                            <span>browse the ecosystem</span>
+                            <i data-lucide="arrow-down" class="w-4 h-4"></i>
+                        </button>
+                    </div>
                     <div class="flex gap-4 font-mono text-xs">
                         <div class="p-3 bg-surface border border-white/10">
                             <span class="text-gray-500 block mb-1">TOTAL_MODULES</span>
@@ -150,12 +156,12 @@
 
             <!-- FEATURED COLLECTIONS -->
             <section id="collections" class="scroll-mt-24 -mt-12">
-                <div class="flex items-end justify-between border-b border-white/10 pb-4 mb-8">
-                    <h3 class="font-display text-2xl text-chrome">featured_collections</h3>
+                <div class="flex items-end justify-between border-b border-white/10 pb-3 mb-6">
+                    <h3 class="font-display text-xl text-chrome">featured_collections</h3>
                     <span class="text-xs text-gray-600 font-mono">curated library sets</span>
                 </div>
 
-                <div id="collectionsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div id="collectionsContainer" class="space-y-4">
                     <!-- Populated by JS -->
                 </div>
             </section>

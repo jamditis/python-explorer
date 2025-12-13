@@ -126,13 +126,13 @@ export function init() {
 }
 
 function renderCollections() {
-    const collectionsGrid = document.getElementById('collectionsGrid');
-    if (!collectionsGrid) return;
+    const collectionsContainer = document.getElementById('collectionsContainer');
+    if (!collectionsContainer) return;
 
     const colorClasses = {
-        'acid': 'border-acid/30 bg-acidDim/10 hover:border-acid',
-        'signal': 'border-signal/30 bg-signalDim/10 hover:border-signal',
-        'ice': 'border-ice/30 bg-iceDim/10 hover:border-ice'
+        'acid': 'border-acid/30 bg-acidDim/5',
+        'signal': 'border-signal/30 bg-signalDim/5',
+        'ice': 'border-ice/30 bg-iceDim/5'
     };
 
     const iconColorClasses = {
@@ -141,22 +141,20 @@ function renderCollections() {
         'ice': 'text-ice'
     };
 
-    collectionsGrid.innerHTML = collections.map(collection => `
-        <div onclick="filterByCollection('${collection.name.replace(/'/g, "\\'")}', ${JSON.stringify(collection.libraries).replace(/"/g, '&quot;')})"
-             class="border ${colorClasses[collection.color]} p-6 cursor-pointer transition-all group">
-            <div class="flex items-start gap-4 mb-4">
-                <div class="w-12 h-12 flex-shrink-0 border ${iconColorClasses[collection.color]} ${colorClasses[collection.color]} flex items-center justify-center">
-                    <i data-lucide="${collection.icon}" class="w-6 h-6 ${iconColorClasses[collection.color]}"></i>
+    collectionsContainer.innerHTML = collections.map(collection => `
+        <div class="border ${colorClasses[collection.color]} p-4">
+            <div class="flex items-center justify-between mb-3">
+                <div class="flex items-center gap-3">
+                    <i data-lucide="${collection.icon}" class="w-4 h-4 ${iconColorClasses[collection.color]}"></i>
+                    <h4 class="font-display text-sm ${iconColorClasses[collection.color]}">${collection.name}</h4>
+                    <span class="text-[9px] text-gray-600 font-mono">${collection.libraries.length} libs</span>
                 </div>
-                <div class="flex-1">
-                    <h4 class="font-display text-base ${iconColorClasses[collection.color]} mb-2">${collection.name}</h4>
-                    <p class="text-xs font-mono text-gray-400 leading-relaxed">${collection.description}</p>
-                </div>
+                <button onclick="filterByCollection('${collection.name.replace(/'/g, "\\'")}', ${JSON.stringify(collection.libraries).replace(/"/g, '&quot;')})"
+                        class="text-[10px] ${iconColorClasses[collection.color]} font-mono hover:underline">
+                    explore →
+                </button>
             </div>
-            <div class="flex items-center justify-between pt-4 border-t border-white/10">
-                <span class="text-[10px] text-gray-600 font-mono">${collection.libraries.length} LIBRARIES</span>
-                <span class="text-[10px] ${iconColorClasses[collection.color]} font-mono opacity-0 group-hover:opacity-100 transition-opacity">EXPLORE →</span>
-            </div>
+            <p class="text-[11px] font-mono text-gray-500 leading-relaxed">${collection.description}</p>
         </div>
     `).join('');
 
