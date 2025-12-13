@@ -93,6 +93,7 @@ export function init() {
 
     searchInput.addEventListener('input', (e) => {
         state.search = e.target.value.toLowerCase();
+        state.activeCollection = null; // Clear collection when searching
         renderGrid();
     });
 
@@ -167,19 +168,14 @@ function filterByCollection(collectionName, libraryNames) {
     const collection = collections.find(c => c.name === collectionName);
     if (!collection) return;
 
-    // Filter to show only libraries in this collection
+    // Store collection in state
+    state.activeCollection = collection;
     state.search = "";
     state.activeCategories = [];
     searchInput.value = `Collection: ${collectionName}`;
 
-    // Manually filter the grid to show only collection libraries
-    const filtered = libraries.filter(lib =>
-        collection.libraries.some(name =>
-            lib.name.toLowerCase() === name.toLowerCase()
-        )
-    );
-
-    renderFilteredGrid(filtered);
+    // Use normal renderGrid which will update charts
+    renderGrid();
     scrollToSection('explorer');
 }
 
@@ -257,6 +253,7 @@ function toggleFilter(cat) {
     } else {
         state.activeCategories.push(cat);
     }
+    state.activeCollection = null; // Clear collection when using category filters
     renderActiveFilters();
     renderGrid();
 }
@@ -275,6 +272,7 @@ function renderActiveFilters() {
 
 function resetFilters() {
     state.activeCategories = [];
+    state.activeCollection = null;
     state.search = "";
     searchInput.value = "";
     renderActiveFilters();
@@ -284,8 +282,16 @@ function resetFilters() {
 function renderGrid() {
     let filtered;
 
+    // Check if we're filtering by collection
+    if (state.activeCollection) {
+        filtered = libraries.filter(lib =>
+            state.activeCollection.libraries.some(name =>
+                lib.name.toLowerCase() === name.toLowerCase()
+            )
+        );
+    }
     // Use fuzzy search if there's a search term, otherwise show all
-    if (state.search.trim()) {
+    else if (state.search.trim()) {
         const fuseResults = fuse.search(state.search);
         filtered = fuseResults.map(result => result.item);
     } else {
