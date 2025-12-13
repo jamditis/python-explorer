@@ -131,10 +131,16 @@
                         <p class="text-gray-400 max-w-2xl text-lg font-mono border-l-2 border-acid pl-4 mb-6">
                             Full-spectrum directory of Python libraries. Covers Web, Data, Automation, Design, and Visualization modules.
                         </p>
-                        <button onclick="scrollToSection('explorer')" class="px-6 py-3 bg-acid text-black font-mono text-xs hover:bg-white transition-all font-bold flex items-center gap-2">
-                            <span>BROWSE THE ECOSYSTEM</span>
-                            <i data-lucide="arrow-down" class="w-4 h-4"></i>
-                        </button>
+                        <div class="flex gap-3">
+                            <button onclick="scrollToSection('explorer')" class="px-6 py-3 bg-acid text-black font-mono text-xs hover:bg-white transition-all font-bold flex items-center gap-2">
+                                <span>BROWSE THE ECOSYSTEM</span>
+                                <i data-lucide="arrow-down" class="w-4 h-4"></i>
+                            </button>
+                            <a href="https://github.com/jamditis/python-explorer/issues/new" target="_blank" rel="noopener noreferrer" class="px-6 py-3 bg-transparent border border-acid/50 text-acid font-mono text-xs hover:bg-acid/10 transition-all font-bold flex items-center gap-2">
+                                <i data-lucide="plus-circle" class="w-4 h-4"></i>
+                                <span>SUBMIT A LIBRARY</span>
+                            </a>
+                        </div>
                     </div>
                     <div class="flex gap-4 font-mono text-xs">
                         <div class="p-3 bg-surface border border-white/10">
