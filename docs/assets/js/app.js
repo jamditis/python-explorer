@@ -1,6 +1,6 @@
 // Main Application Logic
 import { rawLibraries, domainMap } from '../data/libraries.js';
-import { initCharts } from './charts.js';
+import { initCharts, updateCharts } from './charts.js';
 import { initComparator } from './comparator.js';
 import { openModal, closeModal, copyInstall } from './modal.js';
 import { initNaturalSearch } from './natural-search.js';
@@ -188,6 +188,9 @@ function renderGrid() {
     }
 
     document.getElementById('resultCount').innerText = `[ RESULTS: ${filtered.length} ]`;
+
+    // Update charts with filtered data
+    updateCharts(filtered);
 
     if (filtered.length === 0) {
         grid.innerHTML = '';

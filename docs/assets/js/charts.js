@@ -1,5 +1,8 @@
 // Chart.js visualizations
 
+let domainChart = null;
+let popularityChart = null;
+
 export function initCharts(libraries) {
     Chart.defaults.color = '#666';
     Chart.defaults.font.family = "'Share Tech Mono', monospace";
@@ -8,7 +11,7 @@ export function initCharts(libraries) {
     libraries.forEach(l => domains[l.domain] = (domains[l.domain] || 0) + 1);
 
     // Domain distribution pie chart
-    new Chart(document.getElementById('domainChart'), {
+    domainChart = new Chart(document.getElementById('domainChart'), {
         type: 'doughnut',
         data: {
             labels: Object.keys(domains),
@@ -31,7 +34,7 @@ export function initCharts(libraries) {
 
     // Top libraries popularity chart
     const topLibs = [...libraries].sort((a,b) => b.popularity - a.popularity).slice(0, 10);
-    new Chart(document.getElementById('popularityChart'), {
+    popularityChart = new Chart(document.getElementById('popularityChart'), {
         type: 'bar',
         data: {
             labels: topLibs.map(l => l.name),
@@ -61,4 +64,22 @@ export function initCharts(libraries) {
             }
         }
     });
+}
+
+export function updateCharts(filteredLibraries) {
+    if (!domainChart || !popularityChart) return;
+
+    // Update domain distribution with filtered data
+    const domains = {};
+    filteredLibraries.forEach(l => domains[l.domain] = (domains[l.domain] || 0) + 1);
+
+    domainChart.data.labels = Object.keys(domains);
+    domainChart.data.datasets[0].data = Object.values(domains);
+    domainChart.update();
+
+    // Update popularity chart with filtered data
+    const topLibs = [...filteredLibraries].sort((a,b) => b.popularity - a.popularity).slice(0, 10);
+    popularityChart.data.labels = topLibs.map(l => l.name);
+    popularityChart.data.datasets[0].data = topLibs.map(l => l.popularity);
+    popularityChart.update();
 }
