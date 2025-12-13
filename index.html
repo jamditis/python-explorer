@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Explorer // Find the Right Library</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
+    <!-- Libraries -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+
+    <!-- Custom Styles -->
+    <link href="assets/css/styles.css" rel="stylesheet">
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        display: ['Chakra Petch', 'sans-serif'],
+                        mono: ['Share Tech Mono', 'monospace'],
+                    },
+                    colors: {
+                        void: '#050505',
+                        panel: '#0a0a0a',
+                        surface: '#111111',
+                        chrome: '#e5e5e5',
+                        acid: '#ccff00',
+                        acidDim: 'rgba(204, 255, 0, 0.1)',
+                        signal: '#ff2a2a',
+                        signalDim: 'rgba(255, 42, 42, 0.1)',
+                        ice: '#00f0ff',
+                        iceDim: 'rgba(0, 240, 255, 0.1)',
+                    },
+                    backgroundImage: {
+                        'grid-pattern': "linear-gradient(to right, #222 1px, transparent 1px), linear-gradient(to bottom, #222 1px, transparent 1px)",
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="antialiased font-mono">
+
+    <div class="crt-overlay"></div>
+    <div class="fixed inset-0 bg-grid-pattern bg-[size:40px_40px] opacity-[0.07] pointer-events-none z-0"></div>
+
+    <div class="flex min-h-screen relative z-10 flex-col">
+
+        <!-- TOP NAVIGATION -->
+        <header class="sticky top-0 z-50 bg-panel/95 backdrop-blur-sm border-b border-white/10 p-4">
+            <div class="flex items-center justify-between px-4">
+                <div class="flex items-center gap-4 cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <div class="w-10 h-10 bg-acid text-black flex items-center justify-center font-bold font-display text-2xl clip-notch">P</div>
+                    <div>
+                        <div class="font-display font-bold text-xl text-chrome tracking-widest leading-none">PYTHON EXPLORER</div>
+                        <div class="text-[10px] text-acid font-mono leading-none tracking-[0.3em] mt-1">LIBRARY_FINDER</div>
+                    </div>
+                </div>
+
+                <div class="hidden md:flex items-center gap-2 text-[10px] font-mono text-gray-500">
+                    <span id="totalCount" class="text-acid font-bold">0</span>
+                    <span>LIBRARIES</span>
+                    <span class="text-gray-700 mx-2">//</span>
+                    <span id="categoryCount" class="text-ice font-bold">0</span>
+                    <span>CATEGORIES</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- MAIN CONTENT -->
+        <main class="flex-1 p-6 md:p-12 max-w-7xl mx-auto w-full space-y-16">
+
+            <!-- HERO with Natural Language Search -->
+            <section class="text-center space-y-8 pt-12 pb-16">
+                <div>
+                    <h1 class="font-display text-5xl md:text-7xl text-chrome mb-4 glitch-text" data-text="FIND YOUR LIBRARY">FIND YOUR LIBRARY</h1>
+                    <p class="text-gray-400 text-lg md:text-xl font-mono max-w-2xl mx-auto">
+                        Discover Python libraries by describing what you want to do
+                    </p>
+                </div>
+
+                <!-- Natural Language Search -->
+                <div class="max-w-4xl mx-auto space-y-6">
+
+                    <!-- Template Selection -->
+                    <div class="flex justify-center gap-4">
+                        <button id="searchTemplate1" class="px-6 py-3 border-2 text-sm font-mono transition-all">
+                            I have <span class="text-acid">_____</span> and want to <span class="text-acid">_____</span>
+                        </button>
+                        <button id="searchTemplate2" class="px-6 py-3 border-2 text-sm font-mono transition-all bg-acid text-black border-acid">
+                            I want to <span class="underline">_____</span>
+                        </button>
+                    </div>
+
+                    <!-- Dropdown Container 1: "I have..." -->
+                    <div id="dropdown1Container" class="hidden space-y-4">
+                        <div class="flex flex-col md:flex-row items-center gap-4 text-lg font-mono">
+                            <span class="text-gray-400">I have</span>
+                            <div class="relative flex-1 max-w-md">
+                                <select id="dropdown1" class="w-full bg-surface border-2 border-white/20 text-chrome text-base font-mono p-4 focus:outline-none focus:border-acid appearance-none cursor-pointer">
+                                    <option value="">Select...</option>
+                                </select>
+                                <i data-lucide="chevron-down" class="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500 pointer-events-none"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Dropdown Container 2: Second part or "I want to..." -->
+                    <div id="dropdown2Container" class="hidden space-y-4">
+                        <div class="flex flex-col md:flex-row items-center gap-4 text-lg font-mono">
+                            <span class="text-gray-400" id="dropdown2Label">and want to</span>
+                            <div class="relative flex-1 max-w-md">
+                                <select id="dropdown2" class="w-full bg-surface border-2 border-white/20 text-chrome text-base font-mono p-4 focus:outline-none focus:border-acid appearance-none cursor-pointer">
+                                    <option value="">Select...</option>
+                                </select>
+                                <i data-lucide="chevron-down" class="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500 pointer-events-none"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Searches -->
+                    <div class="space-y-3">
+                        <div class="text-xs text-gray-600 font-mono uppercase tracking-wider">Or browse by category:</div>
+                        <div id="quickSearchButtons" class="flex flex-wrap justify-center gap-2">
+                            <!-- Populated by JS -->
+                        </div>
+                    </div>
+
+                    <!-- Traditional Search -->
+                    <div class="pt-6 border-t border-white/10">
+                        <div class="relative max-w-2xl mx-auto">
+                            <i data-lucide="search" class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500"></i>
+                            <input type="text" id="searchInput"
+                                   class="w-full bg-surface border-2 border-white/20 text-chrome text-base font-mono py-4 pl-12 pr-4 focus:outline-none focus:border-acid transition-colors placeholder-gray-600"
+                                   placeholder="Or search directly: pandas, flask, machine learning...">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- LIBRARY GRID -->
+            <section id="explorer" class="scroll-mt-24">
+                <div class="flex items-end justify-between border-b border-white/10 pb-4 mb-8">
+                    <h2 class="font-display text-3xl text-chrome">RESULTS</h2>
+                    <div class="flex items-center gap-4">
+                        <span id="resultCount" class="text-xs font-mono text-gray-500">0 LIBRARIES</span>
+                        <button onclick="resetFilters()" class="px-4 py-2 text-xs font-mono text-gray-400 border border-white/20 hover:border-acid hover:text-acid transition-all">
+                            RESET
+                        </button>
+                    </div>
+                </div>
+
+                <div class="flex flex-col lg:flex-row gap-8">
+
+                    <!-- Sidebar Filters -->
+                    <aside class="w-full lg:w-72 flex-shrink-0">
+                        <div class="sticky top-24 border border-white/10 bg-panel">
+                            <div class="p-4 border-b border-white/10 bg-surface">
+                                <div class="text-xs text-gray-500 font-mono uppercase tracking-wider mb-3">Filter by Category</div>
+                                <input type="text" id="filterSearch" placeholder="Search categories..."
+                                       class="w-full bg-void border border-white/20 text-gray-300 text-xs font-mono py-2 px-3 focus:outline-none focus:border-acid">
+                            </div>
+
+                            <div class="max-h-[70vh] overflow-y-auto p-3 space-y-1" id="categoryList">
+                                <!-- Populated by JS -->
+                            </div>
+                        </div>
+
+                        <!-- Active Filters -->
+                        <div id="activeFilters" class="mt-4 flex flex-wrap gap-2"></div>
+                    </aside>
+
+                    <!-- Main Grid -->
+                    <div class="flex-1">
+                        <div id="grid" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+                            <!-- Cards populated by JS -->
+                        </div>
+
+                        <!-- No Results -->
+                        <div id="noResults" class="hidden border border-dashed border-white/10 bg-surface/50 p-16 text-center">
+                            <i data-lucide="alert-triangle" class="w-16 h-16 text-signal mx-auto mb-6 opacity-50"></i>
+                            <h3 class="text-chrome font-display text-2xl mb-3">NO LIBRARIES FOUND</h3>
+                            <p class="text-gray-500 font-mono text-sm mb-8">Try adjusting your search or filters</p>
+                            <button onclick="resetFilters()" class="px-8 py-3 bg-transparent border-2 border-white/20 text-chrome hover:border-acid hover:text-acid text-sm font-mono transition-all">
+                                CLEAR ALL FILTERS
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- FOOTER -->
+        <footer class="border-t border-white/10 bg-panel py-8 mt-16">
+            <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] font-mono text-gray-600">
+                <div>
+                    Made with 💚 by <a href="https://github.com/jamditis" class="text-acid hover:text-white transition-colors">@jamditis</a>
+                </div>
+                <div class="text-right">
+                    Data from <a href="https://github.com/vinta/awesome-python" class="text-ice hover:text-white transition-colors" target="_blank">awesome-python</a>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- MODAL -->
+    <div id="modalOverlay" class="modal-overlay fixed inset-0 z-[100] hidden flex items-center justify-center p-4">
+        <div class="absolute inset-0 bg-void/95 backdrop-blur-sm" onclick="closeModal()"></div>
+
+        <div class="modal-content relative bg-panel border-2 border-white/20 w-full max-w-3xl max-h-[90vh] shadow-2xl flex flex-col overflow-hidden clip-notch">
+
+            <div class="bg-surface border-b border-white/10 px-6 py-4 flex justify-between items-center">
+                <div class="flex items-center gap-3">
+                    <div class="w-3 h-3 bg-acid rounded-full animate-pulse"></div>
+                    <h3 class="font-display text-2xl text-chrome tracking-wide" id="mTitle">LIBRARY NAME</h3>
+                </div>
+                <button onclick="closeModal()" class="text-gray-500 hover:text-signal transition-colors">
+                    <i data-lucide="x" class="w-6 h-6"></i>
+                </button>
+            </div>
+
+            <div class="flex-1 overflow-y-auto p-8 space-y-6 font-mono">
+                <div class="flex items-center gap-4 text-sm">
+                    <div class="p-3 border border-white/10 text-acid bg-acidDim font-bold font-display text-lg" id="mIcon">ICO</div>
+                    <div>
+                        <div class="text-gray-500 text-xs mb-1">CLASSIFICATION</div>
+                        <div class="flex gap-2 items-center">
+                            <span id="mDomain" class="text-ice font-bold">DOMAIN</span>
+                            <span class="text-gray-700">/</span>
+                            <span id="mCategory" class="text-chrome">CATEGORY</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-xs text-gray-500 uppercase tracking-widest mb-3 border-b border-white/10 pb-2">Description</h4>
+                    <p id="mDesc" class="text-gray-300 text-base leading-relaxed"></p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="p-4 border border-white/10 bg-surface">
+                        <div class="text-xs text-gray-500 mb-2">BEST FOR</div>
+                        <p id="mBestFor" class="text-orange-400 text-sm"></p>
+                    </div>
+                    <div class="p-4 border border-white/10 bg-surface hover:border-ice transition-colors">
+                        <div class="text-xs text-gray-500 mb-2">DOCUMENTATION</div>
+                        <a id="mLink" href="#" target="_blank" class="text-ice text-sm underline decoration-ice/30 hover:decoration-ice truncate block">View Documentation →</a>
+                    </div>
+                </div>
+
+                <div class="bg-[#0d0d0d] border border-gray-800 overflow-hidden">
+                    <div class="bg-[#1a1a1a] border-b border-gray-800 px-4 py-3 flex justify-between items-center">
+                        <div class="text-xs text-gray-500 font-mono">INSTALLATION</div>
+                        <button onclick="copyInstall()" class="text-xs text-acid hover:text-white flex items-center gap-2 transition-colors">
+                            <i data-lucide="copy" class="w-4 h-4"></i>
+                            <span id="copyBtnText">COPY</span>
+                        </button>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <code id="mInstall" class="text-green-500 text-base block font-mono">pip install package</code>
+                        <div class="h-px bg-gray-800 w-full"></div>
+                        <pre class="text-gray-400 text-sm overflow-x-auto"><code id="mSnippet">import module...</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Initialize Icons -->
+    <script>
+        lucide.createIcons();
+    </script>
+
+    <!-- Load modular JavaScript -->
+    <script type="module" src="assets/js/app.js"></script>
+
+</body>
+</html>
