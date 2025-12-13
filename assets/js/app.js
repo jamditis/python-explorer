@@ -173,31 +173,31 @@ function renderGrid() {
     document.getElementById('noResults').classList.add('hidden');
 
     grid.innerHTML = filtered.map(lib => `
-        <div onclick="openModal('${lib.id}')" class="bg-panel border-2 border-white/10 p-6 relative group hover:border-acid transition-all cursor-pointer flex flex-col h-full">
+        <div onclick="openModal('${lib.id}')" class="bg-panel border-2 border-white/10 p-5 relative group hover:border-acid transition-all cursor-pointer flex flex-col min-h-[240px]">
             <div class="absolute inset-0 bg-acid/5 opacity-0 group-hover:opacity-100 transition-opacity z-0"></div>
 
-            <div class="relative z-10 flex flex-col flex-1">
+            <div class="relative z-10 flex flex-col h-full">
                 <!-- Header -->
-                <div class="flex items-start justify-between mb-4">
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 bg-acid/10 border border-acid/30 flex items-center justify-center">
-                            <i data-lucide="package" class="w-5 h-5 text-acid"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-display text-lg text-chrome group-hover:text-acid transition-colors">${lib.name}</h4>
-                            <div class="text-[10px] text-gray-600 font-mono uppercase mt-0.5">${lib.domain}</div>
-                        </div>
+                <div class="flex items-start gap-3 mb-4">
+                    <div class="w-10 h-10 flex-shrink-0 bg-acid/10 border border-acid/30 flex items-center justify-center">
+                        <i data-lucide="package" class="w-5 h-5 text-acid"></i>
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <h4 class="font-display text-base text-chrome group-hover:text-acid transition-colors truncate">${lib.name}</h4>
+                        <div class="text-[10px] text-gray-600 font-mono uppercase mt-1">${lib.domain}</div>
                     </div>
                 </div>
 
-                <!-- Description -->
-                <p class="text-sm font-mono text-gray-400 leading-relaxed mb-4 flex-1">${lib.description}</p>
+                <!-- Description - takes available space -->
+                <div class="flex-1 mb-4">
+                    <p class="text-sm font-mono text-gray-400 leading-relaxed line-clamp-3">${lib.description}</p>
+                </div>
 
-                <!-- Footer -->
-                <div class="pt-4 border-t border-white/10 flex items-center justify-between">
-                    <span class="text-xs text-gray-600 font-mono">${lib.category}</span>
-                    <div class="flex items-center gap-1 text-xs text-acid opacity-0 group-hover:opacity-100 transition-opacity">
-                        <span>View Details</span>
+                <!-- Footer - always at bottom -->
+                <div class="pt-3 border-t border-white/10 flex items-center justify-between gap-2">
+                    <span class="text-xs text-gray-600 font-mono truncate">${lib.category}</span>
+                    <div class="flex items-center gap-1 text-xs text-acid opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+                        <span>Details</span>
                         <i data-lucide="arrow-right" class="w-3 h-3"></i>
                     </div>
                 </div>
