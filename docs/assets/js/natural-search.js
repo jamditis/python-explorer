@@ -71,10 +71,9 @@ export function initNaturalSearch(searchCallback) {
     const dropdown2 = document.getElementById('dropdown2');
     const quickSearchButtons = document.getElementById('quickSearchButtons');
 
-    // Check if all elements exist
+    // Check if all elements exist (only needed for natural search page)
     if (!template1 || !template2 || !dropdown1 || !dropdown2 || !quickSearchButtons) {
-        console.error('Natural search elements not found');
-        return;
+        return; // Silently skip if natural search elements don't exist
     }
 
     let currentTemplate = null;
