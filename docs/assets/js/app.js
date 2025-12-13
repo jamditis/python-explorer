@@ -123,6 +123,7 @@ export function init() {
     window.filterJournalismLibs = filterJournalismLibs;
     window.generateRequirementsTxt = generateRequirementsTxt;
     window.filterByCollection = filterByCollection;
+    window.toggleAccordion = toggleAccordion;
 }
 
 function renderCollections() {
@@ -130,9 +131,9 @@ function renderCollections() {
     if (!collectionsContainer) return;
 
     const colorClasses = {
-        'acid': 'border-acid/30 bg-acidDim/5',
-        'signal': 'border-signal/30 bg-signalDim/5',
-        'ice': 'border-ice/30 bg-iceDim/5'
+        'acid': 'border-acid/30 bg-acidDim/5 hover:bg-acidDim/10',
+        'signal': 'border-signal/30 bg-signalDim/5 hover:bg-signalDim/10',
+        'ice': 'border-ice/30 bg-iceDim/5 hover:bg-iceDim/10'
     };
 
     const iconColorClasses = {
@@ -141,24 +142,55 @@ function renderCollections() {
         'ice': 'text-ice'
     };
 
-    collectionsContainer.innerHTML = collections.map(collection => `
-        <div class="border ${colorClasses[collection.color]} p-4">
-            <div class="flex items-center justify-between mb-3">
+    collectionsContainer.innerHTML = collections.map((collection, index) => {
+        const libraryList = collection.libraries.map(libName => {
+            const lib = libraries.find(l => l.name.toLowerCase() === libName.toLowerCase());
+            return lib ? lib.name : libName;
+        }).join(', ');
+
+        return `
+        <div class="border ${colorClasses[collection.color]}">
+            <button onclick="toggleAccordion(${index})" class="w-full p-4 flex items-center justify-between cursor-pointer transition-colors">
                 <div class="flex items-center gap-3">
                     <i data-lucide="${collection.icon}" class="w-4 h-4 ${iconColorClasses[collection.color]}"></i>
                     <h4 class="font-display text-sm ${iconColorClasses[collection.color]}">${collection.name}</h4>
                     <span class="text-[9px] text-gray-600 font-mono">${collection.libraries.length} libs</span>
                 </div>
+                <i data-lucide="chevron-down" class="w-4 h-4 text-gray-500 transition-transform accordion-chevron-${index}"></i>
+            </button>
+            <div id="accordion-${index}" class="accordion-content hidden px-4 pb-4">
+                <p class="text-[11px] font-mono text-gray-400 leading-relaxed mb-3">${collection.description}</p>
+                <div class="flex flex-wrap gap-2 mb-3">
+                    ${collection.libraries.slice(0, 8).map(libName => {
+                        const lib = libraries.find(l => l.name.toLowerCase() === libName.toLowerCase());
+                        return `<span class="text-[10px] px-2 py-1 bg-white/5 border border-white/10 text-gray-400 font-mono">${lib ? lib.name : libName}</span>`;
+                    }).join('')}
+                    ${collection.libraries.length > 8 ? `<span class="text-[10px] px-2 py-1 text-gray-600 font-mono">+${collection.libraries.length - 8} more</span>` : ''}
+                </div>
                 <button onclick="filterByCollection('${collection.name.replace(/'/g, "\\'")}', ${JSON.stringify(collection.libraries).replace(/"/g, '&quot;')})"
-                        class="text-[10px] ${iconColorClasses[collection.color]} font-mono hover:underline">
-                    explore →
+                        class="text-[10px] ${iconColorClasses[collection.color]} font-mono hover:underline flex items-center gap-1">
+                    <span>View all ${collection.libraries.length} libraries</span>
+                    <i data-lucide="arrow-right" class="w-3 h-3"></i>
                 </button>
             </div>
-            <p class="text-[11px] font-mono text-gray-500 leading-relaxed">${collection.description}</p>
         </div>
-    `).join('');
+        `;
+    }).join('');
 
     lucide.createIcons();
+}
+
+function toggleAccordion(index) {
+    const content = document.getElementById(`accordion-${index}`);
+    const chevron = document.querySelector(`.accordion-chevron-${index}`);
+
+    if (content.classList.contains('hidden')) {
+        content.classList.remove('hidden');
+        chevron.style.transform = 'rotate(180deg)';
+    } else {
+        content.classList.add('hidden');
+        chevron.style.transform = 'rotate(0deg)';
+    }
 }
 
 function filterByCollection(collectionName, libraryNames) {
