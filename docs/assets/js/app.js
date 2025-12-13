@@ -38,7 +38,21 @@ export const libraries = rawLibraries.map((lib, index) => {
 export const state = {
     search: "",
     activeCategories: [],
-    sortBy: "relevance"
+    sortBy: "relevance",
+    journalismFilter: false  // Add journalism filter flag
+};
+
+// Category color mapping (based on domain)
+export const domainColors = {
+    "Web": "#ccff00",           // acid
+    "Data Science": "#00f0ff",  // ice
+    "Machine Learning": "#ff2a2a", // signal
+    "Automation": "#ccff00",    // acid
+    "Utilities": "#e5e5e5",     // chrome
+    "Visualization": "#00f0ff", // ice
+    "DevOps": "#ff2a2a",        // signal
+    "Desktop": "#ccff00",       // acid
+    "Design": "#00f0ff"         // ice
 };
 
 // Fuse.js instance for fuzzy search
@@ -94,6 +108,7 @@ export function init() {
     searchInput.addEventListener('input', (e) => {
         state.search = e.target.value.toLowerCase();
         state.activeCollection = null; // Clear collection when searching
+        state.journalismFilter = false; // Clear journalism filter when searching
         renderGrid();
     });
 
@@ -202,6 +217,7 @@ function filterByCollection(collectionName, libraryNames) {
     state.activeCollection = collection;
     state.search = "";
     state.activeCategories = [];
+    state.journalismFilter = false;
     searchInput.value = `Collection: ${collectionName}`;
 
     // Use normal renderGrid which will update charts
@@ -284,6 +300,7 @@ function toggleFilter(cat) {
         state.activeCategories.push(cat);
     }
     state.activeCollection = null; // Clear collection when using category filters
+    state.journalismFilter = false; // Clear journalism filter when using category filters
     renderActiveFilters();
     renderGrid();
 }
@@ -303,6 +320,7 @@ function renderActiveFilters() {
 function resetFilters() {
     state.activeCategories = [];
     state.activeCollection = null;
+    state.journalismFilter = false;
     state.search = "";
     searchInput.value = "";
     renderActiveFilters();
@@ -312,8 +330,14 @@ function resetFilters() {
 function renderGrid() {
     let filtered;
 
+    // Check if we're filtering by journalism tag
+    if (state.journalismFilter) {
+        filtered = libraries.filter(lib =>
+            lib.description.includes('[JOURNALISM]')
+        );
+    }
     // Check if we're filtering by collection
-    if (state.activeCollection) {
+    else if (state.activeCollection) {
         filtered = libraries.filter(lib =>
             state.activeCollection.libraries.some(name =>
                 lib.name.toLowerCase() === name.toLowerCase()
@@ -346,19 +370,21 @@ function renderGrid() {
 
     document.getElementById('noResults').classList.add('hidden');
 
-    grid.innerHTML = filtered.map(lib => `
-        <div onclick="openModal('${lib.id}')" class="bg-panel border-2 border-white/10 p-5 relative group hover:border-acid transition-all cursor-pointer flex flex-col min-h-[240px]">
-            <div class="absolute inset-0 bg-acid/5 opacity-0 group-hover:opacity-100 transition-opacity z-0"></div>
+    grid.innerHTML = filtered.map(lib => {
+        const color = domainColors[lib.domain] || '#e5e5e5';
+        return `
+        <div onclick="openModal('${lib.id}')" class="bg-panel border-2 border-white/10 p-5 relative group hover:border-[color] transition-all cursor-pointer flex flex-col min-h-[240px]" style="--domain-color: ${color};">
+            <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity z-0" style="background-color: ${color}15;"></div>
 
             <div class="relative z-10 flex flex-col h-full">
                 <!-- Header -->
                 <div class="flex items-start gap-3 mb-4">
-                    <div class="w-10 h-10 flex-shrink-0 bg-acid/10 border border-acid/30 flex items-center justify-center">
-                        <i data-lucide="package" class="w-5 h-5 text-acid"></i>
+                    <div class="w-10 h-10 flex-shrink-0 border flex items-center justify-center" style="background-color: ${color}10; border-color: ${color}30;">
+                        <i data-lucide="package" class="w-5 h-5" style="color: ${color};"></i>
                     </div>
                     <div class="flex-1 min-w-0">
-                        <h4 class="font-display text-base text-chrome group-hover:text-acid transition-colors truncate">${lib.name}</h4>
-                        <div class="text-[10px] text-gray-600 font-mono uppercase mt-1">${lib.domain}</div>
+                        <h4 class="font-display text-base text-chrome transition-colors truncate" style="--hover-color: ${color};">${lib.name}</h4>
+                        <div class="text-[10px] font-mono uppercase mt-1" style="color: ${color}AA;">${lib.domain}</div>
                     </div>
                 </div>
 
@@ -370,14 +396,15 @@ function renderGrid() {
                 <!-- Footer - always at bottom -->
                 <div class="pt-3 border-t border-white/10 flex items-center justify-between gap-2">
                     <span class="text-xs text-gray-600 font-mono truncate">${lib.category}</span>
-                    <div class="flex items-center gap-1 text-xs text-acid opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+                    <div class="flex items-center gap-1 text-xs opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap" style="color: ${color};">
                         <span>Details</span>
                         <i data-lucide="arrow-right" class="w-3 h-3"></i>
                     </div>
                 </div>
             </div>
         </div>
-    `).join('');
+        `;
+    }).join('');
 
     lucide.createIcons();
 }
@@ -394,7 +421,9 @@ function handleNaturalSearch(searchTerm) {
 
 function filterJournalismLibs() {
     // Filter to show only journalism-tagged libraries
-    state.search = "[JOURNALISM]";
+    state.journalismFilter = true;
+    state.search = "";
+    state.activeCollection = null;
     searchInput.value = "";
     state.activeCategories = [];
     renderActiveFilters();

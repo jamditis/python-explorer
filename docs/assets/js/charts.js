@@ -1,4 +1,5 @@
 // Chart.js visualizations
+import { domainColors } from './app.js';
 
 let domainChart = null;
 let popularityChart = null;
@@ -32,17 +33,28 @@ export function initCharts(libraries) {
         }
     });
 
-    // Top libraries popularity chart
-    const topLibs = [...libraries].sort((a,b) => b.popularity - a.popularity).slice(0, 10);
+    // Category breakdown chart
+    const categoriesWithDomain = {};
+    libraries.forEach(l => {
+        if (!categoriesWithDomain[l.category]) {
+            categoriesWithDomain[l.category] = { count: 0, domain: l.domain };
+        }
+        categoriesWithDomain[l.category].count++;
+    });
+
+    const topCategories = Object.entries(categoriesWithDomain)
+        .sort((a,b) => b[1].count - a[1].count)
+        .slice(0, 10);
+
     popularityChart = new Chart(document.getElementById('popularityChart'), {
         type: 'bar',
         data: {
-            labels: topLibs.map(l => l.name),
+            labels: topCategories.map(c => c[0]),
             datasets: [{
-                label: 'IMPACT_SCORE',
-                data: topLibs.map(l => l.popularity),
-                backgroundColor: '#ccff00',
-                barThickness: 6
+                label: 'LIBRARY_COUNT',
+                data: topCategories.map(c => c[1].count),
+                backgroundColor: topCategories.map(c => domainColors[c[1].domain] || '#e5e5e5'),
+                barThickness: 8
             }]
         },
         options: {
@@ -77,9 +89,21 @@ export function updateCharts(filteredLibraries) {
     domainChart.data.datasets[0].data = Object.values(domains);
     domainChart.update();
 
-    // Update popularity chart with filtered data
-    const topLibs = [...filteredLibraries].sort((a,b) => b.popularity - a.popularity).slice(0, 10);
-    popularityChart.data.labels = topLibs.map(l => l.name);
-    popularityChart.data.datasets[0].data = topLibs.map(l => l.popularity);
+    // Update category breakdown chart with filtered data
+    const categoriesWithDomain = {};
+    filteredLibraries.forEach(l => {
+        if (!categoriesWithDomain[l.category]) {
+            categoriesWithDomain[l.category] = { count: 0, domain: l.domain };
+        }
+        categoriesWithDomain[l.category].count++;
+    });
+
+    const topCategories = Object.entries(categoriesWithDomain)
+        .sort((a,b) => b[1].count - a[1].count)
+        .slice(0, 10);
+
+    popularityChart.data.labels = topCategories.map(c => c[0]);
+    popularityChart.data.datasets[0].data = topCategories.map(c => c[1].count);
+    popularityChart.data.datasets[0].backgroundColor = topCategories.map(c => domainColors[c[1].domain] || '#e5e5e5');
     popularityChart.update();
 }
