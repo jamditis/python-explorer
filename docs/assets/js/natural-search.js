@@ -3,50 +3,50 @@
 export const searchTemplates = {
     "I have": {
         options: [
-            { value: "csv", label: "CSV files", searches: ["pandas", "csv", "data analysis"] },
-            { value: "excel", label: "Excel spreadsheets", searches: ["openpyxl", "pandas", "xlrd"] },
-            { value: "json", label: "JSON data", searches: ["json", "requests", "api"] },
-            { value: "images", label: "Images", searches: ["pillow", "opencv", "image processing"] },
-            { value: "pdf", label: "PDF files", searches: ["pypdf", "reportlab", "pdf"] },
-            { value: "database", label: "A database", searches: ["sqlalchemy", "orm", "database"] },
-            { value: "api", label: "An API", searches: ["requests", "http", "api"] },
-            { value: "website", label: "A website to scrape", searches: ["beautiful soup", "scrapy", "selenium"] },
-            { value: "text", label: "Text data", searches: ["nlp", "spacy", "text processing"] },
-            { value: "video", label: "Video files", searches: ["opencv", "video", "ffmpeg"] }
+            { value: "csv", label: "CSV files", searches: ["csv", "pandas", "data"] },
+            { value: "excel", label: "Excel spreadsheets", searches: ["excel", "pandas", "spreadsheet"] },
+            { value: "json", label: "JSON data", searches: ["json", "api", "data"] },
+            { value: "images", label: "Images", searches: ["image", "photo", "picture"] },
+            { value: "pdf", label: "PDF files", searches: ["pdf", "document"] },
+            { value: "database", label: "A database", searches: ["database", "sql", "data"] },
+            { value: "api", label: "An API to work with", searches: ["api", "rest", "http"] },
+            { value: "website", label: "A website to scrape", searches: ["scraping", "web", "html"] },
+            { value: "text", label: "Text data", searches: ["text", "nlp", "language"] },
+            { value: "video", label: "Video files", searches: ["video", "media", "stream"] }
         ],
         nextTemplate: "and want to"
     },
     "and want to": {
         options: [
-            { value: "analyze", label: "Analyze it", searches: ["pandas", "numpy", "data analysis"] },
-            { value: "visualize", label: "Visualize it", searches: ["matplotlib", "plotly", "seaborn"] },
-            { value: "clean", label: "Clean it", searches: ["pandas", "data validation"] },
-            { value: "transform", label: "Transform it", searches: ["pandas", "data engineering"] },
-            { value: "automate", label: "Automate processing", searches: ["automation", "celery", "airflow"] },
-            { value: "extract", label: "Extract data from it", searches: ["scraping", "parsing", "extraction"] },
-            { value: "generate", label: "Generate reports", searches: ["reportlab", "jinja", "documentation"] },
-            { value: "predict", label: "Make predictions", searches: ["machine learning", "scikit", "tensorflow"] },
-            { value: "classify", label: "Classify it", searches: ["machine learning", "classification"] },
-            { value: "search", label: "Search through it", searches: ["search", "indexing", "elasticsearch"] }
+            { value: "analyze", label: "Analyze it", searches: ["analysis", "analyze", "explore"] },
+            { value: "visualize", label: "Visualize it", searches: ["visualization", "chart", "plot"] },
+            { value: "clean", label: "Clean it", searches: ["clean", "validation", "parse"] },
+            { value: "transform", label: "Transform it", searches: ["transform", "convert", "process"] },
+            { value: "automate", label: "Automate processing", searches: ["automation", "task", "schedule"] },
+            { value: "extract", label: "Extract data from it", searches: ["extract", "scrape", "parse"] },
+            { value: "generate", label: "Generate reports", searches: ["generate", "report", "document"] },
+            { value: "predict", label: "Make predictions", searches: ["machine learning", "prediction", "model"] },
+            { value: "classify", label: "Classify it", searches: ["classification", "machine learning", "categorize"] },
+            { value: "search", label: "Search through it", searches: ["search", "query", "index"] }
         ]
     },
     "I want to": {
         options: [
-            { value: "build-web", label: "Build a web application", searches: ["flask", "django", "fastapi"] },
-            { value: "build-api", label: "Build an API", searches: ["fastapi", "flask", "rest"] },
-            { value: "scrape-web", label: "Scrape websites", searches: ["beautiful soup", "scrapy", "selenium"] },
-            { value: "analyze-data", label: "Analyze data", searches: ["pandas", "numpy", "data analysis"] },
-            { value: "visualize", label: "Create visualizations", searches: ["matplotlib", "plotly", "dash"] },
-            { value: "ml", label: "Do machine learning", searches: ["scikit", "tensorflow", "pytorch"] },
-            { value: "nlp", label: "Process text/language", searches: ["spacy", "nltk", "nlp"] },
-            { value: "cv", label: "Process images/video", searches: ["opencv", "pillow", "computer vision"] },
-            { value: "automate", label: "Automate tasks", searches: ["selenium", "automation", "schedule"] },
-            { value: "test", label: "Test my code", searches: ["pytest", "unittest", "testing"] },
-            { value: "gui", label: "Build a desktop app", searches: ["tkinter", "pyqt", "gui"] },
-            { value: "game", label: "Make a game", searches: ["pygame", "game development"] },
-            { value: "work-files", label: "Work with files", searches: ["pathlib", "file manipulation", "pdf"] },
-            { value: "database", label: "Work with databases", searches: ["sqlalchemy", "database", "orm"] },
-            { value: "deploy", label: "Deploy applications", searches: ["docker", "devops", "deployment"] }
+            { value: "build-web", label: "Build a web application", searches: ["web", "framework", "application"] },
+            { value: "build-api", label: "Build an API", searches: ["api", "rest", "fastapi"] },
+            { value: "scrape-web", label: "Scrape websites", searches: ["scraping", "web", "extract"] },
+            { value: "analyze-data", label: "Analyze data", searches: ["data analysis", "pandas", "statistics"] },
+            { value: "visualize", label: "Create visualizations", searches: ["visualization", "chart", "graph"] },
+            { value: "ml", label: "Do machine learning", searches: ["machine learning", "model", "train"] },
+            { value: "nlp", label: "Process text/language", searches: ["nlp", "text", "language"] },
+            { value: "cv", label: "Process images/video", searches: ["image", "video", "computer vision"] },
+            { value: "automate", label: "Automate tasks", searches: ["automation", "task", "workflow"] },
+            { value: "test", label: "Test my code", searches: ["testing", "test", "unittest"] },
+            { value: "gui", label: "Build a desktop app", searches: ["gui", "desktop", "interface"] },
+            { value: "game", label: "Make a game", searches: ["game", "graphics", "pygame"] },
+            { value: "work-files", label: "Work with files", searches: ["file", "document", "io"] },
+            { value: "database", label: "Work with databases", searches: ["database", "sql", "orm"] },
+            { value: "deploy", label: "Deploy applications", searches: ["deploy", "docker", "server"] }
         ]
     }
 };
@@ -124,10 +124,12 @@ export function initNaturalSearch(searchCallback) {
         if (!e.target.value) return;
 
         if (currentTemplate === 'I want to') {
-            // Direct "I want to" search
+            // Direct "I want to" search - try all search terms
             const choice = searchTemplates['I want to'].options.find(opt => opt.value === e.target.value);
             if (choice) {
-                executeSearch(choice.searches[0], searchCallback);
+                // Join all search terms with OR logic for better results
+                const searchTerm = choice.searches.join(' ');
+                executeSearch(searchTerm, searchCallback);
             }
         } else if (currentTemplate === 'I have') {
             // Combined "I have...want to..." search
@@ -135,8 +137,12 @@ export function initNaturalSearch(searchCallback) {
             const secondChoice = searchTemplates['and want to'].options.find(opt => opt.value === e.target.value);
 
             if (firstChoice && secondChoice) {
-                const combinedSearches = [...new Set([...firstChoice.searches, ...secondChoice.searches])];
-                executeSearch(combinedSearches[0], searchCallback);
+                // Prioritize second choice (action) but include data type context
+                // This gives better results: e.g., "analyze pandas" vs just "analyze"
+                const primaryTerm = secondChoice.searches[0];
+                const contextTerm = firstChoice.searches[0];
+                const searchTerm = `${primaryTerm} ${contextTerm}`;
+                executeSearch(searchTerm, searchCallback);
             }
         }
     });
