@@ -1,5 +1,6 @@
 // Main Application Logic
 import { rawLibraries, domainMap } from '../data/libraries.js';
+import { collections } from '../data/collections.js';
 import { initCharts, updateCharts } from './charts.js';
 import { initComparator } from './comparator.js';
 import { openModal, closeModal, copyInstall } from './modal.js';
@@ -74,6 +75,7 @@ export function init() {
     });
 
     renderFilters();
+    renderCollections();
     renderGrid();
 
     // initCharts only if chart canvases exist
@@ -119,6 +121,114 @@ export function init() {
     window.copyInstall = copyInstall;
     window.filterJournalismLibs = filterJournalismLibs;
     window.generateRequirementsTxt = generateRequirementsTxt;
+    window.filterByCollection = filterByCollection;
+}
+
+function renderCollections() {
+    const collectionsGrid = document.getElementById('collectionsGrid');
+    if (!collectionsGrid) return;
+
+    const colorClasses = {
+        'acid': 'border-acid/30 bg-acidDim/10 hover:border-acid',
+        'signal': 'border-signal/30 bg-signalDim/10 hover:border-signal',
+        'ice': 'border-ice/30 bg-iceDim/10 hover:border-ice'
+    };
+
+    const iconColorClasses = {
+        'acid': 'text-acid',
+        'signal': 'text-signal',
+        'ice': 'text-ice'
+    };
+
+    collectionsGrid.innerHTML = collections.map(collection => `
+        <div onclick="filterByCollection('${collection.name.replace(/'/g, "\\'")}', ${JSON.stringify(collection.libraries).replace(/"/g, '&quot;')})"
+             class="border ${colorClasses[collection.color]} p-6 cursor-pointer transition-all group">
+            <div class="flex items-start gap-4 mb-4">
+                <div class="w-12 h-12 flex-shrink-0 border ${iconColorClasses[collection.color]} ${colorClasses[collection.color]} flex items-center justify-center">
+                    <i data-lucide="${collection.icon}" class="w-6 h-6 ${iconColorClasses[collection.color]}"></i>
+                </div>
+                <div class="flex-1">
+                    <h4 class="font-display text-base ${iconColorClasses[collection.color]} mb-2">${collection.name}</h4>
+                    <p class="text-xs font-mono text-gray-400 leading-relaxed">${collection.description}</p>
+                </div>
+            </div>
+            <div class="flex items-center justify-between pt-4 border-t border-white/10">
+                <span class="text-[10px] text-gray-600 font-mono">${collection.libraries.length} LIBRARIES</span>
+                <span class="text-[10px] ${iconColorClasses[collection.color]} font-mono opacity-0 group-hover:opacity-100 transition-opacity">EXPLORE →</span>
+            </div>
+        </div>
+    `).join('');
+
+    lucide.createIcons();
+}
+
+function filterByCollection(collectionName, libraryNames) {
+    // Convert library names to search that will match them
+    const collection = collections.find(c => c.name === collectionName);
+    if (!collection) return;
+
+    // Filter to show only libraries in this collection
+    state.search = "";
+    state.activeCategories = [];
+    searchInput.value = `Collection: ${collectionName}`;
+
+    // Manually filter the grid to show only collection libraries
+    const filtered = libraries.filter(lib =>
+        collection.libraries.some(name =>
+            lib.name.toLowerCase() === name.toLowerCase()
+        )
+    );
+
+    renderFilteredGrid(filtered);
+    scrollToSection('explorer');
+}
+
+function renderFilteredGrid(filtered) {
+    document.getElementById('resultCount').innerText = `[ RESULTS: ${filtered.length} ]`;
+    updateCharts(filtered);
+
+    if (filtered.length === 0) {
+        grid.innerHTML = '';
+        document.getElementById('noResults').classList.remove('hidden');
+        return;
+    }
+
+    document.getElementById('noResults').classList.add('hidden');
+
+    grid.innerHTML = filtered.map(lib => `
+        <div onclick="openModal('${lib.id}')" class="bg-panel border-2 border-white/10 p-5 relative group hover:border-acid transition-all cursor-pointer flex flex-col min-h-[240px]">
+            <div class="absolute inset-0 bg-acid/5 opacity-0 group-hover:opacity-100 transition-opacity z-0"></div>
+
+            <div class="relative z-10 flex flex-col h-full">
+                <!-- Header -->
+                <div class="flex items-start gap-3 mb-4">
+                    <div class="w-10 h-10 flex-shrink-0 bg-acid/10 border border-acid/30 flex items-center justify-center">
+                        <i data-lucide="package" class="w-5 h-5 text-acid"></i>
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <h4 class="font-display text-base text-chrome group-hover:text-acid transition-colors truncate">${lib.name}</h4>
+                        <div class="text-[10px] text-gray-600 font-mono uppercase mt-1">${lib.domain}</div>
+                    </div>
+                </div>
+
+                <!-- Description - takes available space -->
+                <div class="flex-1 mb-4">
+                    <p class="text-sm font-mono text-gray-400 leading-relaxed line-clamp-3">${lib.description}</p>
+                </div>
+
+                <!-- Footer - always at bottom -->
+                <div class="pt-3 border-t border-white/10 flex items-center justify-between gap-2">
+                    <span class="text-xs text-gray-600 font-mono truncate">${lib.category}</span>
+                    <div class="flex items-center gap-1 text-xs text-acid opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+                        <span>Details</span>
+                        <i data-lucide="arrow-right" class="w-3 h-3"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `).join('');
+
+    lucide.createIcons();
 }
 
 function updateStats() {
