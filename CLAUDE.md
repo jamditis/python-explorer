@@ -17,6 +17,54 @@ python3 -m http.server 3000
 # Open http://localhost:3000/docs/index.html
 ```
 
+**IMPORTANT**: Always read `.clinerules` and `.clinerules-lessons` before making changes!
+
+## Recent Updates (Last Session)
+
+### Features Added
+1. ✅ **Natural Language Search Interface**
+   - "I have" + "I want to" dropdowns for guided library discovery
+   - Quick search category buttons
+   - Improved search logic that combines terms for better fuzzy matching
+   - Search terms optimized for broader, more relevant results
+
+2. ✅ **Color-Coded Visual System**
+   - Domain-based color mapping (Web=acid, Data Science=ice, ML=signal)
+   - Color-coded library cards, icons, borders, and hover states
+   - Dynamic category breakdown chart with color-coded bars
+   - Consistent color hierarchy across all UI elements
+
+3. ✅ **Journalism & Media Toolkit**
+   - Special featured section with direct filtering
+   - 39 libraries tagged with `[JOURNALISM]` (hidden from display)
+   - Direct tag matching instead of fuzzy search for accuracy
+   - Requirements.txt export for journalism libraries
+
+4. ✅ **Featured Collections**
+   - 10 curated collections in accordion layout
+   - All collection names in ALL CAPS
+   - Collections include: Data Journalism Toolkit, Beginner-Friendly Starters, etc.
+
+5. ✅ **Submit Library Button**
+   - Links to GitHub issue creation
+   - Opens in new tab with security attributes
+
+6. ✅ **Hidden Tag System**
+   - `[JOURNALISM]` tag stripped from all user-facing displays
+   - Tags remain in data for filtering logic
+   - Applied to both grid cards and modal descriptions
+
+### Bug Fixes
+- Fixed journalism filter returning 0 results (was using fuzzy search, now uses direct tag matching)
+- Fixed charts not updating when filters change
+- Fixed state management conflicts between different filter types
+- Restored missing natural language search interface from OG design
+
+### Documentation Created
+- `.clinerules` - Comprehensive development rules and patterns
+- `.clinerules-lessons` - 15 major lessons learned from development
+- Updated `CLAUDE.md` with testing checklist and common pitfalls
+
 ### Key Files to Know
 - `docs/index.html` - Main entry point (deployed to GitHub Pages)
 - `docs/assets/js/app.js` - Core application logic and state management
