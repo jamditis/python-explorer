@@ -2,7 +2,7 @@
 
 ![Python Explorer](style/og-image.png)
 
-> A cyberpunk-styled interactive directory of Python libraries for developers
+## An interactive directory of Python libraries for journalists and developers
 
 [![Live Demo](https://img.shields.io/badge/demo-live-brightgreen)](https://jamditis.github.io/python-explorer)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
