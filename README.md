@@ -1,5 +1,7 @@
 # Python Explorer
 
+![Python Explorer](style/og-image.png)
+
 > A cyberpunk-styled interactive directory of Python libraries for developers
 
 [![Live Demo](https://img.shields.io/badge/demo-live-brightgreen)](https://jamditis.github.io/python-explorer)
@@ -11,18 +13,23 @@ Python Explorer is a comprehensive, searchable catalog of Python libraries acros
 
 ## ✨ Features
 
-### 🗣️ Natural Language Search
-- **"I have X and want to Y"** - Answer simple questions to find the right library
-- **"I want to Z"** - Direct goal-based searching for beginners
-- **Quick Category Buttons** - One-click access to popular categories
-- **Smart Search Suggestions** - Contextual search terms based on your needs
+### 🔍 Intelligent Search
+- **Fuzzy Search** - Find libraries even with typos or partial matches using Fuse.js
+- **AI-Enhanced Descriptions** - Every library has a plain-language, beginner-friendly description
+- **Real-time Filtering** - Instant results by name, description, or domain
+- **Category Filtering** - Multi-select filtering across all 23 categories
 
-### 🔍 Powerful Discovery
-- **345 Python Libraries** - Curated from the awesome-python collection
-- **23 Categories** - From Web Frameworks to Machine Learning to GUI Development
-- **Real-time Search** - Instant filtering by name, description, or domain
-- **Category Filtering** - Multi-select filtering across all categories
-- **Clean, Readable Cards** - Library information at a glance
+### 📰 Journalism & Media Toolkit
+- **Curated Collection** - 39 libraries specifically tagged for journalism and media work
+- **One-Click Access** - Dedicated section highlighting tools for data journalism, web scraping, visualization, and content management
+- **Requirements Export** - Download a ready-to-use requirements.txt for journalism projects
+
+### 🔧 Developer Tools
+- **345 Python Libraries** - Comprehensive collection from awesome-python
+- **Requirements.txt Generator** - Export any filtered set of libraries as a pip requirements file
+- **Interactive Charts** - Visual analytics showing domain distribution and popularity
+- **Side-by-Side Comparison** - Compare libraries to choose the best tool for your needs
+- **Clean Cards** - Easy-to-read library information at a glance
 
 ### 🎨 Design & UX
 - **Cyberpunk Aesthetic** - Distinctive AMDITIS design system with acid green accents
@@ -113,10 +120,12 @@ python3 tools/integrate_libraries.py
 ## 📊 Tech Stack
 
 - **Frontend**: Vanilla JavaScript (ES6 Modules)
+- **Search**: Fuse.js 7.0.0 (fuzzy matching)
 - **Styling**: TailwindCSS CDN + Custom CSS
 - **Charts**: Chart.js 3.9.1
 - **Icons**: Lucide Icons
 - **Fonts**: Google Fonts (Chakra Petch, Share Tech Mono)
+- **AI Enhancement**: Claude Code (description generation)
 
 ## 🤝 Contributing
 
