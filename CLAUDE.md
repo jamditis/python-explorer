@@ -81,6 +81,11 @@ Custom cyberpunk aesthetic with:
 - **Custom Elements**: Notched corners (clip-path), CRT scanline overlay, glitch text animations
 - **Typography**: "Chakra Petch" display font, "Share Tech Mono" monospace
 
+**IMPORTANT DESIGN RULES:**
+- **NO custom cursors** - Always use default browser cursors (never override cursor style)
+- Keep effects subtle (CRT scanline opacity: 0.12 max)
+- Maintain high contrast for accessibility
+
 ## Development
 
 ### Local Development

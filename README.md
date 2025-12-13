@@ -18,9 +18,10 @@ Python Explorer is a comprehensive, searchable catalog of Python libraries acros
 - **Smart Search Suggestions** - Contextual search terms based on your needs
 
 ### 🔍 Powerful Discovery
-- **350+ Python Libraries** - Curated from the awesome-python collection
+- **345 Python Libraries** - Curated from the awesome-python collection
+- **23 Categories** - From Web Frameworks to Machine Learning to GUI Development
 - **Real-time Search** - Instant filtering by name, description, or domain
-- **Category Filtering** - Multi-select filtering across 25+ categories
+- **Category Filtering** - Multi-select filtering across all categories
 - **Clean, Readable Cards** - Library information at a glance
 
 ### 🎨 Design & UX
