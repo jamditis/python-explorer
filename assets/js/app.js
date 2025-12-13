@@ -41,25 +41,36 @@ export const state = {
 };
 
 // DOM References
-const grid = document.getElementById('grid');
-const filterList = document.getElementById('categoryList');
-const searchInput = document.getElementById('searchInput');
-const filterSearch = document.getElementById('filterSearch');
-const activeFiltersContainer = document.getElementById('activeFilters');
+let grid, filterList, searchInput, filterSearch, activeFiltersContainer;
 
 // Initialize application
 export function init() {
+    // Get DOM references
+    grid = document.getElementById('grid');
+    filterList = document.getElementById('categoryList');
+    searchInput = document.getElementById('searchInput');
+    filterSearch = document.getElementById('filterSearch');
+    activeFiltersContainer = document.getElementById('activeFilters');
+
+    if (!grid || !searchInput) {
+        console.error('Required DOM elements not found');
+        return;
+    }
+
     renderFilters();
     renderGrid();
+
     // initCharts only if chart canvases exist
     if (document.getElementById('domainChart')) {
         initCharts(libraries);
     }
     updateStats();
+
     // initComparator only if selects exist
     if (document.getElementById('compSelect1')) {
         initComparator(libraries);
     }
+
     initNaturalSearch(handleNaturalSearch);
 
     searchInput.addEventListener('input', (e) => {
@@ -98,6 +109,8 @@ function updateStats() {
 }
 
 function renderFilters() {
+    if (!filterList) return;
+
     const categories = [...new Set(libraries.map(l => l.category))].sort();
 
     filterList.innerHTML = categories.map(cat => `

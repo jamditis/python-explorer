@@ -71,6 +71,12 @@ export function initNaturalSearch(searchCallback) {
     const dropdown2 = document.getElementById('dropdown2');
     const quickSearchButtons = document.getElementById('quickSearchButtons');
 
+    // Check if all elements exist
+    if (!template1 || !template2 || !dropdown1 || !dropdown2 || !quickSearchButtons) {
+        console.error('Natural search elements not found');
+        return;
+    }
+
     let currentTemplate = null;
 
     // Initialize template selection
