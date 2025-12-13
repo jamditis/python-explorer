@@ -1,0 +1,229 @@
+# Python Explorer - Development Rules
+
+## Project Architecture
+
+### Modular ES6 Structure
+- Main entry point: `docs/index.html`
+- JavaScript modules in `docs/assets/js/`:
+  - `app.js` - Main application logic, state management, grid rendering
+  - `charts.js` - Chart.js visualizations
+  - `comparator.js` - Library comparison functionality
+  - `modal.js` - Library detail modal
+  - `natural-search.js` - Natural language search
+- Data files in `docs/assets/data/`:
+  - `libraries.js` - Main library database (exported as ES6 module)
+  - `collections.js` - Curated library collections
+- No build process - direct ES6 module imports work in modern browsers
+
+### GitHub Pages Deployment
+- All public files live in `/docs` folder
+- GitHub Pages serves from `/docs` directory
+- No build step required - static files only
+
+## Design System
+
+### Color Palette
+- `acid` (#ccff00) - Primary accent (yellow/lime)
+- `signal` (#ff2a2a) - Secondary accent (red)
+- `ice` (#00f0ff) - Tertiary accent (cyan)
+- `chrome` (#e5e5e5) - Light text
+- `void`/`panel`/`surface` - Dark backgrounds
+
+### Domain Color Mapping
+```javascript
+{
+    "Web": "#ccff00",           // acid
+    "Data Science": "#00f0ff",  // ice
+    "Machine Learning": "#ff2a2a", // signal
+    "Automation": "#ccff00",    // acid
+    "Utilities": "#e5e5e5",     // chrome
+    "Visualization": "#00f0ff", // ice
+    "DevOps": "#ff2a2a",        // signal
+    "Desktop": "#ccff00",       // acid
+    "Design": "#00f0ff"         // ice
+}
+```
+
+### Typography & Casing Rules
+- **ALL CAPS** for section headers and subheads (e.g., "PYTHON_ECOSYSTEM", "FEATURED COLLECTIONS", "LIVE ANALYTICS")
+- **Sentence case** for body text and descriptions
+- **NEVER** use title case for headings
+- Font families:
+  - Display: "Chakra Petch"
+  - Monospace: "Share Tech Mono"
+
+### UI Conventions
+- **NO custom cursors** - Always use default browser cursors
+- Subtle effects only (CRT scanline opacity: 0.12 max)
+- High contrast for accessibility
+- Notched corners using clip-path
+- Color-coded borders and icons based on domain
+
+## Data Management
+
+### Library Data Structure
+Each library in `libraries.js` has:
+```javascript
+{
+    n: "LibraryName",           // Name
+    c: "Category Name",         // Category
+    d: "Description text",      // Description
+    l: "https://link.com/"      // Link to docs/repo
+}
+```
+
+Processed at runtime to include:
+- `domain` - Higher-level grouping via domainMap
+- `popularity` - Calculated score (60-100 range)
+- `install` - Generated pip install command
+- `snippet` - Basic import code example
+
+### Hidden Tags
+- Use `[JOURNALISM]` tag in descriptions for filtering
+- ALWAYS strip tags when displaying to users (grid cards and modal)
+- Tags exist only for internal filtering logic
+
+### Collections
+- All collection names must be ALL CAPS
+- Stored in `collections.js` as ES6 export
+- Each collection has: name, description, icon, color, libraries array
+
+## State Management
+
+### Application State
+```javascript
+state = {
+    search: "",              // Global search term
+    activeCategories: [],    // Selected category filters
+    sortBy: "relevance",     // Sort mode
+    journalismFilter: false, // Special journalism filter flag
+    activeCollection: null   // Currently selected collection
+}
+```
+
+### State Clearing Rules
+When changing filters, always clear conflicting state:
+- Search input → Clear `activeCollection`, `journalismFilter`
+- Category filter → Clear `activeCollection`, `journalismFilter`
+- Collection filter → Clear `search`, `activeCategories`, `journalismFilter`
+- Journalism filter → Clear `search`, `activeCategories`, `activeCollection`
+
+## Feature Implementation Patterns
+
+### Filtering System
+1. Journalism filter uses direct tag matching, not fuzzy search
+2. Collection filter matches library names from collection data
+3. Category filter is multi-select checkbox system
+4. Fuzzy search uses Fuse.js with threshold 0.4
+
+### Chart Updates
+- Charts MUST update dynamically when filters change
+- Call `updateCharts(filteredLibraries)` in renderGrid()
+- Category breakdown chart uses color-coded bars based on domain
+
+### Color Coding
+- Library cards inherit domain color for:
+  - Icon container background and border
+  - Icon color
+  - Domain label color
+  - Hover border color
+  - Hover background overlay
+  - "Details" arrow color
+- Charts use domain colors for visual consistency
+
+## Code Style
+
+### ES6 Module Imports
+```javascript
+import { rawLibraries, domainMap } from '../data/libraries.js';
+import { collections } from '../data/collections.js';
+import { initCharts, updateCharts } from './charts.js';
+```
+
+### DOM Rendering
+- Use template literals for HTML generation
+- Always call `lucide.createIcons()` after rendering new icons
+- Clean data before display (strip tags, format text)
+
+### Event Handling
+- Use inline `onclick` for simple actions
+- Use event listeners for complex interactions
+- Prevent default behavior when needed (e.g., keyboard shortcuts)
+
+## External Dependencies (CDN)
+
+- TailwindCSS 3.x
+- Chart.js
+- Fuse.js (fuzzy search)
+- Lucide Icons
+- Google Fonts (Chakra Petch, Share Tech Mono)
+
+## Testing & Development
+
+### Local Development
+```bash
+python3 -m http.server 3000
+# Open http://localhost:3000/docs/index.html
+```
+
+### Browser Requirements
+- Requires ES6 module support (all modern browsers)
+- Hard refresh (Cmd+Shift+R) needed during development due to module caching
+
+## Git Workflow
+
+### Commit Messages
+- Use descriptive, imperative mood ("Add feature" not "Added feature")
+- Include bullet points for multiple changes
+- Always include Claude Code signature:
+```
+🤖 Generated with [Claude Code](https://claude.com/claude-code)
+
+Co-Authored-By: Claude <noreply@anthropic.com>
+```
+
+### Branch Strategy
+- Push directly to `main` for this project
+- All changes go live immediately via GitHub Pages
+
+## User Interaction Features
+
+### Submit Library Button
+- Links to GitHub issue creation
+- Opens in new tab with security attributes: `target="_blank" rel="noopener noreferrer"`
+- Styled with border and acid color accent
+
+### Requirements.txt Generator
+- Allows download of pip requirements for any filtered library set
+- Uses Blob API for file downloads
+- Supports: all libraries, current filter, journalism subset
+
+### Accordion Collections
+- Featured collections use accordion pattern
+- One collection expanded at a time
+- Smooth transitions with chevron rotation
+
+## Performance Considerations
+
+- Handles 300+ libraries without performance issues
+- Fuzzy search is efficient with proper threshold
+- Charts update smoothly with filtered data
+- No unnecessary re-renders
+
+## Accessibility
+
+- High contrast color scheme
+- Semantic HTML structure
+- Keyboard navigation support (/ key for search)
+- Clear visual feedback for interactive elements
+
+## Content Guidelines
+
+### Descriptions
+- Beginner-friendly language
+- Focus on practical use cases
+- 1-3 sentences maximum
+- No marketing fluff or superlatives
+
+### Disclaimer
+Always maintain disclaimer about Joe Amditis not endorsing libraries - this is an exploration tool only
