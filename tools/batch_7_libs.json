@@ -1,0 +1,272 @@
+[
+  {
+    "name": "rq",
+    "category": "Task Queues",
+    "description": "Simple job queues for Python.",
+    "link": "https://github.com/rq/rq"
+  },
+  {
+    "name": "Genshi",
+    "category": "Utilities",
+    "description": "Python templating toolkit for generation of web-aware output.",
+    "link": "https://genshi.edgewall.org/"
+  },
+  {
+    "name": "Jinja2",
+    "category": "Utilities",
+    "description": "A modern and designer friendly templating language.",
+    "link": "https://github.com/pallets/jinja"
+  },
+  {
+    "name": "Mako",
+    "category": "Utilities",
+    "description": "Hyperfast and lightweight templating for the Python platform.",
+    "link": "http://www.makotemplates.org/"
+  },
+  {
+    "name": "apache-libcloud",
+    "category": "Utilities",
+    "description": "One Python library for all clouds.",
+    "link": "https://libcloud.apache.org/"
+  },
+  {
+    "name": "boto3",
+    "category": "Utilities",
+    "description": "Python interface to Amazon Web Services.",
+    "link": "https://github.com/boto/boto3"
+  },
+  {
+    "name": "django-wordpress",
+    "category": "Utilities",
+    "description": "WordPress models and views for Django.",
+    "link": "https://github.com/istrategylabs/django-wordpress"
+  },
+  {
+    "name": "facebook-sdk",
+    "category": "Utilities",
+    "description": "Facebook Platform Python SDK.",
+    "link": "https://github.com/mobolic/facebook-sdk"
+  },
+  {
+    "name": "google-api-python-client",
+    "category": "Utilities",
+    "description": "Google APIs Client Library for Python.",
+    "link": "https://github.com/google/google-api-python-client"
+  },
+  {
+    "name": "gspread",
+    "category": "Utilities",
+    "description": "Google Spreadsheets Python API.",
+    "link": "https://github.com/burnash/gspread"
+  },
+  {
+    "name": "twython",
+    "category": "Utilities",
+    "description": "A Python wrapper for the Twitter API.",
+    "link": "https://github.com/ryanmcgrath/twython"
+  },
+  {
+    "name": "furl",
+    "category": "Utilities",
+    "description": "A small Python library that makes parsing and manipulating URLs easy.",
+    "link": "https://github.com/gruns/furl"
+  },
+  {
+    "name": "purl",
+    "category": "Utilities",
+    "description": "A simple, immutable URL class with a clean API for interrogation and manipulation.",
+    "link": "https://github.com/codeinthehole/purl"
+  },
+  {
+    "name": "pyshorteners",
+    "category": "Utilities",
+    "description": "A pure Python URL shortening lib.",
+    "link": "https://github.com/ellisonleao/pyshorteners"
+  },
+  {
+    "name": "webargs",
+    "category": "Utilities",
+    "description": "A friendly library for parsing HTTP request arguments with built-in support for popular web frameworks.",
+    "link": "https://github.com/marshmallow-code/webargs"
+  },
+  {
+    "name": "moviepy",
+    "category": "Video",
+    "description": "A module for script-based movie editing with many formats, including animated GIFs.",
+    "link": "https://zulko.github.io/moviepy/"
+  },
+  {
+    "name": "scikit-video",
+    "category": "Video",
+    "description": "Video processing routines for SciPy.",
+    "link": "https://github.com/aizvorski/scikit-video"
+  },
+  {
+    "name": "vidgear",
+    "category": "Video",
+    "description": "Most Powerful multi-threaded Video Processing framework.",
+    "link": "https://github.com/abhiTronix/vidgear"
+  },
+  {
+    "name": "django-compressor",
+    "category": "Utilities",
+    "description": "Compresses linked and inline JavaScript or CSS into a single cached file.",
+    "link": "https://github.com/django-compressor/django-compressor"
+  },
+  {
+    "name": "django-pipeline",
+    "category": "Utilities",
+    "description": "An asset packaging library for Django.",
+    "link": "https://github.com/jazzband/django-pipeline"
+  },
+  {
+    "name": "django-storages",
+    "category": "Utilities",
+    "description": "A collection of custom storage back ends for Django.",
+    "link": "https://github.com/jschneier/django-storages"
+  },
+  {
+    "name": "fanstatic",
+    "category": "Utilities",
+    "description": "Packages, optimizes, and serves static file dependencies as Python packages.",
+    "link": "http://www.fanstatic.org/en/latest/"
+  },
+  {
+    "name": "fileconveyor",
+    "category": "Utilities",
+    "description": "A daemon to detect and sync files to CDNs, S3 and FTP.",
+    "link": "http://wimleers.com/fileconveyor"
+  },
+  {
+    "name": "flask-assets",
+    "category": "Utilities",
+    "description": "Helps you integrate webassets into your Flask app.",
+    "link": "https://github.com/miracle2k/flask-assets"
+  },
+  {
+    "name": "webassets",
+    "category": "Utilities",
+    "description": "Bundles, optimizes, and manages unique cache-busting URLs for static resources.",
+    "link": "https://github.com/miracle2k/webassets"
+  },
+  {
+    "name": "html2text",
+    "category": "Web Content Extracting",
+    "description": "Convert HTML to Markdown-formatted text.",
+    "link": "https://github.com/Alir3z4/html2text"
+  },
+  {
+    "name": "lassie",
+    "category": "Web Content Extracting",
+    "description": "Web Content Retrieval for Humans.",
+    "link": "https://github.com/michaelhelmick/lassie"
+  },
+  {
+    "name": "micawber",
+    "category": "Web Content Extracting",
+    "description": "A small library for extracting rich content from URLs.",
+    "link": "https://github.com/coleifer/micawber"
+  },
+  {
+    "name": "newspaper",
+    "category": "Web Content Extracting",
+    "description": "News extraction, article extraction and content curation in Python.",
+    "link": "https://github.com/codelucas/newspaper"
+  },
+  {
+    "name": "python-readability",
+    "category": "Web Content Extracting",
+    "description": "Fast Python port of arc90's readability tool.",
+    "link": "https://github.com/buriy/python-readability"
+  },
+  {
+    "name": "requests-html",
+    "category": "Web Content Extracting",
+    "description": "Pythonic HTML Parsing for Humans.",
+    "link": "https://github.com/psf/requests-html"
+  },
+  {
+    "name": "sumy",
+    "category": "Web Content Extracting",
+    "description": "A module for automatic summarization of text documents and HTML pages.",
+    "link": "https://github.com/miso-belica/sumy"
+  },
+  {
+    "name": "textract",
+    "category": "Web Content Extracting",
+    "description": "Extract text from any document, Word, PowerPoint, PDFs, etc.",
+    "link": "https://github.com/deanmalmgren/textract"
+  },
+  {
+    "name": "toapi",
+    "category": "Web Content Extracting",
+    "description": "Every web site provides APIs.",
+    "link": "https://github.com/gaojiuli/toapi"
+  },
+  {
+    "name": "feedparser",
+    "category": "Web Crawling",
+    "description": "Universal feed parser.",
+    "link": "https://github.com/kurtmckee/feedparser"
+  },
+  {
+    "name": "grab",
+    "category": "Web Crawling",
+    "description": "Site scraping framework.",
+    "link": "https://github.com/lorien/grab"
+  },
+  {
+    "name": "mechanicalsoup",
+    "category": "Web Crawling",
+    "description": "A Python library for automating interaction with websites.",
+    "link": "https://github.com/MechanicalSoup/MechanicalSoup"
+  },
+  {
+    "name": "scrapy",
+    "category": "Web Crawling",
+    "description": "A fast high-level screen scraping and web crawling framework.",
+    "link": "https://github.com/scrapy/scrapy"
+  },
+  {
+    "name": "autobahn-python",
+    "category": "WebSocket",
+    "description": "WebSocket & WAMP for Python on Twisted and [asyncio](https://docs.python.org/3/library/asyncio.html).",
+    "link": "https://github.com/crossbario/autobahn-python"
+  },
+  {
+    "name": "channels",
+    "category": "WebSocket",
+    "description": "Developer-friendly asynchrony for Django.",
+    "link": "https://github.com/django/channels"
+  },
+  {
+    "name": "websockets",
+    "category": "WebSocket",
+    "description": "A library for building WebSocket servers and clients with a focus on correctness and simplicity.",
+    "link": "https://github.com/aaugustin/websockets"
+  },
+  {
+    "name": "gunicorn",
+    "category": "Web Frameworks",
+    "description": "Pre-forked, ported from Ruby's Unicorn project.",
+    "link": "https://github.com/benoitc/gunicorn"
+  },
+  {
+    "name": "uwsgi",
+    "category": "Web Frameworks",
+    "description": "A project aims at developing a full stack for building hosting services, written in C.",
+    "link": "https://uwsgi-docs.readthedocs.io/en/latest/"
+  },
+  {
+    "name": "waitress",
+    "category": "Web Frameworks",
+    "description": "Multi-threaded, powers Pyramid.",
+    "link": "https://github.com/Pylons/waitress"
+  },
+  {
+    "name": "werkzeug",
+    "category": "Web Frameworks",
+    "description": "A WSGI utility library for Python that powers Flask and can easily be embedded into your own projects.",
+    "link": "https://github.com/pallets/werkzeug"
+  }
+]

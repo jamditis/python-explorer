@@ -1,0 +1,302 @@
+[
+  {
+    "name": "Bicycle Repair Man",
+    "category": "Utilities",
+    "description": "Bicycle Repair Man, a refactoring tool for Python.",
+    "link": "http://bicyclerepair.sourceforge.net/"
+  },
+  {
+    "name": "Bowler",
+    "category": "Utilities",
+    "description": "Safe code refactoring for modern Python.",
+    "link": "https://pybowler.io/"
+  },
+  {
+    "name": "Rope",
+    "category": "Utilities",
+    "description": "Rope is a python refactoring library.",
+    "link": "https://github.com/python-rope/rope"
+  },
+  {
+    "name": "PythonRobotics",
+    "category": "Utilities",
+    "description": "This is a compilation of various robotics algorithms with visualizations.",
+    "link": "https://github.com/AtsushiSakai/PythonRobotics"
+  },
+  {
+    "name": "rospy",
+    "category": "Utilities",
+    "description": "This is a library for ROS (Robot Operating System).",
+    "link": "http://wiki.ros.org/rospy"
+  },
+  {
+    "name": "zeroRPC",
+    "category": "Utilities",
+    "description": "zerorpc is a flexible RPC implementation based on [ZeroMQ](http://zeromq.org/) and [MessagePack](http://msgpack.org/).",
+    "link": "https://github.com/0rpc/zerorpc-python"
+  },
+  {
+    "name": "astropy",
+    "category": "Science",
+    "description": "A community Python library for Astronomy.",
+    "link": "http://www.astropy.org/"
+  },
+  {
+    "name": "bcbio-nextgen",
+    "category": "Science",
+    "description": "Providing best-practice pipelines for fully automated high throughput sequencing analysis.",
+    "link": "https://github.com/chapmanb/bcbio-nextgen"
+  },
+  {
+    "name": "bccb",
+    "category": "Science",
+    "description": "Collection of useful code related to biological analysis.",
+    "link": "https://github.com/chapmanb/bcbb"
+  },
+  {
+    "name": "Biopython",
+    "category": "Science",
+    "description": "Biopython is a set of freely available tools for biological computation.",
+    "link": "http://biopython.org/wiki/Main_Page"
+  },
+  {
+    "name": "cclib",
+    "category": "Science",
+    "description": "A library for parsing and interpreting the results of computational chemistry packages.",
+    "link": "http://cclib.github.io/"
+  },
+  {
+    "name": "Colour",
+    "category": "Science",
+    "description": "Implementing a comprehensive number of colour theory transformations and algorithms.",
+    "link": "http://colour-science.org/"
+  },
+  {
+    "name": "Karate Club",
+    "category": "Science",
+    "description": "Unsupervised machine learning toolbox for graph structured data.",
+    "link": "https://github.com/benedekrozemberczki/karateclub"
+  },
+  {
+    "name": "NetworkX",
+    "category": "Science",
+    "description": "A high-productivity software for complex networks.",
+    "link": "https://networkx.github.io/"
+  },
+  {
+    "name": "NIPY",
+    "category": "Science",
+    "description": "A collection of neuroimaging toolkits.",
+    "link": "http://nipy.org/"
+  },
+  {
+    "name": "NumPy",
+    "category": "Science",
+    "description": "A fundamental package for scientific computing with Python.",
+    "link": "http://www.numpy.org/"
+  },
+  {
+    "name": "ObsPy",
+    "category": "Science",
+    "description": "A Python toolbox for seismology.",
+    "link": "https://github.com/obspy/obspy/wiki/"
+  },
+  {
+    "name": "Open Babel",
+    "category": "Science",
+    "description": "A chemical toolbox designed to speak the many languages of chemical data.",
+    "link": "https://open-babel.readthedocs.io/"
+  },
+  {
+    "name": "PyDy",
+    "category": "Science",
+    "description": "Short for Python Dynamics, used to assist with workflow in the modeling of dynamic motion.",
+    "link": "http://www.pydy.org/"
+  },
+  {
+    "name": "PyMC",
+    "category": "Science",
+    "description": "Markov Chain Monte Carlo sampling toolkit.",
+    "link": "https://github.com/pymc-devs/pymc3"
+  },
+  {
+    "name": "QuTiP",
+    "category": "Science",
+    "description": "Quantum Toolbox in Python.",
+    "link": "http://qutip.org/"
+  },
+  {
+    "name": "RDKit",
+    "category": "Science",
+    "description": "Cheminformatics and Machine Learning Software.",
+    "link": "http://www.rdkit.org/"
+  },
+  {
+    "name": "SciPy",
+    "category": "Science",
+    "description": "A Python-based ecosystem of open-source software for mathematics, science, and engineering.",
+    "link": "https://www.scipy.org/"
+  },
+  {
+    "name": "SimPy",
+    "category": "Science",
+    "description": "A process-based discrete-event simulation framework.",
+    "link": "https://gitlab.com/team-simpy/simpy"
+  },
+  {
+    "name": "statsmodels",
+    "category": "Science",
+    "description": "Statistical modeling and econometrics in Python.",
+    "link": "https://github.com/statsmodels/statsmodels"
+  },
+  {
+    "name": "SymPy",
+    "category": "Science",
+    "description": "A Python library for symbolic mathematics.",
+    "link": "https://github.com/sympy/sympy"
+  },
+  {
+    "name": "Zipline",
+    "category": "Science",
+    "description": "A Pythonic algorithmic trading library.",
+    "link": "https://github.com/quantopian/zipline"
+  },
+  {
+    "name": "django-haystack",
+    "category": "Utilities",
+    "description": "Modular search for Django.",
+    "link": "https://github.com/django-haystack/django-haystack"
+  },
+  {
+    "name": "elasticsearch-dsl-py",
+    "category": "Utilities",
+    "description": "The official high-level Python client for Elasticsearch.",
+    "link": "https://github.com/elastic/elasticsearch-dsl-py"
+  },
+  {
+    "name": "elasticsearch-py",
+    "category": "Utilities",
+    "description": "The official low-level Python client for [Elasticsearch](https://www.elastic.co/products/elasticsearch).",
+    "link": "https://www.elastic.co/guide/en/elasticsearch/client/python-api/current/index.html"
+  },
+  {
+    "name": "pysolr",
+    "category": "Utilities",
+    "description": "A lightweight Python wrapper for [Apache Solr](https://lucene.apache.org/solr/).",
+    "link": "https://github.com/django-haystack/pysolr"
+  },
+  {
+    "name": "whoosh",
+    "category": "Utilities",
+    "description": "A fast, pure Python search engine library.",
+    "link": "http://whoosh.readthedocs.io/en/latest/"
+  },
+  {
+    "name": "marshmallow",
+    "category": "Utilities",
+    "description": "A lightweight library for converting complex objects to and from simple Python datatypes.",
+    "link": "https://github.com/marshmallow-code/marshmallow"
+  },
+  {
+    "name": "pysimdjson",
+    "category": "Utilities",
+    "description": "A Python bindings for [simdjson](https://github.com/lemire/simdjson).",
+    "link": "https://github.com/TkTech/pysimdjson"
+  },
+  {
+    "name": "python-rapidjson",
+    "category": "Utilities",
+    "description": "A Python wrapper around [RapidJSON](https://github.com/Tencent/rapidjson).",
+    "link": "https://github.com/python-rapidjson/python-rapidjson"
+  },
+  {
+    "name": "toonify",
+    "category": "Utilities",
+    "description": "A compact, human-readable serialization format that reduces LLM token usage by 30-60% compared to JSON.",
+    "link": "https://github.com/ScrapeGraphAI/toonify"
+  },
+  {
+    "name": "ultrajson",
+    "category": "Utilities",
+    "description": "A fast JSON decoder and encoder written in C with Python bindings.",
+    "link": "https://github.com/esnme/ultrajson"
+  },
+  {
+    "name": "python-lambda",
+    "category": "Utilities",
+    "description": "A toolkit for developing and deploying Python code in AWS Lambda.",
+    "link": "https://github.com/nficano/python-lambda"
+  },
+  {
+    "name": "Zappa",
+    "category": "Utilities",
+    "description": "A tool for deploying WSGI applications on AWS Lambda and API Gateway.",
+    "link": "https://github.com/zappa/Zappa"
+  },
+  {
+    "name": "xonsh",
+    "category": "Utilities",
+    "description": "A Python-powered, cross-platform, Unix-gazing shell language and command prompt.",
+    "link": "https://github.com/xonsh/xonsh/"
+  },
+  {
+    "name": "lektor",
+    "category": "Utilities",
+    "description": "An easy to use static CMS and blog engine.",
+    "link": "https://github.com/lektor/lektor"
+  },
+  {
+    "name": "mkdocs",
+    "category": "Utilities",
+    "description": "Markdown friendly documentation generator.",
+    "link": "https://github.com/mkdocs/mkdocs/"
+  },
+  {
+    "name": "makesite",
+    "category": "Utilities",
+    "description": "Simple, lightweight, and magic-free static site/blog generator (< 130 lines).",
+    "link": "https://github.com/sunainapai/makesite"
+  },
+  {
+    "name": "nikola",
+    "category": "Utilities",
+    "description": "A static website and blog generator.",
+    "link": "https://github.com/getnikola/nikola"
+  },
+  {
+    "name": "pelican",
+    "category": "Utilities",
+    "description": "Static site generator that supports Markdown and reST syntax.",
+    "link": "https://github.com/getpelican/pelican"
+  },
+  {
+    "name": "django-taggit",
+    "category": "Utilities",
+    "description": "Simple tagging for Django.",
+    "link": "https://github.com/jazzband/django-taggit"
+  },
+  {
+    "name": "celery",
+    "category": "Task Queues",
+    "description": "An asynchronous task queue/job queue based on distributed message passing.",
+    "link": "https://docs.celeryproject.org/en/stable/"
+  },
+  {
+    "name": "dramatiq",
+    "category": "Task Queues",
+    "description": "A fast and reliable background task processing library for Python 3.",
+    "link": "https://github.com/Bogdanp/dramatiq"
+  },
+  {
+    "name": "huey",
+    "category": "Task Queues",
+    "description": "Little multi-threaded task queue.",
+    "link": "https://github.com/coleifer/huey"
+  },
+  {
+    "name": "mrq",
+    "category": "Task Queues",
+    "description": "A distributed worker task queue in Python using Redis & gevent.",
+    "link": "https://github.com/pricingassistant/mrq"
+  }
+]

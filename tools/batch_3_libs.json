@@ -1,0 +1,302 @@
+[
+  {
+    "name": "mimetypes",
+    "category": "Utilities",
+    "description": "(Python standard library) Map filenames to MIME types.",
+    "link": "https://docs.python.org/3/library/mimetypes.html"
+  },
+  {
+    "name": "pathlib",
+    "category": "Utilities",
+    "description": "(Python standard library) An cross-platform, object-oriented path library.",
+    "link": "https://docs.python.org/3/library/pathlib.html"
+  },
+  {
+    "name": "path.py",
+    "category": "Utilities",
+    "description": "A module wrapper for [os.path](https://docs.python.org/3/library/os.path.html).",
+    "link": "https://github.com/jaraco/path.py"
+  },
+  {
+    "name": "python-magic",
+    "category": "Utilities",
+    "description": "A Python interface to the libmagic file type identification library.",
+    "link": "https://github.com/ahupp/python-magic"
+  },
+  {
+    "name": "watchdog",
+    "category": "Utilities",
+    "description": "API and shell utilities to monitor file system events.",
+    "link": "https://github.com/gorakhargosh/watchdog"
+  },
+  {
+    "name": "coconut",
+    "category": "Utilities",
+    "description": "A variant of Python built for simple, elegant, Pythonic functional programming.",
+    "link": "https://github.com/evhub/coconut"
+  },
+  {
+    "name": "funcy",
+    "category": "Utilities",
+    "description": "A fancy and practical functional tools.",
+    "link": "https://github.com/Suor/funcy"
+  },
+  {
+    "name": "more-itertools",
+    "category": "Utilities",
+    "description": "More routines for operating on iterables, beyond `itertools`.",
+    "link": "https://github.com/erikrose/more-itertools"
+  },
+  {
+    "name": "returns",
+    "category": "Utilities",
+    "description": "A set of type-safe monads, transformers, and composition utilities.",
+    "link": "https://github.com/dry-python/returns"
+  },
+  {
+    "name": "cytoolz",
+    "category": "Utilities",
+    "description": "Cython implementation of `Toolz`: High performance functional utilities.",
+    "link": "https://github.com/pytoolz/cytoolz/"
+  },
+  {
+    "name": "toolz",
+    "category": "Utilities",
+    "description": "A collection of functional utilities for iterators, functions, and dictionaries.",
+    "link": "https://github.com/pytoolz/toolz"
+  },
+  {
+    "name": "curses",
+    "category": "GUI Development",
+    "description": "Built-in wrapper for [ncurses](http://www.gnu.org/software/ncurses/) used to create terminal GUI applications.",
+    "link": "https://docs.python.org/3/library/curses.html"
+  },
+  {
+    "name": "Eel",
+    "category": "GUI Development",
+    "description": "A library for making simple Electron-like offline HTML/JS GUI apps.",
+    "link": "https://github.com/ChrisKnott/Eel"
+  },
+  {
+    "name": "enaml",
+    "category": "GUI Development",
+    "description": "Creating beautiful user-interfaces with Declarative Syntax like QML.",
+    "link": "https://github.com/nucleic/enaml"
+  },
+  {
+    "name": "Flet",
+    "category": "GUI Development",
+    "description": "Cross-platform GUI framework for building modern apps in pure Python. Run on Windows, macOS, Linux, Android, iOS, and the Web.",
+    "link": "https://flet.dev/"
+  },
+  {
+    "name": "Flexx",
+    "category": "GUI Development",
+    "description": "Flexx is a pure Python toolkit for creating GUI's, that uses web technology for its rendering.",
+    "link": "https://github.com/zoofIO/flexx"
+  },
+  {
+    "name": "Gooey",
+    "category": "GUI Development",
+    "description": "Turn command line programs into a full GUI application with one line.",
+    "link": "https://github.com/chriskiehl/Gooey"
+  },
+  {
+    "name": "kivy",
+    "category": "GUI Development",
+    "description": "A library for creating NUI applications, running on Windows, Linux, Mac OS X, Android and iOS.",
+    "link": "https://kivy.org/"
+  },
+  {
+    "name": "pyglet",
+    "category": "GUI Development",
+    "description": "A cross-platform windowing and multimedia library for Python.",
+    "link": "https://github.com/pyglet/pyglet"
+  },
+  {
+    "name": "PyGObject",
+    "category": "GUI Development",
+    "description": "Python Bindings for GLib/GObject/GIO/GTK+ (GTK+3).",
+    "link": "https://pygobject.readthedocs.io/"
+  },
+  {
+    "name": "PyQt",
+    "category": "GUI Development",
+    "description": "Python bindings for the [Qt](https://www.qt.io/) cross-platform application and UI framework.",
+    "link": "https://doc.qt.io/qtforpython/"
+  },
+  {
+    "name": "PySimpleGUI",
+    "category": "GUI Development",
+    "description": "Wrapper for tkinter, Qt, WxPython and Remi.",
+    "link": "https://github.com/PySimpleGUI/PySimpleGUI"
+  },
+  {
+    "name": "pywebview",
+    "category": "GUI Development",
+    "description": "A lightweight cross-platform native wrapper around a webview component.",
+    "link": "https://github.com/r0x0r/pywebview/"
+  },
+  {
+    "name": "Tkinter",
+    "category": "GUI Development",
+    "description": "Tkinter is Python's de-facto standard GUI package.",
+    "link": "https://wiki.python.org/moin/TkInter"
+  },
+  {
+    "name": "Toga",
+    "category": "GUI Development",
+    "description": "A Python native, OS native GUI toolkit.",
+    "link": "https://github.com/pybee/toga"
+  },
+  {
+    "name": "urwid",
+    "category": "GUI Development",
+    "description": "A library for creating terminal GUI applications with strong support for widgets, events, rich colors, etc.",
+    "link": "http://urwid.org/"
+  },
+  {
+    "name": "wxPython",
+    "category": "GUI Development",
+    "description": "A blending of the wxWidgets C++ class library with the Python.",
+    "link": "https://wxpython.org/"
+  },
+  {
+    "name": "DearPyGui",
+    "category": "GUI Development",
+    "description": "A Simple GPU accelerated Python GUI framework",
+    "link": "https://github.com/RaylockLLC/DearPyGui/"
+  },
+  {
+    "name": "graphene",
+    "category": "Utilities",
+    "description": "GraphQL framework for Python.",
+    "link": "https://github.com/graphql-python/graphene/"
+  },
+  {
+    "name": "Arcade",
+    "category": "Game Development",
+    "description": "Arcade is a modern Python framework for crafting games with compelling graphics and sound.",
+    "link": "https://api.arcade.academy/en/latest/"
+  },
+  {
+    "name": "Cocos2d",
+    "category": "Game Development",
+    "description": "cocos2d is a framework for building 2D games, demos, and other graphical/interactive applications.",
+    "link": "https://www.cocos.com/en/cocos2d-x"
+  },
+  {
+    "name": "Harfang3D",
+    "category": "Game Development",
+    "description": "Python framework for 3D, VR and game development.",
+    "link": "http://www.harfang3d.com/"
+  },
+  {
+    "name": "Panda3D",
+    "category": "Game Development",
+    "description": "3D game engine developed by Disney.",
+    "link": "https://www.panda3d.org/"
+  },
+  {
+    "name": "Pygame",
+    "category": "Game Development",
+    "description": "Pygame is a set of Python modules designed for writing games.",
+    "link": "http://www.pygame.org/news.html"
+  },
+  {
+    "name": "PyOgre",
+    "category": "Game Development",
+    "description": "Python bindings for the Ogre 3D render engine, can be used for games, simulations, anything 3D.",
+    "link": "http://www.ogre3d.org/tikiwiki/PyOgre"
+  },
+  {
+    "name": "PyOpenGL",
+    "category": "Game Development",
+    "description": "Python ctypes bindings for OpenGL and it's related APIs.",
+    "link": "http://pyopengl.sourceforge.net/"
+  },
+  {
+    "name": "PySDL2",
+    "category": "Game Development",
+    "description": "A ctypes based wrapper for the SDL2 library.",
+    "link": "https://pysdl2.readthedocs.io/"
+  },
+  {
+    "name": "RenPy",
+    "category": "Game Development",
+    "description": "A Visual Novel engine.",
+    "link": "https://www.renpy.org/"
+  },
+  {
+    "name": "django-countries",
+    "category": "Utilities",
+    "description": "A Django app that provides a country field for models and forms.",
+    "link": "https://github.com/SmileyChris/django-countries"
+  },
+  {
+    "name": "geodjango",
+    "category": "Utilities",
+    "description": "A world-class geographic web framework.",
+    "link": "https://docs.djangoproject.com/en/dev/ref/contrib/gis/"
+  },
+  {
+    "name": "geojson",
+    "category": "Utilities",
+    "description": "Python bindings and utilities for GeoJSON.",
+    "link": "https://github.com/jazzband/geojson"
+  },
+  {
+    "name": "geopy",
+    "category": "Utilities",
+    "description": "Python Geocoding Toolbox.",
+    "link": "https://github.com/geopy/geopy"
+  },
+  {
+    "name": "beautifulsoup",
+    "category": "Utilities",
+    "description": "Providing Pythonic idioms for iterating, searching, and modifying HTML or XML.",
+    "link": "https://www.crummy.com/software/BeautifulSoup/bs4/doc/"
+  },
+  {
+    "name": "bleach",
+    "category": "Utilities",
+    "description": "A whitelist-based HTML sanitization and text linkification library.",
+    "link": "https://github.com/mozilla/bleach"
+  },
+  {
+    "name": "cssutils",
+    "category": "Utilities",
+    "description": "A CSS library for Python.",
+    "link": "https://pypi.org/project/cssutils/"
+  },
+  {
+    "name": "html5lib",
+    "category": "Utilities",
+    "description": "A standards-compliant library for parsing and serializing HTML documents and fragments.",
+    "link": "https://github.com/html5lib/html5lib-python"
+  },
+  {
+    "name": "lxml",
+    "category": "Utilities",
+    "description": "A very fast, easy-to-use and versatile library for handling HTML and XML.",
+    "link": "http://lxml.de/"
+  },
+  {
+    "name": "markupsafe",
+    "category": "Utilities",
+    "description": "Implements a XML/HTML/XHTML Markup safe string for Python.",
+    "link": "https://github.com/pallets/markupsafe"
+  },
+  {
+    "name": "pyquery",
+    "category": "Utilities",
+    "description": "A jQuery-like library for parsing HTML.",
+    "link": "https://github.com/gawel/pyquery"
+  },
+  {
+    "name": "untangle",
+    "category": "Utilities",
+    "description": "Converts XML documents to Python objects for easy access.",
+    "link": "https://github.com/stchris/untangle"
+  }
+]

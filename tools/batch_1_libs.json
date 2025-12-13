@@ -1,0 +1,302 @@
+[
+  {
+    "name": "ajenti",
+    "category": "Utilities",
+    "description": "The admin panel your servers deserve.",
+    "link": "https://github.com/ajenti/ajenti"
+  },
+  {
+    "name": "django-grappelli",
+    "category": "Utilities",
+    "description": "A jazzy skin for the Django Admin-Interface.",
+    "link": "https://github.com/sehmaschine/django-grappelli"
+  },
+  {
+    "name": "flask-admin",
+    "category": "Utilities",
+    "description": "Simple and extensible administrative interface framework for Flask.",
+    "link": "https://github.com/flask-admin/flask-admin"
+  },
+  {
+    "name": "flower",
+    "category": "Utilities",
+    "description": "Real-time monitor and web admin for Celery.",
+    "link": "https://github.com/mher/flower"
+  },
+  {
+    "name": "jet-bridge",
+    "category": "Utilities",
+    "description": "Admin panel framework for any application with nice UI (ex Jet Django).",
+    "link": "https://github.com/jet-admin/jet-bridge"
+  },
+  {
+    "name": "wooey",
+    "category": "Utilities",
+    "description": "A Django app which creates automatic web UIs for Python scripts.",
+    "link": "https://github.com/wooey/wooey"
+  },
+  {
+    "name": "streamlit",
+    "category": "Utilities",
+    "description": "A framework which lets you build dashboards, generate reports, or create chat apps in minutes.",
+    "link": "https://github.com/streamlit/streamlit"
+  },
+  {
+    "name": "daphne",
+    "category": "Web Frameworks",
+    "description": "A HTTP, HTTP2 and WebSocket protocol server for ASGI and ASGI-HTTP.",
+    "link": "https://github.com/django/daphne"
+  },
+  {
+    "name": "uvicorn",
+    "category": "Web Frameworks",
+    "description": "A lightning-fast ASGI server implementation, using uvloop and httptools.",
+    "link": "https://github.com/encode/uvicorn"
+  },
+  {
+    "name": "hypercorn",
+    "category": "Web Frameworks",
+    "description": "An ASGI and WSGI Server based on Hyper libraries and inspired by Gunicorn.",
+    "link": "https://github.com/pgjones/hypercorn"
+  },
+  {
+    "name": "asyncio",
+    "category": "Utilities",
+    "description": "(Python standard library) Asynchronous I/O, event loop, coroutines and tasks.",
+    "link": "https://docs.python.org/3/library/asyncio.html"
+  },
+  {
+    "name": "concurrent.futures",
+    "category": "Utilities",
+    "description": "(Python standard library) A high-level interface for asynchronously executing callables.",
+    "link": "https://docs.python.org/3/library/concurrent.futures.html"
+  },
+  {
+    "name": "multiprocessing",
+    "category": "Utilities",
+    "description": "(Python standard library) Process-based parallelism.",
+    "link": "https://docs.python.org/3/library/multiprocessing.html"
+  },
+  {
+    "name": "trio",
+    "category": "Utilities",
+    "description": "A friendly library for async concurrency and I/O.",
+    "link": "https://github.com/python-trio/trio"
+  },
+  {
+    "name": "twisted",
+    "category": "Utilities",
+    "description": "An event-driven networking engine.",
+    "link": "https://github.com/twisted/twisted"
+  },
+  {
+    "name": "uvloop",
+    "category": "Utilities",
+    "description": "Ultra fast asyncio event loop.",
+    "link": "https://github.com/MagicStack/uvloop"
+  },
+  {
+    "name": "eventlet",
+    "category": "Utilities",
+    "description": "Asynchronous framework with WSGI support.",
+    "link": "https://github.com/eventlet/eventlet"
+  },
+  {
+    "name": "gevent",
+    "category": "Utilities",
+    "description": "A coroutine-based Python networking library that uses [greenlet](https://github.com/python-greenlet/greenlet).",
+    "link": "https://github.com/gevent/gevent"
+  },
+  {
+    "name": "bitbake",
+    "category": "Build Tools",
+    "description": "A make-like build tool for embedded Linux.",
+    "link": "https://github.com/openembedded/bitbake"
+  },
+  {
+    "name": "buildout",
+    "category": "Build Tools",
+    "description": "A build system for creating, assembling and deploying applications from multiple parts.",
+    "link": "https://github.com/buildout/buildout"
+  },
+  {
+    "name": "platformio",
+    "category": "Build Tools",
+    "description": "A console tool to build code with different development platforms.",
+    "link": "https://github.com/platformio/platformio-core"
+  },
+  {
+    "name": "pybuilder",
+    "category": "Build Tools",
+    "description": "A continuous build tool written in pure Python.",
+    "link": "https://github.com/pybuilder/pybuilder"
+  },
+  {
+    "name": "scons",
+    "category": "Build Tools",
+    "description": "A software construction tool.",
+    "link": "https://github.com/SCons/scons"
+  },
+  {
+    "name": "attrs",
+    "category": "Utilities",
+    "description": "Replacement for `__init__`, `__eq__`, `__repr__`, etc. boilerplate in class definitions.",
+    "link": "https://github.com/python-attrs/attrs"
+  },
+  {
+    "name": "bidict",
+    "category": "Utilities",
+    "description": "Efficient, Pythonic bidirectional map data structures and related functionality..",
+    "link": "https://github.com/jab/bidict"
+  },
+  {
+    "name": "box",
+    "category": "Utilities",
+    "description": "Python dictionaries with advanced dot notation access.",
+    "link": "https://github.com/cdgriffith/Box"
+  },
+  {
+    "name": "dataclasses",
+    "category": "Utilities",
+    "description": "(Python standard library) Data classes.",
+    "link": "https://docs.python.org/3/library/dataclasses.html"
+  },
+  {
+    "name": "dotteddict",
+    "category": "Utilities",
+    "description": "A library that provides a method of accessing lists and dicts with a dotted path notation.",
+    "link": "https://github.com/carlosescri/DottedDict"
+  },
+  {
+    "name": "feincms",
+    "category": "Utilities",
+    "description": "One of the most advanced Content Management Systems built on Django.",
+    "link": "https://github.com/feincms/feincms"
+  },
+  {
+    "name": "indico",
+    "category": "Utilities",
+    "description": "A feature-rich event management system, made @ [CERN](https://en.wikipedia.org/wiki/CERN).",
+    "link": "https://github.com/indico/indico"
+  },
+  {
+    "name": "wagtail",
+    "category": "Utilities",
+    "description": "A Django content management system.",
+    "link": "https://github.com/wagtail/wagtail"
+  },
+  {
+    "name": "beaker",
+    "category": "Utilities",
+    "description": "A WSGI middleware for sessions and caching.",
+    "link": "https://github.com/bbangert/beaker"
+  },
+  {
+    "name": "django-cache-machine",
+    "category": "Utilities",
+    "description": "Automatic caching and invalidation for Django models.",
+    "link": "https://github.com/django-cache-machine/django-cache-machine"
+  },
+  {
+    "name": "django-cacheops",
+    "category": "Utilities",
+    "description": "A slick ORM cache with automatic granular event-driven invalidation.",
+    "link": "https://github.com/Suor/django-cacheops"
+  },
+  {
+    "name": "dogpile.cache",
+    "category": "Utilities",
+    "description": "dogpile.cache is a next generation replacement for Beaker made by the same authors.",
+    "link": "https://github.com/sqlalchemy/dogpile.cache"
+  },
+  {
+    "name": "hermescache",
+    "category": "Utilities",
+    "description": "Python caching library with tag-based invalidation and dogpile effect prevention.",
+    "link": "https://pypi.org/project/HermesCache/"
+  },
+  {
+    "name": "pylibmc",
+    "category": "Utilities",
+    "description": "A Python wrapper around the [libmemcached](https://libmemcached.org/libMemcached.html) interface.",
+    "link": "https://github.com/lericson/pylibmc"
+  },
+  {
+    "name": "python-diskcache",
+    "category": "Utilities",
+    "description": "SQLite and file backed cache backend with faster lookups than memcached and redis.",
+    "link": "https://github.com/grantjenks/python-diskcache"
+  },
+  {
+    "name": "errbot",
+    "category": "Utilities",
+    "description": "The easiest and most popular chatbot to implement ChatOps.",
+    "link": "https://github.com/errbotio/errbot/"
+  },
+  {
+    "name": "easyocr",
+    "category": "Computer Vision",
+    "description": "Ready-to-use OCR with 40+ languages supported.",
+    "link": "https://github.com/JaidedAI/EasyOCR"
+  },
+  {
+    "name": "kornia",
+    "category": "Computer Vision",
+    "description": "Open Source Differentiable Computer Vision Library for PyTorch.",
+    "link": "https://github.com/kornia/kornia/"
+  },
+  {
+    "name": "opencv",
+    "category": "Computer Vision",
+    "description": "Open Source Computer Vision Library.",
+    "link": "https://opencv.org/"
+  },
+  {
+    "name": "pytesseract",
+    "category": "Computer Vision",
+    "description": "A wrapper for [Google Tesseract OCR](https://github.com/tesseract-ocr).",
+    "link": "https://github.com/madmaze/pytesseract"
+  },
+  {
+    "name": "tesserocr",
+    "category": "Computer Vision",
+    "description": "Another simple, Pillow-friendly, wrapper around the `tesseract-ocr` API for OCR.",
+    "link": "https://github.com/sirfz/tesserocr"
+  },
+  {
+    "name": "configparser",
+    "category": "Utilities",
+    "description": "(Python standard library) INI file parser.",
+    "link": "https://docs.python.org/3/library/configparser.html"
+  },
+  {
+    "name": "configobj",
+    "category": "Utilities",
+    "description": "INI file parser with validation.",
+    "link": "https://github.com/DiffSK/configobj"
+  },
+  {
+    "name": "hydra",
+    "category": "Utilities",
+    "description": "Hydra is a framework for elegantly configuring complex applications.",
+    "link": "https://github.com/facebookresearch/hydra"
+  },
+  {
+    "name": "python-decouple",
+    "category": "Utilities",
+    "description": "Strict separation of settings from code.",
+    "link": "https://github.com/HBNetwork/python-decouple"
+  },
+  {
+    "name": "cryptography",
+    "category": "Security",
+    "description": "A package designed to expose cryptographic primitives and recipes to Python developers.",
+    "link": "https://github.com/pyca/cryptography"
+  },
+  {
+    "name": "paramiko",
+    "category": "Security",
+    "description": "The leading native Python SSHv2 protocol library.",
+    "link": "https://github.com/paramiko/paramiko"
+  }
+]

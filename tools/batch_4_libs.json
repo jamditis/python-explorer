@@ -1,0 +1,302 @@
+[
+  {
+    "name": "WeasyPrint",
+    "category": "Utilities",
+    "description": "A visual rendering engine for HTML and CSS that can export to PDF.",
+    "link": "http://weasyprint.org/"
+  },
+  {
+    "name": "xmldataset",
+    "category": "Utilities",
+    "description": "Simple XML Parsing.",
+    "link": "https://xmldataset.readthedocs.io/en/latest/"
+  },
+  {
+    "name": "xmltodict",
+    "category": "Utilities",
+    "description": "Working with XML feel like you are working with JSON.",
+    "link": "https://github.com/martinblech/xmltodict"
+  },
+  {
+    "name": "httpx",
+    "category": "HTTP Clients",
+    "description": "A next generation HTTP client for Python.",
+    "link": "https://github.com/encode/httpx"
+  },
+  {
+    "name": "requests",
+    "category": "HTTP Clients",
+    "description": "HTTP Requests for Humans.",
+    "link": "https://github.com/psf/requests"
+  },
+  {
+    "name": "treq",
+    "category": "HTTP Clients",
+    "description": "Python requests like API built on top of Twisted's HTTP client.",
+    "link": "https://github.com/twisted/treq"
+  },
+  {
+    "name": "urllib3",
+    "category": "HTTP Clients",
+    "description": "A HTTP library with thread-safe connection pooling, file post support, sanity friendly.",
+    "link": "https://github.com/urllib3/urllib3"
+  },
+  {
+    "name": "keyboard",
+    "category": "Utilities",
+    "description": "Hook and simulate global keyboard events on Windows and Linux.",
+    "link": "https://github.com/boppreh/keyboard"
+  },
+  {
+    "name": "mouse",
+    "category": "Utilities",
+    "description": "Hook and simulate global mouse events on Windows and Linux.",
+    "link": "https://github.com/boppreh/mouse"
+  },
+  {
+    "name": "pynput",
+    "category": "Utilities",
+    "description": "A library to control and monitor input devices.",
+    "link": "https://github.com/moses-palmer/pynput"
+  },
+  {
+    "name": "scapy",
+    "category": "Utilities",
+    "description": "A brilliant packet manipulation library.",
+    "link": "https://github.com/secdev/scapy"
+  },
+  {
+    "name": "pillow",
+    "category": "Image Processing",
+    "description": "Pillow is the friendly [PIL](http://www.pythonware.com/products/pil/) fork.",
+    "link": "https://github.com/python-pillow/Pillow"
+  },
+  {
+    "name": "python-barcode",
+    "category": "Image Processing",
+    "description": "Create barcodes in Python with no extra dependencies.",
+    "link": "https://github.com/WhyNotHugo/python-barcode"
+  },
+  {
+    "name": "pymatting",
+    "category": "Image Processing",
+    "description": "A library for alpha matting.",
+    "link": "http://github.com/pymatting/pymatting"
+  },
+  {
+    "name": "python-qrcode",
+    "category": "Image Processing",
+    "description": "A pure Python QR Code generator.",
+    "link": "https://github.com/lincolnloop/python-qrcode"
+  },
+  {
+    "name": "pywal",
+    "category": "Image Processing",
+    "description": "A tool that generates color schemes from images.",
+    "link": "https://github.com/dylanaraps/pywal"
+  },
+  {
+    "name": "pyvips",
+    "category": "Image Processing",
+    "description": "A fast image processing library with low memory needs.",
+    "link": "https://github.com/libvips/pyvips"
+  },
+  {
+    "name": "quads",
+    "category": "Image Processing",
+    "description": "Computer art based on quadtrees.",
+    "link": "https://github.com/fogleman/Quads"
+  },
+  {
+    "name": "scikit-image",
+    "category": "Image Processing",
+    "description": "A Python library for (scientific) image processing.",
+    "link": "http://scikit-image.org/"
+  },
+  {
+    "name": "thumbor",
+    "category": "Image Processing",
+    "description": "A smart imaging service. It enables on-demand crop, re-sizing and flipping of images.",
+    "link": "https://github.com/thumbor/thumbor"
+  },
+  {
+    "name": "wand",
+    "category": "Image Processing",
+    "description": "Python bindings for [MagickWand](http://www.imagemagick.org/script/magick-wand.php), C API for ImageMagick.",
+    "link": "https://github.com/emcconville/wand"
+  },
+  {
+    "name": "cpython",
+    "category": "Utilities",
+    "description": "**Default, most widely used implementation of the Python programming language written in C.**",
+    "link": "https://github.com/python/cpython"
+  },
+  {
+    "name": "cython",
+    "category": "Utilities",
+    "description": "Optimizing Static Compiler for Python.",
+    "link": "https://github.com/cython/cython"
+  },
+  {
+    "name": "clpython",
+    "category": "Utilities",
+    "description": "Implementation of the Python programming language written in Common Lisp.",
+    "link": "https://github.com/metawilm/cl-python"
+  },
+  {
+    "name": "ironpython",
+    "category": "Utilities",
+    "description": "Implementation of the Python programming language written in C#.",
+    "link": "https://github.com/IronLanguages/ironpython3"
+  },
+  {
+    "name": "micropython",
+    "category": "Utilities",
+    "description": "A lean and efficient Python programming language implementation.",
+    "link": "https://github.com/micropython/micropython"
+  },
+  {
+    "name": "numba",
+    "category": "Utilities",
+    "description": "Python JIT compiler to LLVM aimed at scientific Python.",
+    "link": "https://github.com/numba/numba"
+  },
+  {
+    "name": "peachpy",
+    "category": "Utilities",
+    "description": "x86-64 assembler embedded in Python.",
+    "link": "https://github.com/Maratyszcza/PeachPy"
+  },
+  {
+    "name": "pypy",
+    "category": "Utilities",
+    "description": "A very fast and compliant implementation of the Python language.",
+    "link": "https://foss.heptapod.net/pypy/pypy"
+  },
+  {
+    "name": "pyston",
+    "category": "Utilities",
+    "description": "A Python implementation using JIT techniques.",
+    "link": "https://github.com/pyston/pyston/"
+  },
+  {
+    "name": "bpython",
+    "category": "Utilities",
+    "description": "A fancy interface to the Python interpreter.",
+    "link": "https://github.com/bpython/bpython"
+  },
+  {
+    "name": "Jupyter Notebook (IPython)",
+    "category": "Utilities",
+    "description": "A rich toolkit to help you make the most out of using Python interactively.",
+    "link": "https://jupyter.org/"
+  },
+  {
+    "name": "ptpython",
+    "category": "Utilities",
+    "description": "Advanced Python REPL built on top of the [python-prompt-toolkit](https://github.com/jonathanslenders/python-prompt-toolkit).",
+    "link": "https://github.com/jonathanslenders/ptpython"
+  },
+  {
+    "name": "Babel",
+    "category": "Utilities",
+    "description": "An internationalization library for Python.",
+    "link": "http://babel.pocoo.org/en/latest/"
+  },
+  {
+    "name": "PyICU",
+    "category": "Utilities",
+    "description": "A wrapper of International Components for Unicode C++ library ([ICU](http://site.icu-project.org/)).",
+    "link": "https://github.com/ovalhub/pyicu"
+  },
+  {
+    "name": "Airflow",
+    "category": "Job Scheduler",
+    "description": "Airflow is a platform to programmatically author, schedule and monitor workflows.",
+    "link": "https://airflow.apache.org/"
+  },
+  {
+    "name": "APScheduler",
+    "category": "Job Scheduler",
+    "description": "A light but powerful in-process task scheduler that lets you schedule functions.",
+    "link": "http://apscheduler.readthedocs.io/en/latest/"
+  },
+  {
+    "name": "django-schedule",
+    "category": "Job Scheduler",
+    "description": "A calendaring app for Django.",
+    "link": "https://github.com/thauber/django-schedule"
+  },
+  {
+    "name": "doit",
+    "category": "Job Scheduler",
+    "description": "A task runner and build tool.",
+    "link": "http://pydoit.org/"
+  },
+  {
+    "name": "gunnery",
+    "category": "Job Scheduler",
+    "description": "Multipurpose task execution tool for distributed systems with web-based interface.",
+    "link": "https://github.com/gunnery/gunnery"
+  },
+  {
+    "name": "Joblib",
+    "category": "Job Scheduler",
+    "description": "A set of tools to provide lightweight pipelining in Python.",
+    "link": "https://joblib.readthedocs.io/"
+  },
+  {
+    "name": "Plan",
+    "category": "Job Scheduler",
+    "description": "Writing crontab file in Python like a charm.",
+    "link": "https://github.com/fengsp/plan"
+  },
+  {
+    "name": "Prefect",
+    "category": "Job Scheduler",
+    "description": "A modern workflow orchestration framework that makes it easy to build, schedule and monitor robust data pipelines.",
+    "link": "https://github.com/PrefectHQ/prefect"
+  },
+  {
+    "name": "schedule",
+    "category": "Job Scheduler",
+    "description": "Python job scheduling for humans.",
+    "link": "https://github.com/dbader/schedule"
+  },
+  {
+    "name": "Spiff",
+    "category": "Job Scheduler",
+    "description": "A powerful workflow engine implemented in pure Python.",
+    "link": "https://github.com/knipknap/SpiffWorkflow"
+  },
+  {
+    "name": "TaskFlow",
+    "category": "Job Scheduler",
+    "description": "A Python library that helps to make task execution easy, consistent and reliable.",
+    "link": "https://docs.openstack.org/developer/taskflow/"
+  },
+  {
+    "name": "logbook",
+    "category": "Logging",
+    "description": "Logging replacement for Python.",
+    "link": "http://logbook.readthedocs.io/en/stable/"
+  },
+  {
+    "name": "logging",
+    "category": "Logging",
+    "description": "(Python standard library) Logging facility for Python.",
+    "link": "https://docs.python.org/3/library/logging.html"
+  },
+  {
+    "name": "loguru",
+    "category": "Logging",
+    "description": "Library which aims to bring enjoyable logging in Python.",
+    "link": "https://github.com/Delgan/loguru"
+  },
+  {
+    "name": "sentry-python",
+    "category": "Logging",
+    "description": "Sentry SDK for Python.",
+    "link": "https://github.com/getsentry/sentry-python"
+  }
+]

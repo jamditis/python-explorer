@@ -1,0 +1,302 @@
+[
+  {
+    "name": "structlog",
+    "category": "Logging",
+    "description": "Structured logging made easy.",
+    "link": "https://www.structlog.org/en/stable/"
+  },
+  {
+    "name": "gym",
+    "category": "Machine Learning",
+    "description": "A toolkit for developing and comparing reinforcement learning algorithms.",
+    "link": "https://github.com/openai/gym"
+  },
+  {
+    "name": "H2O",
+    "category": "Machine Learning",
+    "description": "Open Source Fast Scalable Machine Learning Platform.",
+    "link": "https://github.com/h2oai/h2o-3"
+  },
+  {
+    "name": "Metrics",
+    "category": "Machine Learning",
+    "description": "Machine learning evaluation metrics.",
+    "link": "https://github.com/benhamner/Metrics"
+  },
+  {
+    "name": "NuPIC",
+    "category": "Machine Learning",
+    "description": "Numenta Platform for Intelligent Computing.",
+    "link": "https://github.com/numenta/nupic"
+  },
+  {
+    "name": "scikit-learn",
+    "category": "Machine Learning",
+    "description": "The most popular Python library for Machine Learning.",
+    "link": "http://scikit-learn.org/"
+  },
+  {
+    "name": "Spark ML",
+    "category": "Machine Learning",
+    "description": "[Apache Spark](http://spark.apache.org/)'s scalable Machine Learning library.",
+    "link": "http://spark.apache.org/docs/latest/ml-guide.html"
+  },
+  {
+    "name": "vowpal\\_porpoise",
+    "category": "Machine Learning",
+    "description": "A lightweight Python wrapper for [Vowpal Wabbit](https://github.com/JohnLangford/vowpal_wabbit/).",
+    "link": "https://github.com/josephreisinger/vowpal_porpoise"
+  },
+  {
+    "name": "xgboost",
+    "category": "Machine Learning",
+    "description": "A scalable, portable, and distributed gradient boosting library.",
+    "link": "https://github.com/dmlc/xgboost"
+  },
+  {
+    "name": "MindsDB",
+    "category": "Machine Learning",
+    "description": "MindsDB is an open source AI layer for existing databases that allows you to effortlessly develop, train and deploy state-of-the-art machine learni...",
+    "link": "https://github.com/mindsdb/mindsdb"
+  },
+  {
+    "name": "Python(x,y)",
+    "category": "Utilities",
+    "description": "Scientific-applications-oriented Python Distribution based on Qt and Spyder.",
+    "link": "http://python-xy.github.io/"
+  },
+  {
+    "name": "pythonlibs",
+    "category": "Utilities",
+    "description": "Unofficial Windows binaries for Python extension packages.",
+    "link": "http://www.lfd.uci.edu/~gohlke/pythonlibs/"
+  },
+  {
+    "name": "PythonNet",
+    "category": "Utilities",
+    "description": "Python Integration with the .NET Common Language Runtime (CLR).",
+    "link": "https://github.com/pythonnet/pythonnet"
+  },
+  {
+    "name": "PyWin32",
+    "category": "Utilities",
+    "description": "Python Extensions for Windows.",
+    "link": "https://github.com/mhammond/pywin32"
+  },
+  {
+    "name": "WinPython",
+    "category": "Utilities",
+    "description": "Portable development environment for Windows 7/8.",
+    "link": "https://winpython.github.io/"
+  },
+  {
+    "name": "blinker",
+    "category": "Utilities",
+    "description": "A fast Python in-process signal/event dispatching system.",
+    "link": "https://github.com/jek/blinker"
+  },
+  {
+    "name": "boltons",
+    "category": "Utilities",
+    "description": "A set of pure-Python utilities.",
+    "link": "https://github.com/mahmoud/boltons"
+  },
+  {
+    "name": "itsdangerous",
+    "category": "Utilities",
+    "description": "Various helpers to pass trusted data to untrusted environments.",
+    "link": "https://github.com/pallets/itsdangerous"
+  },
+  {
+    "name": "magenta",
+    "category": "Utilities",
+    "description": "A tool to generate music and art using artificial intelligence.",
+    "link": "https://github.com/magenta/magenta"
+  },
+  {
+    "name": "pluginbase",
+    "category": "Utilities",
+    "description": "A simple but flexible plugin system for Python.",
+    "link": "https://github.com/mitsuhiko/pluginbase"
+  },
+  {
+    "name": "tryton",
+    "category": "Utilities",
+    "description": "A general purpose business framework.",
+    "link": "http://www.tryton.org/"
+  },
+  {
+    "name": "mininet",
+    "category": "Utilities",
+    "description": "A popular network emulator and API written in Python.",
+    "link": "https://github.com/mininet/mininet"
+  },
+  {
+    "name": "napalm",
+    "category": "Utilities",
+    "description": "Cross-vendor API to manipulate network devices.",
+    "link": "https://github.com/napalm-automation/napalm"
+  },
+  {
+    "name": "pox",
+    "category": "Utilities",
+    "description": "A Python-based SDN control applications, such as OpenFlow SDN controllers.",
+    "link": "https://github.com/noxrepo/pox"
+  },
+  {
+    "name": "django-activity-stream",
+    "category": "Utilities",
+    "description": "Generating generic activity streams from the actions on your site.",
+    "link": "https://github.com/justquick/django-activity-stream"
+  },
+  {
+    "name": "Stream Framework",
+    "category": "Utilities",
+    "description": "Building news feed and notification systems using Cassandra and Redis.",
+    "link": "https://github.com/tschellenbach/Stream-Framework"
+  },
+  {
+    "name": "pip",
+    "category": "Utilities",
+    "description": "The package installer for Python.",
+    "link": "https://pip.pypa.io/en/stable/"
+  },
+  {
+    "name": "conda",
+    "category": "Utilities",
+    "description": "Cross-platform, Python-agnostic binary package manager.",
+    "link": "https://github.com/conda/conda/"
+  },
+  {
+    "name": "poetry",
+    "category": "Utilities",
+    "description": "Python dependency management and packaging made easy.",
+    "link": "https://github.com/sdispater/poetry"
+  },
+  {
+    "name": "uv",
+    "category": "Utilities",
+    "description": "An extremely fast Python package and project manager, written in Rust.",
+    "link": "https://github.com/astral-sh/uv"
+  },
+  {
+    "name": "bandersnatch",
+    "category": "Utilities",
+    "description": "PyPI mirroring tool provided by Python Packaging Authority (PyPA).",
+    "link": "https://github.com/pypa/bandersnatch/"
+  },
+  {
+    "name": "devpi",
+    "category": "Utilities",
+    "description": "PyPI server and packaging/testing/release tool.",
+    "link": "https://github.com/devpi/devpi"
+  },
+  {
+    "name": "localshop",
+    "category": "Utilities",
+    "description": "Local PyPI server (custom packages and auto-mirroring of pypi).",
+    "link": "https://github.com/jazzband/localshop"
+  },
+  {
+    "name": "warehouse",
+    "category": "Utilities",
+    "description": "Next generation Python Package Repository (PyPI).",
+    "link": "https://github.com/pypa/warehouse"
+  },
+  {
+    "name": "fsociety",
+    "category": "Utilities",
+    "description": "A Penetration testing framework.",
+    "link": "https://github.com/Manisso/fsociety"
+  },
+  {
+    "name": "setoolkit",
+    "category": "Utilities",
+    "description": "A toolkit for social engineering.",
+    "link": "https://github.com/trustedsec/social-engineer-toolkit"
+  },
+  {
+    "name": "sqlmap",
+    "category": "Utilities",
+    "description": "Automatic SQL injection and database takeover tool.",
+    "link": "https://github.com/sqlmapproject/sqlmap"
+  },
+  {
+    "name": "django-guardian",
+    "category": "Utilities",
+    "description": "Implementation of per object permissions for Django 1.2+",
+    "link": "https://github.com/django-guardian/django-guardian"
+  },
+  {
+    "name": "django-rules",
+    "category": "Utilities",
+    "description": "A tiny but powerful app providing object-level permissions to Django, without requiring a database.",
+    "link": "https://github.com/dfunckt/django-rules"
+  },
+  {
+    "name": "delegator.py",
+    "category": "Processes",
+    "description": "[Subprocesses](https://docs.python.org/3/library/subprocess.html) for Humans 2.0.",
+    "link": "https://github.com/amitt001/delegator.py"
+  },
+  {
+    "name": "sarge",
+    "category": "Processes",
+    "description": "Yet another wrapper for subprocess.",
+    "link": "https://sarge.readthedocs.io/en/latest/"
+  },
+  {
+    "name": "sh",
+    "category": "Processes",
+    "description": "A full-fledged subprocess replacement for Python.",
+    "link": "https://github.com/amoffat/sh"
+  },
+  {
+    "name": "annoy",
+    "category": "Utilities",
+    "description": "Approximate Nearest Neighbors in C++/Python optimized for memory usage.",
+    "link": "https://github.com/spotify/annoy"
+  },
+  {
+    "name": "fastFM",
+    "category": "Utilities",
+    "description": "A library for Factorization Machines.",
+    "link": "https://github.com/ibayer/fastFM"
+  },
+  {
+    "name": "implicit",
+    "category": "Utilities",
+    "description": "A fast Python implementation of collaborative filtering for implicit datasets.",
+    "link": "https://github.com/benfred/implicit"
+  },
+  {
+    "name": "libffm",
+    "category": "Utilities",
+    "description": "A library for Field-aware Factorization Machine (FFM).",
+    "link": "https://github.com/guestwalk/libffm"
+  },
+  {
+    "name": "lightfm",
+    "category": "Utilities",
+    "description": "A Python implementation of a number of popular recommendation algorithms.",
+    "link": "https://github.com/lyst/lightfm"
+  },
+  {
+    "name": "spotlight",
+    "category": "Utilities",
+    "description": "Deep recommender models using PyTorch.",
+    "link": "https://github.com/maciejkula/spotlight"
+  },
+  {
+    "name": "Surprise",
+    "category": "Utilities",
+    "description": "A scikit for building and analyzing recommender systems.",
+    "link": "https://github.com/NicolasHug/Surprise"
+  },
+  {
+    "name": "tensorrec",
+    "category": "Utilities",
+    "description": "A Recommendation Engine Framework in TensorFlow.",
+    "link": "https://github.com/jfkirk/tensorrec"
+  }
+]

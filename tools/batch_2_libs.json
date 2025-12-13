@@ -1,0 +1,302 @@
+[
+  {
+    "name": "pynacl",
+    "category": "Security",
+    "description": "Python binding to the Networking and Cryptography (NaCl) library.",
+    "link": "https://github.com/pyca/pynacl"
+  },
+  {
+    "name": "pandas",
+    "category": "Data Analysis",
+    "description": "A library providing high-performance, easy-to-use data structures and data analysis tools.",
+    "link": "http://pandas.pydata.org/"
+  },
+  {
+    "name": "aws-sdk-pandas",
+    "category": "Data Analysis",
+    "description": "Pandas on AWS.",
+    "link": "https://github.com/aws/aws-sdk-pandas"
+  },
+  {
+    "name": "datasette",
+    "category": "Data Analysis",
+    "description": "An open source multi-tool for exploring and publishing data.",
+    "link": "https://github.com/simonw/datasette"
+  },
+  {
+    "name": "desbordante",
+    "category": "Data Analysis",
+    "description": "An open source data profiler for complex pattern discovery.",
+    "link": "https://github.com/desbordante/desbordante-core/"
+  },
+  {
+    "name": "optimus",
+    "category": "Data Analysis",
+    "description": "Agile Data Science Workflows made easy with PySpark.",
+    "link": "https://github.com/hi-primus/optimus"
+  },
+  {
+    "name": "cerberus",
+    "category": "Data Analysis",
+    "description": "A lightweight and extensible data validation library.",
+    "link": "https://github.com/pyeve/cerberus"
+  },
+  {
+    "name": "colander",
+    "category": "Data Analysis",
+    "description": "Validating and deserializing data obtained via XML, JSON, an HTML form post.",
+    "link": "https://github.com/Pylons/colander"
+  },
+  {
+    "name": "jsonschema",
+    "category": "Data Analysis",
+    "description": "An implementation of [JSON Schema](http://json-schema.org/) for Python.",
+    "link": "https://github.com/python-jsonschema/jsonschema"
+  },
+  {
+    "name": "schema",
+    "category": "Data Analysis",
+    "description": "A library for validating Python data structures.",
+    "link": "https://github.com/keleshev/schema"
+  },
+  {
+    "name": "schematics",
+    "category": "Data Analysis",
+    "description": "Data Structure Validation.",
+    "link": "https://github.com/schematics/schematics"
+  },
+  {
+    "name": "voluptuous",
+    "category": "Data Analysis",
+    "description": "A Python data validation library.",
+    "link": "https://github.com/alecthomas/voluptuous"
+  },
+  {
+    "name": "pydantic",
+    "category": "Data Analysis",
+    "description": "Data validation using Python type hints.",
+    "link": "https://github.com/pydantic/pydantic"
+  },
+  {
+    "name": "altair",
+    "category": "Data Visualization",
+    "description": "Declarative statistical visualization library for Python.",
+    "link": "https://github.com/altair-viz/altair"
+  },
+  {
+    "name": "bokeh",
+    "category": "Data Visualization",
+    "description": "Interactive Web Plotting for Python.",
+    "link": "https://github.com/bokeh/bokeh"
+  },
+  {
+    "name": "bqplot",
+    "category": "Data Visualization",
+    "description": "Interactive Plotting Library for the Jupyter Notebook.",
+    "link": "https://github.com/bloomberg/bqplot"
+  },
+  {
+    "name": "cartopy",
+    "category": "Data Visualization",
+    "description": "A cartographic python library with matplotlib support.",
+    "link": "https://github.com/SciTools/cartopy"
+  },
+  {
+    "name": "diagrams",
+    "category": "Data Visualization",
+    "description": "Diagram as Code.",
+    "link": "https://github.com/mingrammer/diagrams"
+  },
+  {
+    "name": "matplotlib",
+    "category": "Data Visualization",
+    "description": "A Python 2D plotting library.",
+    "link": "https://github.com/matplotlib/matplotlib"
+  },
+  {
+    "name": "plotnine",
+    "category": "Data Visualization",
+    "description": "A grammar of graphics for Python based on ggplot2.",
+    "link": "https://github.com/has2k1/plotnine"
+  },
+  {
+    "name": "pygal",
+    "category": "Data Visualization",
+    "description": "A Python SVG Charts Creator.",
+    "link": "https://github.com/Kozea/pygal"
+  },
+  {
+    "name": "pygraphviz",
+    "category": "Data Visualization",
+    "description": "Python interface to [Graphviz](http://www.graphviz.org/).",
+    "link": "https://github.com/pygraphviz/pygraphviz/"
+  },
+  {
+    "name": "pyqtgraph",
+    "category": "Data Visualization",
+    "description": "Interactive and realtime 2D/3D/Image plotting and science/engineering widgets.",
+    "link": "https://github.com/pyqtgraph/pyqtgraph"
+  },
+  {
+    "name": "seaborn",
+    "category": "Data Visualization",
+    "description": "Statistical data visualization using Matplotlib.",
+    "link": "https://github.com/mwaskom/seaborn"
+  },
+  {
+    "name": "vispy",
+    "category": "Data Visualization",
+    "description": "High-performance scientific visualization based on OpenGL.",
+    "link": "https://github.com/vispy/vispy"
+  },
+  {
+    "name": "pickleDB",
+    "category": "Database",
+    "description": "A simple and lightweight key-value store for Python.",
+    "link": "https://github.com/patx/pickledb"
+  },
+  {
+    "name": "tinydb",
+    "category": "Database",
+    "description": "A tiny, document-oriented database.",
+    "link": "https://github.com/msiemens/tinydb"
+  },
+  {
+    "name": "zodb",
+    "category": "Database",
+    "description": "A native object database for Python. A key-value and object graph database.",
+    "link": "https://github.com/zopefoundation/ZODB"
+  },
+  {
+    "name": "arrow",
+    "category": "Utilities",
+    "description": "A Python library that offers a sensible and human-friendly approach to creating, manipulating, formatting and converting dates, times and timestamps.",
+    "link": "https://github.com/arrow-py/arrow"
+  },
+  {
+    "name": "dateutil",
+    "category": "Utilities",
+    "description": "Extensions to the standard Python [datetime](https://docs.python.org/3/library/datetime.html) module.",
+    "link": "https://github.com/dateutil/dateutil"
+  },
+  {
+    "name": "pendulum",
+    "category": "Utilities",
+    "description": "Python datetimes made easy.",
+    "link": "https://github.com/sdispater/pendulum"
+  },
+  {
+    "name": "pytz",
+    "category": "Utilities",
+    "description": "World timezone definitions, modern and historical. Brings the [tz database](https://en.wikipedia.org/wiki/Tz_database) into Python.",
+    "link": "https://pypi.org/project/pytz/"
+  },
+  {
+    "name": "keras",
+    "category": "Deep Learning",
+    "description": "A high-level neural networks library and capable of running on top of either TensorFlow or Theano.",
+    "link": "https://github.com/keras-team/keras"
+  },
+  {
+    "name": "pytorch",
+    "category": "Deep Learning",
+    "description": "Tensors and Dynamic neural networks in Python with strong GPU acceleration.",
+    "link": "https://github.com/pytorch/pytorch"
+  },
+  {
+    "name": "pytorch-lightning",
+    "category": "Deep Learning",
+    "description": "Deep learning framework to train, deploy, and ship AI products Lightning fast.",
+    "link": "https://github.com/Lightning-AI/pytorch-lightning"
+  },
+  {
+    "name": "stable-baselines3",
+    "category": "Deep Learning",
+    "description": "PyTorch implementations of Stable Baselines (deep) reinforcement learning algorithms.",
+    "link": "https://github.com/DLR-RM/stable-baselines3"
+  },
+  {
+    "name": "tensorflow",
+    "category": "Deep Learning",
+    "description": "The most popular Deep Learning framework created by Google.",
+    "link": "https://github.com/tensorflow/tensorflow"
+  },
+  {
+    "name": "theano",
+    "category": "Deep Learning",
+    "description": "A library for fast numerical computation.",
+    "link": "https://github.com/Theano/Theano"
+  },
+  {
+    "name": "py2app",
+    "category": "Utilities",
+    "description": "Freezes Python scripts (Mac OS X).",
+    "link": "https://github.com/ronaldoussoren/py2app"
+  },
+  {
+    "name": "py2exe",
+    "category": "Utilities",
+    "description": "Freezes Python scripts (Windows).",
+    "link": "https://github.com/py2exe/py2exe"
+  },
+  {
+    "name": "pyarmor",
+    "category": "Utilities",
+    "description": "A tool used to obfuscate python scripts, bind obfuscated scripts to fixed machine or expire obfuscated scripts.",
+    "link": "https://github.com/dashingsoft/pyarmor"
+  },
+  {
+    "name": "pyinstaller",
+    "category": "Utilities",
+    "description": "Converts Python programs into stand-alone executables (cross-platform).",
+    "link": "https://github.com/pyinstaller/pyinstaller"
+  },
+  {
+    "name": "shiv",
+    "category": "Utilities",
+    "description": "A command line utility for building fully self-contained zipapps (PEP 441), but with all their dependencies included.",
+    "link": "https://github.com/linkedin/shiv"
+  },
+  {
+    "name": "sphinx",
+    "category": "Utilities",
+    "description": "Python Documentation generator.",
+    "link": "https://github.com/sphinx-doc/sphinx/"
+  },
+  {
+    "name": "pdoc",
+    "category": "Utilities",
+    "description": "Epydoc replacement to auto generate API documentation for Python libraries.",
+    "link": "https://github.com/mitmproxy/pdoc"
+  },
+  {
+    "name": "akshare",
+    "category": "Utilities",
+    "description": "A financial data interface library, built for human beings!",
+    "link": "https://github.com/jindaxiang/akshare"
+  },
+  {
+    "name": "s3cmd",
+    "category": "Utilities",
+    "description": "A command line tool for managing Amazon S3 and CloudFront.",
+    "link": "https://github.com/s3tools/s3cmd"
+  },
+  {
+    "name": "youtube-dl",
+    "category": "Utilities",
+    "description": "A command-line program to download videos from YouTube and other video sites.",
+    "link": "https://github.com/ytdl-org/youtube-dl/"
+  },
+  {
+    "name": "pyenv",
+    "category": "Utilities",
+    "description": "Simple Python version management.",
+    "link": "https://github.com/pyenv/pyenv"
+  },
+  {
+    "name": "virtualenv",
+    "category": "Utilities",
+    "description": "A tool to create isolated Python environments.",
+    "link": "https://github.com/pypa/virtualenv"
+  }
+]
