@@ -372,6 +372,7 @@ function renderGrid() {
 
     grid.innerHTML = filtered.map(lib => {
         const color = domainColors[lib.domain] || '#e5e5e5';
+        const cleanDescription = lib.description.replace(/\[JOURNALISM\]\s*/g, '');
         return `
         <div onclick="openModal('${lib.id}')" class="bg-panel border-2 border-white/10 p-5 relative group hover:border-[color] transition-all cursor-pointer flex flex-col min-h-[240px]" style="--domain-color: ${color};">
             <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity z-0" style="background-color: ${color}15;"></div>
@@ -390,7 +391,7 @@ function renderGrid() {
 
                 <!-- Description - takes available space -->
                 <div class="flex-1 mb-4">
-                    <p class="text-sm font-mono text-gray-400 leading-relaxed line-clamp-3">${lib.description}</p>
+                    <p class="text-sm font-mono text-gray-400 leading-relaxed line-clamp-3">${cleanDescription}</p>
                 </div>
 
                 <!-- Footer - always at bottom -->

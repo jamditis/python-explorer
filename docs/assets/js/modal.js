@@ -16,7 +16,8 @@ export function openModal(id, libraries) {
     if (!lib) return;
 
     mTitle.innerText = lib.name.toUpperCase();
-    mDesc.innerText = lib.description;
+    // Remove [JOURNALISM] tag from description display
+    mDesc.innerText = lib.description.replace(/\[JOURNALISM\]\s*/g, '');
     mInstall.innerText = lib.install;
     mSnippet.innerText = lib.snippet;
     mIcon.innerText = lib.domain.substring(0,3).toUpperCase();
