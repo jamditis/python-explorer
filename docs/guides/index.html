@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Beginner Guides // AMDITIS</title>
+    <meta name="description" content="Comprehensive beginner-friendly guides to Python development. Learn environments, imports, file paths, and essential Python concepts.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" href="../favicon.png">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://jamditis.github.io/python-explorer/guides/">
+    <meta property="og:title" content="Python Beginner Guides - AMDITIS">
+    <meta property="og:description" content="Comprehensive beginner-friendly guides to Python development. Learn environments, imports, file paths, and essential Python concepts.">
+    <meta property="og:image" content="https://jamditis.github.io/python-explorer/og-image.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://jamditis.github.io/python-explorer/guides/">
+    <meta property="twitter:title" content="Python Beginner Guides - AMDITIS">
+    <meta property="twitter:description" content="Comprehensive beginner-friendly guides to Python development. Learn environments, imports, file paths, and essential Python concepts.">
+    <meta property="twitter:image" content="https://jamditis.github.io/python-explorer/og-image.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
+    <!-- Libraries -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Custom Styles -->
+    <link href="../assets/css/styles.css" rel="stylesheet">
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        display: ['Chakra Petch', 'sans-serif'],
+                        mono: ['Share Tech Mono', 'monospace'],
+                    },
+                    colors: {
+                        void: '#050505',
+                        panel: '#0a0a0a',
+                        surface: '#111111',
+                        chrome: '#e5e5e5',
+                        acid: '#ccff00',
+                        acidDim: 'rgba(204, 255, 0, 0.1)',
+                        signal: '#ff2a2a',
+                        signalDim: 'rgba(255, 42, 42, 0.1)',
+                        ice: '#00f0ff',
+                        iceDim: 'rgba(0, 240, 255, 0.1)',
+                    },
+                    backgroundImage: {
+                        'grid-pattern': "linear-gradient(to right, #222 1px, transparent 1px), linear-gradient(to bottom, #222 1px, transparent 1px)",
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="antialiased font-mono">
+
+    <div class="crt-overlay"></div>
+
+    <!-- Background Grid -->
+    <div class="fixed inset-0 bg-grid-pattern bg-[size:40px_40px] opacity-[0.07] pointer-events-none z-0"></div>
+
+    <div class="flex min-h-screen relative z-10 flex-col">
+
+        <!-- TOP NAVIGATION BAR -->
+        <header class="sticky top-0 z-50 bg-panel border-b border-white/10 p-2">
+            <div class="flex items-center justify-between px-4 py-2">
+                <div class="flex items-center gap-4">
+                    <a href="../index.html" class="flex items-center gap-4 hover:opacity-80 transition-opacity">
+                        <div class="w-8 h-8 bg-acid text-black flex items-center justify-center font-bold font-display text-xl clip-notch">A</div>
+                        <div>
+                            <div class="font-display font-bold text-xl text-chrome tracking-widest leading-none">AMDITIS</div>
+                            <div class="text-[10px] text-acid font-mono leading-none tracking-[0.3em] mt-1">PY_EXPLORER</div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="flex items-center gap-2">
+                    <a href="../index.html" class="px-4 py-2 text-xs font-mono text-gray-400 hover:text-white hover:bg-white/5 border border-transparent transition-all flex items-center gap-2">
+                        <i data-lucide="arrow-left" class="w-3 h-3"></i>
+                        <span>BACK TO LIBRARY</span>
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <!-- MAIN CONTENT -->
+        <main class="flex-1 p-6 md:p-12 max-w-7xl mx-auto w-full">
+
+            <!-- HERO SECTION -->
+            <section class="mb-16 border-b border-white/10 pb-12 relative overflow-hidden">
+                <div class="absolute top-0 right-0 p-12 opacity-5">
+                    <i data-lucide="book-open" class="w-64 h-64 text-acid"></i>
+                </div>
+                <div class="relative z-10">
+                    <h1 class="font-display text-5xl md:text-7xl text-chrome mb-6 glitch-text" data-text="PYTHON BEGINNER GUIDES">PYTHON BEGINNER GUIDES</h1>
+                    <p class="text-gray-400 max-w-3xl text-lg font-mono border-l-2 border-acid pl-4 mb-8">
+                        Comprehensive, beginner-friendly guides to essential Python concepts. Start here if you're new to Python or need to understand fundamental workflows.
+                    </p>
+                    <div class="flex gap-4 font-mono text-xs">
+                        <div class="p-4 bg-surface border border-white/10 clip-notch">
+                            <span class="text-gray-500 block mb-1">TOTAL_GUIDES</span>
+                            <span class="text-acid text-2xl font-bold">04</span>
+                        </div>
+                        <div class="p-4 bg-surface border border-white/10 clip-notch">
+                            <span class="text-gray-500 block mb-1">SKILL_LEVEL</span>
+                            <span class="text-ice text-2xl font-bold">BEGINNER</span>
+                        </div>
+                        <div class="p-4 bg-surface border border-white/10 clip-notch">
+                            <span class="text-gray-500 block mb-1">STATUS</span>
+                            <span class="text-signal text-2xl font-bold">ACTIVE</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- GUIDES GRID -->
+            <section>
+                <div class="flex items-end justify-between border-b border-white/10 pb-4 mb-8">
+                    <h3 class="font-display text-2xl text-chrome">AVAILABLE GUIDES</h3>
+                    <span class="text-xs text-gray-600 font-mono">MORE COMING SOON</span>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                    <!-- Python Environments Guide -->
+                    <a href="python-environments.html" class="bg-panel border border-white/10 hover:border-signal/50 p-6 clip-notch relative group transition-all hover:bg-surface">
+                        <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                            <i data-lucide="box" class="w-16 h-16 text-signal"></i>
+                        </div>
+                        <div class="relative z-10">
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="w-10 h-10 bg-signal/20 border border-signal flex items-center justify-center">
+                                    <i data-lucide="box" class="w-5 h-5 text-signal"></i>
+                                </div>
+                                <div class="text-xs text-gray-500 font-mono">ESSENTIAL</div>
+                            </div>
+                            <h4 class="font-display text-xl text-chrome mb-3 group-hover:text-signal transition-colors">PYTHON ENVIRONMENTS</h4>
+                            <p class="text-gray-400 text-sm font-mono leading-relaxed mb-4">
+                                Learn what virtual environments are, why you need them, and how to use them effectively. Essential knowledge for any Python developer.
+                            </p>
+                            <div class="flex items-center justify-between">
+                                <div class="flex gap-2 text-[10px]">
+                                    <span class="px-2 py-1 bg-signal/20 text-signal border border-signal/30">BEGINNER</span>
+                                    <span class="px-2 py-1 bg-surface text-gray-500 border border-white/10">5 MIN READ</span>
+                                </div>
+                                <i data-lucide="arrow-right" class="w-4 h-4 text-signal group-hover:translate-x-1 transition-transform"></i>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Import Statements Guide -->
+                    <a href="import-statements.html" class="bg-panel border border-white/10 p-6 clip-notch relative group hover:border-ice transition-all">
+                        <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                            <i data-lucide="package" class="w-16 h-16 text-ice"></i>
+                        </div>
+                        <div class="relative z-10">
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="w-10 h-10 bg-ice/20 border border-ice/30 flex items-center justify-center group-hover:bg-ice/30 transition-colors">
+                                    <i data-lucide="package" class="w-5 h-5 text-ice"></i>
+                                </div>
+                                <div class="text-xs text-ice font-mono font-bold">LIVE</div>
+                            </div>
+                            <h4 class="font-display text-xl text-chrome mb-3 group-hover:text-ice transition-colors">IMPORT STATEMENTS</h4>
+                            <p class="text-gray-400 text-sm font-mono leading-relaxed mb-4">
+                                Master Python's import system, understand modules and packages, and learn best practices for organizing your code.
+                            </p>
+                            <div class="flex items-center justify-between">
+                                <div class="flex gap-2 text-[10px]">
+                                    <span class="px-2 py-1 bg-ice/20 text-ice border border-ice/30">BEGINNER</span>
+                                    <span class="px-2 py-1 bg-surface text-gray-500 border border-white/10">8 MIN READ</span>
+                                </div>
+                                <i data-lucide="arrow-right" class="w-4 h-4 text-ice group-hover:translate-x-1 transition-transform"></i>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- File Paths Guide -->
+                    <a href="file-paths.html" class="bg-panel border border-white/10 p-6 clip-notch relative group hover:border-acid transition-all">
+                        <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                            <i data-lucide="folder-open" class="w-16 h-16 text-acid"></i>
+                        </div>
+                        <div class="relative z-10">
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="w-10 h-10 bg-acid/20 border border-acid/30 flex items-center justify-center group-hover:bg-acid/30 transition-colors">
+                                    <i data-lucide="folder-open" class="w-5 h-5 text-acid"></i>
+                                </div>
+                                <div class="text-xs text-acid font-mono font-bold">LIVE</div>
+                            </div>
+                            <h4 class="font-display text-xl text-chrome mb-3 group-hover:text-acid transition-colors">FILE PATHS</h4>
+                            <p class="text-gray-400 text-sm font-mono leading-relaxed mb-4">
+                                Understand absolute vs relative paths, cross-platform compatibility, and how Python finds and reads files.
+                            </p>
+                            <div class="flex items-center justify-between">
+                                <div class="flex gap-2 text-[10px]">
+                                    <span class="px-2 py-1 bg-acid/20 text-acid border border-acid/30">BEGINNER</span>
+                                    <span class="px-2 py-1 bg-surface text-gray-500 border border-white/10">10 MIN READ</span>
+                                </div>
+                                <i data-lucide="arrow-right" class="w-4 h-4 text-acid group-hover:translate-x-1 transition-transform"></i>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Requirements.txt Guide -->
+                    <a href="requirements-txt.html" class="bg-panel border border-white/10 p-6 clip-notch relative group hover:border-ice transition-all">
+                        <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                            <i data-lucide="file-text" class="w-16 h-16 text-ice"></i>
+                        </div>
+                        <div class="relative z-10">
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="w-10 h-10 bg-ice/20 border border-ice/30 flex items-center justify-center group-hover:bg-ice/30 transition-colors">
+                                    <i data-lucide="file-text" class="w-5 h-5 text-ice"></i>
+                                </div>
+                                <div class="text-xs text-ice font-mono font-bold">LIVE</div>
+                            </div>
+                            <h4 class="font-display text-xl text-chrome mb-3 group-hover:text-ice transition-colors">REQUIREMENTS.TXT</h4>
+                            <p class="text-gray-400 text-sm font-mono leading-relaxed mb-4">
+                                Learn to create and manage dependency files, freeze your environment, and ensure reproducible setups.
+                            </p>
+                            <div class="flex items-center justify-between">
+                                <div class="flex gap-2 text-[10px]">
+                                    <span class="px-2 py-1 bg-ice/20 text-ice border border-ice/30">BEGINNER</span>
+                                    <span class="px-2 py-1 bg-surface text-gray-500 border border-white/10">6 MIN READ</span>
+                                </div>
+                                <i data-lucide="arrow-right" class="w-4 h-4 text-ice group-hover:translate-x-1 transition-transform"></i>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Coming Soon Card 4 -->
+                    <div class="bg-panel border border-white/10 border-dashed p-6 clip-notch relative opacity-50">
+                        <div class="absolute top-0 right-0 p-4 opacity-10">
+                            <i data-lucide="git-branch" class="w-16 h-16 text-ice"></i>
+                        </div>
+                        <div class="relative z-10">
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="w-10 h-10 bg-ice/20 border border-ice/30 flex items-center justify-center">
+                                    <i data-lucide="git-branch" class="w-5 h-5 text-ice"></i>
+                                </div>
+                                <div class="text-xs text-gray-600 font-mono">COMING SOON</div>
+                            </div>
+                            <h4 class="font-display text-xl text-gray-600 mb-3">VERSION CONTROL</h4>
+                            <p class="text-gray-600 text-sm font-mono leading-relaxed mb-4">
+                                Introduction to Git for Python projects. Learn branching, committing, and collaborating with others.
+                            </p>
+                            <div class="flex gap-2 text-[10px]">
+                                <span class="px-2 py-1 bg-ice/10 text-ice/50 border border-ice/20">BEGINNER</span>
+                                <span class="px-2 py-1 bg-surface/50 text-gray-600 border border-white/5">TBD</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Coming Soon Card 5 -->
+                    <div class="bg-panel border border-white/10 border-dashed p-6 clip-notch relative opacity-50">
+                        <div class="absolute top-0 right-0 p-4 opacity-10">
+                            <i data-lucide="bug" class="w-16 h-16 text-acid"></i>
+                        </div>
+                        <div class="relative z-10">
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="w-10 h-10 bg-acid/20 border border-acid/30 flex items-center justify-center">
+                                    <i data-lucide="bug" class="w-5 h-5 text-acid"></i>
+                                </div>
+                                <div class="text-xs text-gray-600 font-mono">COMING SOON</div>
+                            </div>
+                            <h4 class="font-display text-xl text-gray-600 mb-3">DEBUGGING BASICS</h4>
+                            <p class="text-gray-600 text-sm font-mono leading-relaxed mb-4">
+                                Essential debugging techniques, understanding error messages, and using print statements effectively.
+                            </p>
+                            <div class="flex gap-2 text-[10px]">
+                                <span class="px-2 py-1 bg-acid/10 text-acid/50 border border-acid/20">BEGINNER</span>
+                                <span class="px-2 py-1 bg-surface/50 text-gray-600 border border-white/5">TBD</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- CTA SECTION -->
+            <section class="mt-16 bg-gradient-to-r from-acid/10 via-ice/10 to-signal/10 border border-acid/30 p-8 text-center">
+                <div class="flex items-center justify-center gap-3 mb-4">
+                    <i data-lucide="sparkles" class="w-6 h-6 text-acid"></i>
+                    <h3 class="font-display text-2xl text-chrome">SUGGEST A GUIDE</h3>
+                </div>
+                <p class="text-gray-400 font-mono text-sm mb-6 max-w-2xl mx-auto">
+                    Have an idea for a beginner guide that would help the Python community? Submit a suggestion on GitHub.
+                </p>
+                <a href="https://github.com/jamditis/python-explorer/issues/new" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-3 bg-acid text-black font-mono text-xs hover:bg-white transition-all font-bold">
+                    <i data-lucide="plus-circle" class="w-4 h-4"></i>
+                    <span>SUBMIT SUGGESTION</span>
+                </a>
+            </section>
+
+        </main>
+
+        <!-- FOOTER -->
+        <footer class="border-t border-white/10 bg-panel py-8 mt-12">
+            <div class="max-w-7xl mx-auto px-6 flex justify-between items-center text-[10px] font-mono text-gray-600">
+                <div>
+                    STATUS: <span class="text-acid">OPERATIONAL</span><br>
+                    SYSTEM: AMDITIS_KIT_v2.5
+                </div>
+                <div class="text-right">
+                    GENERATED_BY: AI_CORE<br>
+                    SESSION_ID: <span class="text-ice">UNK-99</span>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- Initialize Icons -->
+    <script>
+        lucide.createIcons();
+    </script>
+
+</body>
+</html>
