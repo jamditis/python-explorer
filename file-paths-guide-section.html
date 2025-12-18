@@ -1,0 +1,638 @@
+<!-- PYTHON FILE PATHS GUIDE -->
+<section id="filepaths" class="scroll-mt-24">
+    <div class="flex items-end justify-between border-b border-white/10 pb-4 mb-8">
+        <h3 class="font-display text-2xl text-ice">PYTHON FILE PATHS</h3>
+        <span class="text-xs text-gray-600 font-mono">BEGINNER'S GUIDE</span>
+    </div>
+
+    <!-- Introduction -->
+    <div class="mb-12 p-8 bg-panel border-l-4 border-ice relative overflow-hidden">
+        <div class="absolute top-0 right-0 p-6 opacity-5">
+            <i data-lucide="folder-open" class="w-40 h-40 text-ice"></i>
+        </div>
+        <div class="relative z-10">
+            <div class="flex items-center gap-3 mb-4">
+                <i data-lucide="info" class="w-6 h-6 text-ice"></i>
+                <h4 class="font-display text-xl text-chrome">WHAT ARE FILE PATHS?</h4>
+            </div>
+            <p class="text-gray-300 text-base font-mono mb-4 leading-relaxed">
+                A file path is the <span class="text-ice font-bold">address that tells Python where to find a file</span> on your computer. Just like you need a street address to find a house, Python needs a file path to open, read, or write files.
+            </p>
+            <p class="text-gray-300 text-base font-mono leading-relaxed">
+                There are two types of file paths: <span class="text-acid font-bold">absolute paths</span> (complete addresses from the root of your computer) and <span class="text-signal font-bold">relative paths</span> (directions from where your script is currently located).
+            </p>
+        </div>
+    </div>
+
+    <!-- The Problem It Solves -->
+    <div class="mb-12 bg-signal/10 border border-signal/30 p-8">
+        <div class="flex items-center gap-3 mb-6">
+            <i data-lucide="alert-circle" class="w-6 h-6 text-signal"></i>
+            <h4 class="font-display text-lg text-signal">THE PROBLEM: "WHY DOES MY CODE WORK SOMETIMES BUT NOT OTHERS?"</h4>
+        </div>
+        <div class="space-y-4">
+            <p class="text-gray-300 text-sm font-mono leading-relaxed">
+                You write this code and it works perfectly:
+            </p>
+            <div class="bg-[#0d0d0d] border border-gray-800 rounded-sm overflow-hidden">
+                <div class="bg-[#1a1a1a] border-b border-gray-800 px-4 py-2">
+                    <div class="text-[10px] text-gray-500 font-mono">YOUR SCRIPT</div>
+                </div>
+                <div class="p-4">
+                    <code class="text-green-500 text-xs block font-mono">data = open('interviews.csv')</code>
+                </div>
+            </div>
+            <p class="text-gray-300 text-sm font-mono leading-relaxed">
+                But then you run the same script from a different folder or share it with a colleague, and suddenly:
+            </p>
+            <div class="bg-[#0d0d0d] border border-signal/30 rounded-sm overflow-hidden">
+                <div class="bg-[#1a1a1a] border-b border-signal/30 px-4 py-2">
+                    <div class="text-[10px] text-signal font-mono">ERROR OUTPUT</div>
+                </div>
+                <div class="p-4">
+                    <code class="text-signal text-xs block font-mono">FileNotFoundError: [Errno 2] No such file or directory: 'interviews.csv'</code>
+                </div>
+            </div>
+            <p class="text-gray-300 text-sm font-mono leading-relaxed">
+                <span class="text-signal font-bold">This happens because Python is looking for the file in the wrong place.</span> Understanding file paths prevents this frustration.
+            </p>
+        </div>
+    </div>
+
+    <!-- Absolute vs Relative Paths -->
+    <div class="mb-12">
+        <h4 class="font-display text-lg text-acid mb-6 flex items-center gap-2">
+            <i data-lucide="git-fork" class="w-5 h-5"></i>
+            ABSOLUTE VS RELATIVE PATHS
+        </h4>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <div class="bg-panel border border-acid/30 p-6">
+                <div class="flex items-center gap-2 mb-4">
+                    <i data-lucide="map-pin" class="w-5 h-5 text-acid"></i>
+                    <h5 class="font-display text-sm text-acid">ABSOLUTE PATH</h5>
+                </div>
+                <p class="text-gray-400 text-sm font-mono mb-4">Complete address from the root of your system. Always works regardless of where your script is run from.</p>
+
+                <div class="space-y-3">
+                    <div>
+                        <div class="text-[10px] text-gray-500 font-mono mb-1">MAC / LINUX EXAMPLE</div>
+                        <div class="bg-[#0d0d0d] border border-gray-800 p-2">
+                            <code class="text-acid text-[10px] font-mono">/Users/sarah/projects/news-scraper/data/interviews.csv</code>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="text-[10px] text-gray-500 font-mono mb-1">WINDOWS EXAMPLE</div>
+                        <div class="bg-[#0d0d0d] border border-gray-800 p-2">
+                            <code class="text-acid text-[10px] font-mono">C:\Users\Sarah\projects\news-scraper\data\interviews.csv</code>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-4 space-y-2 text-xs font-mono">
+                    <div class="flex items-start gap-2">
+                        <span class="text-acid">✓</span>
+                        <span class="text-gray-400">Always works from anywhere</span>
+                    </div>
+                    <div class="flex items-start gap-2">
+                        <span class="text-acid">✓</span>
+                        <span class="text-gray-400">Unambiguous and explicit</span>
+                    </div>
+                    <div class="flex items-start gap-2">
+                        <span class="text-signal">❌</span>
+                        <span class="text-gray-400">Breaks when shared with others</span>
+                    </div>
+                    <div class="flex items-start gap-2">
+                        <span class="text-signal">❌</span>
+                        <span class="text-gray-400">Not portable across systems</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-panel border border-ice/30 p-6">
+                <div class="flex items-center gap-2 mb-4">
+                    <i data-lucide="navigation" class="w-5 h-5 text-ice"></i>
+                    <h5 class="font-display text-sm text-ice">RELATIVE PATH</h5>
+                </div>
+                <p class="text-gray-400 text-sm font-mono mb-4">Directions from where your script is currently located. Portable but depends on working directory.</p>
+
+                <div class="space-y-3">
+                    <div>
+                        <div class="text-[10px] text-gray-500 font-mono mb-1">SAME FOLDER</div>
+                        <div class="bg-[#0d0d0d] border border-gray-800 p-2">
+                            <code class="text-ice text-[10px] font-mono">interviews.csv</code>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="text-[10px] text-gray-500 font-mono mb-1">SUBFOLDER</div>
+                        <div class="bg-[#0d0d0d] border border-gray-800 p-2">
+                            <code class="text-ice text-[10px] font-mono">data/interviews.csv</code>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="text-[10px] text-gray-500 font-mono mb-1">PARENT FOLDER</div>
+                        <div class="bg-[#0d0d0d] border border-gray-800 p-2">
+                            <code class="text-ice text-[10px] font-mono">../output/analysis.xlsx</code>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-4 space-y-2 text-xs font-mono">
+                    <div class="flex items-start gap-2">
+                        <span class="text-acid">✓</span>
+                        <span class="text-gray-400">Portable across systems</span>
+                    </div>
+                    <div class="flex items-start gap-2">
+                        <span class="text-acid">✓</span>
+                        <span class="text-gray-400">Works when sharing projects</span>
+                    </div>
+                    <div class="flex items-start gap-2">
+                        <span class="text-signal">❌</span>
+                        <span class="text-gray-400">Depends on working directory</span>
+                    </div>
+                    <div class="flex items-start gap-2">
+                        <span class="text-signal">❌</span>
+                        <span class="text-gray-400">Can break if run from wrong place</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Working Directory -->
+    <div class="mb-12">
+        <h4 class="font-display text-lg text-signal mb-6 flex items-center gap-2">
+            <i data-lucide="map" class="w-5 h-5"></i>
+            WORKING DIRECTORY: WHERE PYTHON THINKS IT IS
+        </h4>
+        <div class="bg-panel border border-white/10 p-6">
+            <p class="text-gray-300 text-sm font-mono mb-6 leading-relaxed">
+                Your <span class="text-signal font-bold">working directory</span> is where Python "stands" when it runs. Relative paths are calculated from this location. If you're in the wrong directory, relative paths won't find your files.
+            </p>
+
+            <div class="space-y-4">
+                <div>
+                    <div class="text-xs text-gray-500 font-mono mb-2">CHECK YOUR CURRENT WORKING DIRECTORY</div>
+                    <div class="bg-[#0d0d0d] border border-gray-800 rounded-sm overflow-hidden">
+                        <div class="bg-[#1a1a1a] border-b border-gray-800 px-4 py-2">
+                            <div class="text-[10px] text-gray-500 font-mono">PYTHON CODE</div>
+                        </div>
+                        <div class="p-4 space-y-1">
+                            <code class="text-green-500 text-xs block font-mono">import os</code>
+                            <code class="text-green-500 text-xs block font-mono">print(os.getcwd())</code>
+                            <div class="text-gray-500 text-[10px] mt-2 font-mono"># Shows where Python currently "is"</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="text-xs text-gray-500 font-mono mb-2">EXAMPLE OUTPUT</div>
+                    <div class="bg-[#0d0d0d] border border-gray-800 p-3">
+                        <code class="text-ice text-xs font-mono">/Users/sarah/projects/news-scraper</code>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-6 p-4 bg-ice/10 border border-ice/30 text-xs font-mono text-gray-300">
+                <span class="text-ice font-bold">CRITICAL:</span> When you run <code class="text-white bg-black/30 px-1">python script.py</code> from different folders, your working directory changes. This is why code works from one location but not another.
+            </div>
+        </div>
+    </div>
+
+    <!-- Cross-Platform Issues -->
+    <div class="mb-12">
+        <h4 class="font-display text-lg text-chrome mb-6 flex items-center gap-2">
+            <i data-lucide="monitor" class="w-5 h-5"></i>
+            CROSS-PLATFORM ISSUES: WINDOWS VS MAC/LINUX
+        </h4>
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <div class="bg-panel border border-white/10 p-6">
+                <div class="flex items-center gap-2 mb-3">
+                    <i data-lucide="slash" class="w-4 h-4 text-ice"></i>
+                    <h5 class="font-display text-xs text-ice">FORWARD SLASHES</h5>
+                </div>
+                <p class="text-gray-400 text-xs font-mono mb-2">Mac & Linux</p>
+                <div class="bg-[#0d0d0d] border border-gray-800 p-2">
+                    <code class="text-ice text-[10px] font-mono">data/interviews.csv</code>
+                </div>
+            </div>
+
+            <div class="bg-panel border border-white/10 p-6">
+                <div class="flex items-center gap-2 mb-3">
+                    <i data-lucide="backslash" class="w-4 h-4 text-signal"></i>
+                    <h5 class="font-display text-xs text-signal">BACKSLASHES</h5>
+                </div>
+                <p class="text-gray-400 text-xs font-mono mb-2">Windows</p>
+                <div class="bg-[#0d0d0d] border border-gray-800 p-2">
+                    <code class="text-signal text-[10px] font-mono">data\interviews.csv</code>
+                </div>
+            </div>
+
+            <div class="bg-panel border border-acid/30 p-6">
+                <div class="flex items-center gap-2 mb-3">
+                    <i data-lucide="check-circle" class="w-4 h-4 text-acid"></i>
+                    <h5 class="font-display text-xs text-acid">THE SOLUTION</h5>
+                </div>
+                <p class="text-gray-400 text-xs font-mono mb-2">Use pathlib (works everywhere)</p>
+                <div class="bg-[#0d0d0d] border border-gray-800 p-2">
+                    <code class="text-acid text-[10px] font-mono">Path('data') / 'interviews.csv'</code>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-6 p-6 bg-signal/10 border-l-4 border-signal">
+            <div class="flex items-start gap-3">
+                <i data-lucide="alert-triangle" class="w-5 h-5 text-signal flex-shrink-0 mt-1"></i>
+                <div>
+                    <h5 class="text-signal font-mono text-sm font-bold mb-2">WHY HARDCODED PATHS BREAK EVERYTHING</h5>
+                    <div class="space-y-2 text-xs font-mono text-gray-300">
+                        <p>If you write: <code class="text-white bg-black/30 px-1">C:\Users\Sarah\projects\data.csv</code></p>
+                        <p>Your teammate on Mac will see an error. Their computer doesn't have a <code class="text-white bg-black/30 px-1">C:</code> drive or a user named Sarah!</p>
+                        <p class="text-signal"><span class="font-bold">NEVER hardcode absolute paths with usernames.</span> Use relative paths or pathlib instead.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- When to Use Each -->
+    <div class="mb-12">
+        <h4 class="font-display text-lg text-ice mb-6 flex items-center gap-2">
+            <i data-lucide="lightbulb" class="w-5 h-5"></i>
+            WHEN TO USE EACH APPROACH
+        </h4>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-surface border border-acid/20 p-6 hover:border-acid/50 transition-all">
+                <div class="text-acid text-xs font-mono mb-3 font-bold">USE RELATIVE PATHS FOR:</div>
+                <ul class="space-y-2 text-xs font-mono text-gray-300">
+                    <li class="flex items-start gap-2">
+                        <span class="text-acid">•</span>
+                        <span>Project files that stay together (scripts, data folders, outputs)</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-acid">•</span>
+                        <span>Code you'll share with teammates or publish on GitHub</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-acid">•</span>
+                        <span>Portable projects that run on different computers</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-acid">•</span>
+                        <span>When files are organized in a predictable structure</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="bg-surface border border-signal/20 p-6 hover:border-signal/50 transition-all">
+                <div class="text-signal text-xs font-mono mb-3 font-bold">USE ABSOLUTE PATHS FOR:</div>
+                <ul class="space-y-2 text-xs font-mono text-gray-300">
+                    <li class="flex items-start gap-2">
+                        <span class="text-signal">•</span>
+                        <span>System-wide configuration files that don't move</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-signal">•</span>
+                        <span>One-off scripts that access files in fixed locations</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-signal">•</span>
+                        <span>Database files or logs stored in standard directories</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-signal">•</span>
+                        <span>When you're certain the path will never change</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="mt-6 p-4 bg-ice/10 border border-ice/30 text-xs font-mono text-gray-300">
+            <span class="text-ice font-bold">RULE OF THUMB:</span> Default to relative paths for 95% of your work. Only use absolute paths when you have a specific reason.
+        </div>
+    </div>
+
+    <!-- Quick Start Guide with pathlib -->
+    <div class="mb-12 bg-acid/5 border border-acid/30 p-8">
+        <h4 class="font-display text-lg text-acid mb-6 flex items-center gap-2">
+            <i data-lucide="terminal" class="w-5 h-5"></i>
+            QUICK START GUIDE: USING PATHLIB
+        </h4>
+
+        <p class="text-gray-300 text-sm font-mono mb-6 leading-relaxed">
+            Python's <code class="text-acid bg-black/30 px-1">pathlib</code> module is the modern way to handle file paths. It works on all operating systems and eliminates slash direction headaches.
+        </p>
+
+        <div class="space-y-6">
+            <!-- Example 1 -->
+            <div>
+                <div class="text-acid font-mono text-xs mb-2">EXAMPLE 01 // BASIC FILE ACCESS</div>
+                <div class="bg-[#0d0d0d] border border-gray-800 rounded-sm overflow-hidden">
+                    <div class="bg-[#1a1a1a] border-b border-gray-800 px-4 py-2">
+                        <div class="text-[10px] text-gray-500 font-mono">PYTHON CODE</div>
+                    </div>
+                    <div class="p-4 space-y-1">
+                        <code class="text-green-500 text-xs block font-mono">from pathlib import Path</code>
+                        <code class="text-green-500 text-xs block font-mono"></code>
+                        <code class="text-green-500 text-xs block font-mono"># Open a file in the 'data' subfolder</code>
+                        <code class="text-green-500 text-xs block font-mono">data_file = Path('data') / 'interviews.csv'</code>
+                        <code class="text-green-500 text-xs block font-mono">with open(data_file) as f:</code>
+                        <code class="text-green-500 text-xs block font-mono ml-4">    content = f.read()</code>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Example 2 -->
+            <div>
+                <div class="text-acid font-mono text-xs mb-2">EXAMPLE 02 // RELATIVE TO SCRIPT LOCATION</div>
+                <div class="bg-[#0d0d0d] border border-gray-800 rounded-sm overflow-hidden">
+                    <div class="bg-[#1a1a1a] border-b border-gray-800 px-4 py-2">
+                        <div class="text-[10px] text-gray-500 font-mono">ALWAYS WORKS REGARDLESS OF WHERE SCRIPT IS RUN FROM</div>
+                    </div>
+                    <div class="p-4 space-y-1">
+                        <code class="text-green-500 text-xs block font-mono">from pathlib import Path</code>
+                        <code class="text-green-500 text-xs block font-mono"></code>
+                        <code class="text-green-500 text-xs block font-mono"># Get the directory where THIS script lives</code>
+                        <code class="text-green-500 text-xs block font-mono">script_dir = Path(__file__).parent</code>
+                        <code class="text-green-500 text-xs block font-mono"></code>
+                        <code class="text-green-500 text-xs block font-mono"># Build path relative to script location</code>
+                        <code class="text-green-500 text-xs block font-mono">data_file = script_dir / 'data' / 'interviews.csv'</code>
+                        <code class="text-green-500 text-xs block font-mono">output_file = script_dir / 'output' / 'analysis.xlsx'</code>
+                        <div class="text-gray-500 text-[10px] mt-2 font-mono"># __file__ is the path to the current script</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Example 3 -->
+            <div>
+                <div class="text-acid font-mono text-xs mb-2">EXAMPLE 03 // CHECKING IF FILE EXISTS</div>
+                <div class="bg-[#0d0d0d] border border-gray-800 rounded-sm overflow-hidden">
+                    <div class="bg-[#1a1a1a] border-b border-gray-800 px-4 py-2">
+                        <div class="text-[10px] text-gray-500 font-mono">AVOID ERRORS BEFORE THEY HAPPEN</div>
+                    </div>
+                    <div class="p-4 space-y-1">
+                        <code class="text-green-500 text-xs block font-mono">from pathlib import Path</code>
+                        <code class="text-green-500 text-xs block font-mono"></code>
+                        <code class="text-green-500 text-xs block font-mono">data_file = Path('scraped_data') / 'articles.json'</code>
+                        <code class="text-green-500 text-xs block font-mono"></code>
+                        <code class="text-green-500 text-xs block font-mono">if data_file.exists():</code>
+                        <code class="text-green-500 text-xs block font-mono ml-4">    print(f"Found file at: {data_file}")</code>
+                        <code class="text-green-500 text-xs block font-mono">else:</code>
+                        <code class="text-green-500 text-xs block font-mono ml-4">    print(f"File not found! Looking in: {data_file.absolute()}")</code>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Example 4 -->
+            <div>
+                <div class="text-acid font-mono text-xs mb-2">EXAMPLE 04 // CREATING DIRECTORIES</div>
+                <div class="bg-[#0d0d0d] border border-gray-800 rounded-sm overflow-hidden">
+                    <div class="bg-[#1a1a1a] border-b border-gray-800 px-4 py-2">
+                        <div class="text-[10px] text-gray-500 font-mono">SAFELY CREATE OUTPUT FOLDERS</div>
+                    </div>
+                    <div class="p-4 space-y-1">
+                        <code class="text-green-500 text-xs block font-mono">from pathlib import Path</code>
+                        <code class="text-green-500 text-xs block font-mono"></code>
+                        <code class="text-green-500 text-xs block font-mono"># Create 'output' folder if it doesn't exist</code>
+                        <code class="text-green-500 text-xs block font-mono">output_dir = Path('output')</code>
+                        <code class="text-green-500 text-xs block font-mono">output_dir.mkdir(exist_ok=True)  # Won't error if already exists</code>
+                        <code class="text-green-500 text-xs block font-mono"></code>
+                        <code class="text-green-500 text-xs block font-mono"># Now save your file</code>
+                        <code class="text-green-500 text-xs block font-mono">output_file = output_dir / 'report.csv'</code>
+                        <code class="text-green-500 text-xs block font-mono">output_file.write_text("Name,Count\nJohn,5")</code>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Example 5 -->
+            <div>
+                <div class="text-acid font-mono text-xs mb-2">EXAMPLE 05 // LISTING FILES IN A DIRECTORY</div>
+                <div class="bg-[#0d0d0d] border border-gray-800 rounded-sm overflow-hidden">
+                    <div class="bg-[#1a1a1a] border-b border-gray-800 px-4 py-2">
+                        <div class="text-[10px] text-gray-500 font-mono">PROCESS MULTIPLE FILES</div>
+                    </div>
+                    <div class="p-4 space-y-1">
+                        <code class="text-green-500 text-xs block font-mono">from pathlib import Path</code>
+                        <code class="text-green-500 text-xs block font-mono"></code>
+                        <code class="text-green-500 text-xs block font-mono"># Find all CSV files in 'data' folder</code>
+                        <code class="text-green-500 text-xs block font-mono">data_dir = Path('data')</code>
+                        <code class="text-green-500 text-xs block font-mono">csv_files = data_dir.glob('*.csv')</code>
+                        <code class="text-green-500 text-xs block font-mono"></code>
+                        <code class="text-green-500 text-xs block font-mono">for csv_file in csv_files:</code>
+                        <code class="text-green-500 text-xs block font-mono ml-4">    print(f"Processing: {csv_file.name}")</code>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Real World Analogy -->
+    <div class="mb-12">
+        <h4 class="font-display text-lg text-ice mb-6 flex items-center gap-2">
+            <i data-lucide="compass" class="w-5 h-5"></i>
+            REAL-WORLD ANALOGY
+        </h4>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <div class="bg-panel border border-white/10 p-6">
+                <div class="flex items-center gap-2 mb-4">
+                    <i data-lucide="map-pin" class="w-5 h-5 text-acid"></i>
+                    <h5 class="font-display text-sm text-acid">ABSOLUTE PATH = GPS COORDINATES</h5>
+                </div>
+                <p class="text-gray-400 text-sm font-mono leading-relaxed">
+                    "Meet me at 40.7580° N, 73.9855° W" (Times Square in New York). This works from anywhere in the world, but it's not portable - if the building moves, the coordinates are wrong. Also useless if someone else doesn't have access to that exact location.
+                </p>
+            </div>
+
+            <div class="bg-panel border border-white/10 p-6">
+                <div class="flex items-center gap-2 mb-4">
+                    <i data-lucide="navigation" class="w-5 h-5 text-ice"></i>
+                    <h5 class="font-display text-sm text-ice">RELATIVE PATH = DIRECTIONS FROM HERE</h5>
+                </div>
+                <p class="text-gray-400 text-sm font-mono leading-relaxed">
+                    "Walk two blocks north, then turn left." This only makes sense from where you currently are. If you start somewhere else, the directions won't work. But if you package the directions with the starting point, anyone can follow them.
+                </p>
+            </div>
+        </div>
+
+        <div class="mt-6 p-6 bg-surface border border-white/10">
+            <p class="text-gray-300 text-sm font-mono leading-relaxed">
+                <span class="text-ice font-bold">For Python projects:</span> Use relative paths anchored to your script location with <code class="text-acid bg-black/30 px-1">Path(__file__).parent</code>. This is like saying "directions from where this script lives" - portable and reliable.
+            </p>
+        </div>
+    </div>
+
+    <!-- Dangers/Common Mistakes -->
+    <div class="mb-12">
+        <h4 class="font-display text-lg text-chrome mb-6 flex items-center gap-2">
+            <i data-lucide="skull" class="w-5 h-5 text-signal"></i>
+            COMMON MISTAKES THAT BREAK FILE PATHS
+        </h4>
+        <div class="space-y-3">
+            <div class="bg-panel border-l-4 border-signal/50 p-4 flex items-start gap-3">
+                <i data-lucide="user-x" class="w-4 h-4 text-signal mt-1 flex-shrink-0"></i>
+                <div>
+                    <div class="text-signal font-mono text-xs font-bold mb-1">HARDCODING YOUR USERNAME</div>
+                    <p class="text-gray-400 text-xs mb-2"><code class="text-white bg-black/30 px-1">/Users/sarah/project/data.csv</code> won't work for your teammate Mike</p>
+                    <p class="text-acid text-xs"><span class="font-bold">FIX:</span> Use relative paths instead</p>
+                </div>
+            </div>
+            <div class="bg-panel border-l-4 border-signal/50 p-4 flex items-start gap-3">
+                <i data-lucide="backslash" class="w-4 h-4 text-signal mt-1 flex-shrink-0"></i>
+                <div>
+                    <div class="text-signal font-mono text-xs font-bold mb-1">USING BACKSLASHES ON WINDOWS</div>
+                    <p class="text-gray-400 text-xs mb-2"><code class="text-white bg-black/30 px-1">data\files\report.csv</code> breaks on Mac/Linux</p>
+                    <p class="text-acid text-xs"><span class="font-bold">FIX:</span> Use pathlib's <code class="bg-black/30 px-1">/</code> operator or forward slashes</p>
+                </div>
+            </div>
+            <div class="bg-panel border-l-4 border-signal/50 p-4 flex items-start gap-3">
+                <i data-lucide="folder-x" class="w-4 h-4 text-signal mt-1 flex-shrink-0"></i>
+                <div>
+                    <div class="text-signal font-mono text-xs font-bold mb-1">NOT CHECKING IF FILE EXISTS</div>
+                    <p class="text-gray-400 text-xs mb-2">Assuming the file is there without verifying leads to crashes</p>
+                    <p class="text-acid text-xs"><span class="font-bold">FIX:</span> Use <code class="bg-black/30 px-1">Path('file.csv').exists()</code> before accessing</p>
+                </div>
+            </div>
+            <div class="bg-panel border-l-4 border-signal/50 p-4 flex items-start gap-3">
+                <i data-lucide="terminal" class="w-4 h-4 text-signal mt-1 flex-shrink-0"></i>
+                <div>
+                    <div class="text-signal font-mono text-xs font-bold mb-1">RUNNING FROM WRONG DIRECTORY</div>
+                    <p class="text-gray-400 text-xs mb-2">Running <code class="text-white bg-black/30 px-1">python src/script.py</code> from project root vs running from <code class="text-white bg-black/30 px-1">src/</code> folder changes working directory</p>
+                    <p class="text-acid text-xs"><span class="font-bold">FIX:</span> Use <code class="bg-black/30 px-1">Path(__file__).parent</code> to anchor paths to script location</p>
+                </div>
+            </div>
+            <div class="bg-panel border-l-4 border-signal/50 p-4 flex items-start gap-3">
+                <i data-lucide="space" class="w-4 h-4 text-signal mt-1 flex-shrink-0"></i>
+                <div>
+                    <div class="text-signal font-mono text-xs font-bold mb-1">SPACES IN FILE NAMES</div>
+                    <p class="text-gray-400 text-xs mb-2"><code class="text-white bg-black/30 px-1">my data file.csv</code> can cause issues in some contexts</p>
+                    <p class="text-acid text-xs"><span class="font-bold">FIX:</span> Use underscores or hyphens: <code class="bg-black/30 px-1">my_data_file.csv</code></p>
+                </div>
+            </div>
+            <div class="bg-panel border-l-4 border-signal/50 p-4 flex items-start gap-3">
+                <i data-lucide="file-warning" class="w-4 h-4 text-signal mt-1 flex-shrink-0"></i>
+                <div>
+                    <div class="text-signal font-mono text-xs font-bold mb-1">ASSUMING CURRENT DIRECTORY</div>
+                    <p class="text-gray-400 text-xs mb-2">Writing <code class="text-white bg-black/30 px-1">open('data.csv')</code> assumes file is in current working directory</p>
+                    <p class="text-acid text-xs"><span class="font-bold">FIX:</span> Be explicit: <code class="bg-black/30 px-1">Path(__file__).parent / 'data.csv'</code></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Golden Rules -->
+    <div class="bg-gradient-to-r from-acid/10 via-ice/10 to-signal/10 border-2 border-ice p-8">
+        <div class="flex items-center justify-center gap-3 mb-6">
+            <i data-lucide="star" class="w-8 h-8 text-ice"></i>
+            <h4 class="font-display text-2xl text-ice">GOLDEN RULES FOR FILE PATHS</h4>
+            <i data-lucide="star" class="w-8 h-8 text-ice"></i>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+            <div class="bg-panel/50 border border-acid/30 p-4">
+                <div class="flex items-start gap-2 mb-2">
+                    <span class="text-acid text-xl font-bold font-display">01</span>
+                    <div>
+                        <div class="text-acid font-mono text-sm font-bold mb-1">USE PATHLIB, NOT STRINGS</div>
+                        <p class="text-gray-300 text-xs">Always import pathlib and use <code class="bg-black/30 px-1 text-white">Path()</code> objects. They handle OS differences automatically.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-panel/50 border border-ice/30 p-4">
+                <div class="flex items-start gap-2 mb-2">
+                    <span class="text-ice text-xl font-bold font-display">02</span>
+                    <div>
+                        <div class="text-ice font-mono text-sm font-bold mb-1">ANCHOR TO SCRIPT LOCATION</div>
+                        <p class="text-gray-300 text-xs">Use <code class="bg-black/30 px-1 text-white">Path(__file__).parent</code> to build paths relative to your script, not working directory.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-panel/50 border border-signal/30 p-4">
+                <div class="flex items-start gap-2 mb-2">
+                    <span class="text-signal text-xl font-bold font-display">03</span>
+                    <div>
+                        <div class="text-signal font-mono text-sm font-bold mb-1">NEVER HARDCODE USERNAMES</div>
+                        <p class="text-gray-300 text-xs">No <code class="bg-black/30 px-1 text-white">/Users/yourname/</code> or <code class="bg-black/30 px-1 text-white">C:\Users\yourname\</code> in your code. Ever.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-panel/50 border border-acid/30 p-4">
+                <div class="flex items-start gap-2 mb-2">
+                    <span class="text-acid text-xl font-bold font-display">04</span>
+                    <div>
+                        <div class="text-acid font-mono text-sm font-bold mb-1">CHECK EXISTENCE FIRST</div>
+                        <p class="text-gray-300 text-xs">Use <code class="bg-black/30 px-1 text-white">.exists()</code> before accessing files. Fail gracefully with helpful error messages.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-panel/50 border border-ice/30 p-4">
+                <div class="flex items-start gap-2 mb-2">
+                    <span class="text-ice text-xl font-bold font-display">05</span>
+                    <div>
+                        <div class="text-ice font-mono text-sm font-bold mb-1">ORGANIZE WITH FOLDERS</div>
+                        <p class="text-gray-300 text-xs">Keep data in <code class="bg-black/30 px-1 text-white">data/</code>, outputs in <code class="bg-black/30 px-1 text-white">output/</code>, scripts in <code class="bg-black/30 px-1 text-white">src/</code>. Consistent structure = fewer path issues.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-panel/50 border border-signal/30 p-4">
+                <div class="flex items-start gap-2 mb-2">
+                    <span class="text-signal text-xl font-bold font-display">06</span>
+                    <div>
+                        <div class="text-signal font-mono text-sm font-bold mb-1">TEST ON DIFFERENT MACHINES</div>
+                        <p class="text-gray-300 text-xs">If possible, test your code on a different computer or OS. Catches portability issues early.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center">
+            <p class="text-chrome text-lg font-mono mb-2">
+                <span class="text-ice font-bold">MASTER PATTERN:</span> <code class="bg-black/30 px-2 py-1 text-acid">Path(__file__).parent / 'data' / 'file.csv'</code>
+            </p>
+            <p class="text-gray-400 text-sm font-mono max-w-3xl mx-auto">
+                This pattern works everywhere, for everyone, every time. Commit it to muscle memory and 90% of your file path problems disappear.
+            </p>
+        </div>
+    </div>
+
+    <!-- Quick Reference Card -->
+    <div class="mt-12 bg-panel border border-white/10 p-6">
+        <h4 class="font-display text-lg text-chrome mb-4 flex items-center gap-2">
+            <i data-lucide="file-text" class="w-5 h-5"></i>
+            QUICK REFERENCE CARD
+        </h4>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs font-mono">
+            <div>
+                <div class="text-gray-500 mb-2">COMMON PATHLIB OPERATIONS</div>
+                <div class="space-y-1 bg-[#0d0d0d] border border-gray-800 p-3">
+                    <div><code class="text-acid">Path('folder') / 'file.csv'</code> <span class="text-gray-600">// Join paths</span></div>
+                    <div><code class="text-acid">path.exists()</code> <span class="text-gray-600">// Check if exists</span></div>
+                    <div><code class="text-acid">path.is_file()</code> <span class="text-gray-600">// Is it a file?</span></div>
+                    <div><code class="text-acid">path.is_dir()</code> <span class="text-gray-600">// Is it a folder?</span></div>
+                    <div><code class="text-acid">path.parent</code> <span class="text-gray-600">// Get parent folder</span></div>
+                    <div><code class="text-acid">path.name</code> <span class="text-gray-600">// Get filename</span></div>
+                    <div><code class="text-acid">path.stem</code> <span class="text-gray-600">// Filename without extension</span></div>
+                    <div><code class="text-acid">path.suffix</code> <span class="text-gray-600">// File extension (.csv)</span></div>
+                </div>
+            </div>
+            <div>
+                <div class="text-gray-500 mb-2">TYPICAL PROJECT STRUCTURE</div>
+                <div class="bg-[#0d0d0d] border border-gray-800 p-3 space-y-0.5">
+                    <div><code class="text-ice">my_project/</code></div>
+                    <div><code class="text-gray-600">├── </code><code class="text-white">main.py</code> <span class="text-gray-600">// Your main script</span></div>
+                    <div><code class="text-gray-600">├── </code><code class="text-ice">data/</code></div>
+                    <div><code class="text-gray-600">│   ├── </code><code class="text-white">interviews.csv</code></div>
+                    <div><code class="text-gray-600">│   └── </code><code class="text-white">sources.json</code></div>
+                    <div><code class="text-gray-600">├── </code><code class="text-ice">output/</code></div>
+                    <div><code class="text-gray-600">│   └── </code><code class="text-white">analysis.xlsx</code></div>
+                    <div><code class="text-gray-600">├── </code><code class="text-ice">src/</code></div>
+                    <div><code class="text-gray-600">│   └── </code><code class="text-white">helpers.py</code></div>
+                    <div><code class="text-gray-600">└── </code><code class="text-white">README.md</code></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
