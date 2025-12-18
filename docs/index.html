@@ -135,7 +135,7 @@
                 <h2 class="font-display text-4xl md:text-6xl text-chrome mb-4 glitch-text" data-text="PYTHON_ECOSYSTEM">PYTHON_ECOSYSTEM</h2>
                 <div class="flex flex-col md:flex-row gap-8 items-start">
                     <div class="flex-1">
-                        <p class="text-gray-400 max-w-2xl text-lg font-mono border-l-2 border-acid pl-4 mb-6">
+                        <p class="text-gray-400 max-w-2xl text-2xl font-mono border-l-2 border-acid pl-4 mb-6">
                             Full-spectrum directory of Python libraries. Covers Web, Data, Automation, Design, and Visualization modules.
                         </p>
                         <div class="flex gap-3">
@@ -177,14 +177,14 @@
 
                     <!-- Dropdown Containers -->
                     <div id="dropdown1Container" class="hidden">
-                        <label class="block text-xs text-gray-500 font-mono mb-2">I have</label>
+                        <label class="block text-base text-gray-500 font-mono mb-2">I have</label>
                         <select id="dropdown1" class="w-full bg-void border border-white/20 text-gray-300 font-mono py-2 px-3 focus:outline-none focus:border-acid">
                             <option value="">Select...</option>
                         </select>
                     </div>
 
                     <div id="dropdown2Container" class="hidden">
-                        <label id="dropdown2Label" class="block text-xs text-gray-500 font-mono mb-2">I want to</label>
+                        <label id="dropdown2Label" class="block text-base text-gray-500 font-mono mb-2">I want to</label>
                         <select id="dropdown2" class="w-full bg-void border border-white/20 text-gray-300 font-mono py-2 px-3 focus:outline-none focus:border-acid">
                             <option value="">Select...</option>
                         </select>
@@ -192,7 +192,7 @@
 
                     <!-- Quick Searches -->
                     <div>
-                        <p class="text-xs text-gray-500 font-mono mb-3">OR BROWSE BY CATEGORY:</p>
+                        <p class="text-base text-gray-500 font-mono mb-3">OR BROWSE BY CATEGORY:</p>
                         <div id="quickSearchButtons" class="flex flex-wrap gap-2">
                             <!-- Populated by JS -->
                         </div>
@@ -200,7 +200,7 @@
                 </div>
 
                 <!-- Disclaimer -->
-                <div class="mt-6 p-4 bg-signal/10 border border-signal/30 text-xs font-mono text-gray-400">
+                <div class="mt-6 p-4 bg-signal/10 border border-signal/30 text-base font-mono text-gray-400">
                     <span class="text-signal font-bold">DISCLAIMER:</span> This tool is for exploration and discovery only. Joe Amditis does not endorse, maintain, or have any involvement with the libraries listed here. Always review documentation and assess security before using any external library in your projects.
                 </div>
             </section>
@@ -216,7 +216,7 @@
                             <i data-lucide="newspaper" class="w-6 h-6 text-ice"></i>
                             <h3 class="font-display text-2xl text-ice">JOURNALISM & MEDIA TOOLKIT</h3>
                         </div>
-                        <p class="text-gray-300 text-sm font-mono mb-6 max-w-3xl">
+                        <p class="text-gray-300 text-lg font-mono mb-6 max-w-3xl">
                             Curated selection of libraries particularly useful for journalists, newsrooms, and media professionals. Includes tools for data journalism, web scraping, document processing, visualization, and content management.
                         </p>
                         <div class="flex gap-3">
@@ -256,7 +256,7 @@
                         <div class="absolute top-0 right-0 p-2 opacity-50">
                             <i data-lucide="pie-chart" class="w-4 h-4 text-gray-600"></i>
                         </div>
-                        <h4 class="text-xs text-acid mb-6 font-mono uppercase tracking-widest border-b border-white/10 pb-2">Domain Distribution <span class="text-gray-600 text-[8px]">(FILTERED VIEW)</span></h4>
+                        <h4 class="text-xs text-acid mb-6 font-mono uppercase tracking-widest border-b border-white/10 pb-2">Domain Distribution <span class="text-gray-600 text-[10px]">(FILTERED VIEW)</span></h4>
                         <div class="chart-container">
                             <canvas id="domainChart"></canvas>
                         </div>
@@ -266,7 +266,7 @@
                         <div class="absolute top-0 right-0 p-2 opacity-50">
                             <i data-lucide="bar-chart-2" class="w-4 h-4 text-gray-600"></i>
                         </div>
-                        <h4 class="text-xs text-signal mb-6 font-mono uppercase tracking-widest border-b border-white/10 pb-2">CATEGORY BREAKDOWN <span class="text-gray-600 text-[8px]">(FILTERED VIEW)</span></h4>
+                        <h4 class="text-xs text-signal mb-6 font-mono uppercase tracking-widest border-b border-white/10 pb-2">CATEGORY BREAKDOWN <span class="text-gray-600 text-[10px]">(FILTERED VIEW)</span></h4>
                         <div class="chart-container">
                             <canvas id="popularityChart"></canvas>
                         </div>
@@ -308,7 +308,7 @@
                     <div class="flex-1 min-h-screen">
 
                         <!-- Status Bar -->
-                        <div class="flex justify-between items-center mb-6 font-mono text-xs text-gray-500 flex-wrap gap-3">
+                        <div class="flex justify-between items-center mb-6 font-mono text-base text-gray-500 flex-wrap gap-3">
                             <span id="resultCount">LOADING_DATA...</span>
                             <button onclick="generateRequirementsTxt('current')" class="px-3 py-1.5 bg-transparent border border-acid/50 text-acid text-[10px] hover:bg-acid hover:text-black transition-all flex items-center gap-2">
                                 <i data-lucide="download" class="w-3 h-3"></i>
@@ -325,7 +325,7 @@
                         <div id="noResults" class="hidden border border-dashed border-white/10 bg-surface/50 p-12 text-center">
                             <i data-lucide="alert-triangle" class="w-12 h-12 text-signal mx-auto mb-4 opacity-50"></i>
                             <h4 class="text-chrome font-display text-xl mb-2">DATA_NOT_FOUND</h4>
-                            <p class="text-gray-500 font-mono text-sm mb-6">Query returned zero results. Adjust filter parameters.</p>
+                            <p class="text-gray-500 font-mono text-lg mb-6">Query returned zero results. Adjust filter parameters.</p>
                             <button onclick="resetFilters()" class="px-6 py-2 bg-transparent border border-white/20 text-chrome hover:border-chrome text-xs font-mono transition-all">
                                 CLEAR_FILTERS
                             </button>
@@ -348,14 +348,14 @@
                         <div class="space-y-6">
                             <div class="grid grid-cols-2 gap-4">
                                 <div>
-                                    <label class="block text-[10px] font-mono text-acid mb-2">ENTITY_A</label>
+                                    <label class="block text-sm font-mono text-acid mb-2">ENTITY_A</label>
                                     <div class="relative">
                                         <select id="compSelect1" class="w-full bg-surface border border-white/20 text-chrome text-xs font-mono p-3 focus:outline-none focus:border-acid appearance-none rounded-none"></select>
                                         <i data-lucide="chevron-down" class="absolute right-3 top-3 w-4 h-4 text-gray-500 pointer-events-none"></i>
                                     </div>
                                 </div>
                                 <div>
-                                    <label class="block text-[10px] font-mono text-signal mb-2">ENTITY_B</label>
+                                    <label class="block text-sm font-mono text-signal mb-2">ENTITY_B</label>
                                     <div class="relative">
                                         <select id="compSelect2" class="w-full bg-surface border border-white/20 text-chrome text-xs font-mono p-3 focus:outline-none focus:border-signal appearance-none rounded-none"></select>
                                         <i data-lucide="chevron-down" class="absolute right-3 top-3 w-4 h-4 text-gray-500 pointer-events-none"></i>
@@ -363,12 +363,12 @@
                                 </div>
                             </div>
 
-                            <div class="p-4 border-l-2 border-ice bg-iceDim text-xs font-mono text-gray-300">
+                            <div class="p-4 border-l-2 border-ice bg-iceDim text-base font-mono text-gray-300">
                                 <span class="text-ice font-bold">TIP:</span> Select entities from identical categories for optimal data correlation.
                             </div>
                         </div>
 
-                        <div id="compareOutput" class="bg-surface border border-white/10 p-6 min-h-[200px] flex items-center justify-center text-gray-600 font-mono text-xs">
+                        <div id="compareOutput" class="bg-surface border border-white/10 p-6 min-h-[200px] flex items-center justify-center text-gray-600 font-mono text-base">
                             [ AWAITING_SELECTION ]
                         </div>
                     </div>
@@ -379,7 +379,7 @@
 
         <!-- FOOTER -->
         <footer class="border-t border-white/10 bg-panel py-8 mt-12">
-            <div class="max-w-7xl mx-auto px-6 flex justify-between items-center text-[10px] font-mono text-gray-600">
+            <div class="max-w-7xl mx-auto px-6 flex justify-between items-center text-sm font-mono text-gray-600">
                 <div>
                     STATUS: <span class="text-acid">OPERATIONAL</span><br>
                     SYSTEM: AMDITIS_KIT_v2.5
@@ -424,31 +424,31 @@
 
                 <div>
                     <h4 class="text-xs text-gray-500 uppercase tracking-widest mb-2 border-b border-white/10 pb-1">Synopsis</h4>
-                    <p id="mDesc" class="text-gray-300 text-sm leading-relaxed"></p>
+                    <p id="mDesc" class="text-gray-300 text-lg leading-relaxed"></p>
                 </div>
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div class="p-4 border border-white/10 bg-surface">
                         <div class="text-xs text-gray-500 mb-2">OPTIMAL_USE_CASE</div>
-                        <p id="mBestFor" class="text-orange-400 text-xs"></p>
+                        <p id="mBestFor" class="text-orange-400 text-base"></p>
                     </div>
                     <div class="p-4 border border-white/10 bg-surface hover:border-ice transition-colors cursor-pointer group">
                         <div class="text-xs text-gray-500 mb-2">SOURCE_LINK</div>
-                        <a id="mLink" href="#" target="_blank" class="text-ice text-xs underline decoration-ice/30 group-hover:decoration-ice truncate block">ACCESS_REPOSITORY</a>
+                        <a id="mLink" href="#" target="_blank" class="text-ice text-base underline decoration-ice/30 group-hover:decoration-ice truncate block">ACCESS_REPOSITORY</a>
                     </div>
                 </div>
 
                 <div class="w-full bg-[#0d0d0d] border border-gray-800 rounded-sm overflow-hidden relative group">
                     <div class="bg-[#1a1a1a] border-b border-gray-800 px-4 py-2 flex justify-between items-center">
-                        <div class="text-[10px] text-gray-500">INSTALL_PROTOCOL</div>
-                        <button onclick="copyInstall()" class="text-[10px] text-acid hover:text-white flex items-center gap-1 transition-colors">
+                        <div class="text-sm text-gray-500">INSTALL_PROTOCOL</div>
+                        <button onclick="copyInstall()" class="text-sm text-acid hover:text-white flex items-center gap-1 transition-colors">
                             <i data-lucide="copy" class="w-3 h-3"></i> <span id="copyBtnText">COPY</span>
                         </button>
                     </div>
                     <div class="p-4">
-                        <code id="mInstall" class="text-green-500 text-xs block mb-4">pip install package</code>
+                        <code id="mInstall" class="text-green-500 text-base block mb-4">pip install package</code>
                         <div class="h-px bg-gray-800 mb-4 w-full"></div>
-                        <pre class="text-gray-400 text-xs overflow-x-auto"><code id="mSnippet">import module...</code></pre>
+                        <pre class="text-gray-400 text-base overflow-x-auto"><code id="mSnippet">import module...</code></pre>
                     </div>
                 </div>
             </div>
