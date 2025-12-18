@@ -126,10 +126,10 @@
                             <i data-lucide="info" class="w-6 h-6 text-ice"></i>
                             <h4 class="font-display text-xl text-chrome">WHAT ARE PYTHON IMPORTS?</h4>
                         </div>
-                        <p class="text-gray-300 text-base font-mono mb-4 leading-relaxed">
+                        <p class="text-gray-300 text-xl font-mono mb-4 leading-relaxed">
                             Think of imports like <span class="text-ice font-bold">checking out tools from a library</span>. When you write Python code, you don't want to build everything from scratch - you want to use code that already exists (either Python's built-in tools or libraries other people wrote).
                         </p>
-                        <p class="text-gray-300 text-base font-mono leading-relaxed">
+                        <p class="text-gray-300 text-xl font-mono leading-relaxed">
                             An import statement tells Python: "I need this specific tool, go find it and make it available for me to use."
                         </p>
                     </div>
@@ -142,8 +142,8 @@
                             <i data-lucide="alert-triangle" class="w-5 h-5 text-signal"></i>
                             <h5 class="font-display text-sm text-signal">WITHOUT IMPORTS</h5>
                         </div>
-                        <p class="text-gray-400 text-sm font-mono mb-3">You would have to:</p>
-                        <ul class="space-y-2 text-xs font-mono text-gray-500">
+                        <p class="text-gray-400 text-lg font-mono mb-3">You would have to:</p>
+                        <ul class="space-y-2 text-base font-mono text-gray-500">
                             <li class="flex items-start gap-2">
                                 <span class="text-signal">❌</span>
                                 <span>Write your own HTTP request code from scratch</span>
@@ -168,8 +168,8 @@
                             <i data-lucide="check-circle" class="w-5 h-5 text-acid"></i>
                             <h5 class="font-display text-sm text-acid">WITH IMPORTS</h5>
                         </div>
-                        <p class="text-gray-400 text-sm font-mono mb-3">You can:</p>
-                        <ul class="space-y-2 text-xs font-mono text-gray-300">
+                        <p class="text-gray-400 text-lg font-mono mb-3">You can:</p>
+                        <ul class="space-y-2 text-base font-mono text-gray-300">
                             <li class="flex items-start gap-2">
                                 <span class="text-acid">✓</span>
                                 <span>Use <code class="text-ice">import requests</code> for HTTP calls</span>
@@ -208,8 +208,8 @@
                                     <code class="text-gray-400 text-xs block font-mono mt-2">df = pandas.DataFrame(data)</code>
                                 </div>
                             </div>
-                            <p class="text-gray-400 text-xs font-mono mb-2"><span class="text-acid font-bold">USE WHEN:</span> You'll use multiple things from the module</p>
-                            <p class="text-gray-500 text-xs font-mono"><span class="text-ice font-bold">BENEFIT:</span> Crystal clear where each function comes from</p>
+                            <p class="text-gray-400 text-base font-mono mb-2"><span class="text-acid font-bold">USE WHEN:</span> You'll use multiple things from the module</p>
+                            <p class="text-gray-500 text-base font-mono"><span class="text-ice font-bold">BENEFIT:</span> Crystal clear where each function comes from</p>
                         </div>
 
                         <!-- Style 2 -->
@@ -223,8 +223,8 @@
                                     <code class="text-gray-400 text-xs block font-mono mt-2">soup = BeautifulSoup(html)</code>
                                 </div>
                             </div>
-                            <p class="text-gray-400 text-xs font-mono mb-2"><span class="text-ice font-bold">USE WHEN:</span> You only need one or two specific things</p>
-                            <p class="text-gray-500 text-xs font-mono"><span class="text-acid font-bold">BENEFIT:</span> Cleaner code, less typing</p>
+                            <p class="text-gray-400 text-base font-mono mb-2"><span class="text-ice font-bold">USE WHEN:</span> You only need one or two specific things</p>
+                            <p class="text-gray-500 text-base font-mono"><span class="text-acid font-bold">BENEFIT:</span> Cleaner code, less typing</p>
                         </div>
 
                         <!-- Style 3 -->
@@ -238,8 +238,8 @@
                                     <code class="text-gray-400 text-xs block font-mono mt-2">result = sqrt(16)  # Where did sqrt come from?</code>
                                 </div>
                             </div>
-                            <p class="text-signal text-xs font-mono mb-2"><span class="font-bold">WARNING:</span> Imports EVERYTHING from the module</p>
-                            <p class="text-gray-500 text-xs font-mono"><span class="text-signal font-bold">PROBLEM:</span> Pollutes your namespace, causes naming conflicts, hard to debug</p>
+                            <p class="text-signal text-base font-mono mb-2"><span class="font-bold">WARNING:</span> Imports EVERYTHING from the module</p>
+                            <p class="text-gray-500 text-base font-mono"><span class="text-signal font-bold">PROBLEM:</span> Pollutes your namespace, causes naming conflicts, hard to debug</p>
                         </div>
                     </div>
                 </div>
@@ -261,7 +261,7 @@
                                     <code class="text-gray-400 text-xs block font-mono">arr = np.array([1,2,3])</code>
                                 </div>
                             </div>
-                            <p class="text-gray-400 text-xs font-mono">Standard conventions (pd, np) keep code readable</p>
+                            <p class="text-gray-400 text-base font-mono">Standard conventions (pd, np) keep code readable</p>
                         </div>
 
                         <div class="bg-panel border border-white/10 p-4">
@@ -274,7 +274,7 @@
                                     <code class="text-gray-400 text-xs block font-mono">p = Path("data.csv")</code>
                                 </div>
                             </div>
-                            <p class="text-gray-400 text-xs font-mono">Clean when you only need one or two things</p>
+                            <p class="text-gray-400 text-base font-mono">Clean when you only need one or two things</p>
                         </div>
 
                         <div class="bg-panel border border-signal/20 p-4">
@@ -286,7 +286,7 @@
                                     <code class="text-gray-400 text-xs block font-mono"># Hard to know what's what!</code>
                                 </div>
                             </div>
-                            <p class="text-gray-400 text-xs font-mono">Avoid unless in interactive shell</p>
+                            <p class="text-gray-400 text-base font-mono">Avoid unless in interactive shell</p>
                         </div>
 
                         <div class="bg-panel border border-signal/20 p-4">
@@ -298,7 +298,7 @@
                                     <code class="text-gray-400 text-xs block font-mono mt-2"># Imports belong at the top</code>
                                 </div>
                             </div>
-                            <p class="text-gray-400 text-xs font-mono">Imports should be at the top of your file</p>
+                            <p class="text-gray-400 text-base font-mono">Imports should be at the top of your file</p>
                         </div>
                     </div>
                 </div>
@@ -314,7 +314,7 @@
                             <i data-lucide="x-circle" class="w-4 h-4 text-signal mt-1 flex-shrink-0"></i>
                             <div>
                                 <div class="text-signal font-mono text-xs font-bold mb-1">ModuleNotFoundError: No module named 'requests'</div>
-                                <p class="text-gray-400 text-xs mb-2">Python can't find the module you're trying to import.</p>
+                                <p class="text-gray-400 text-base mb-2">Python can't find the module you're trying to import.</p>
                                 <div class="bg-[#0d0d0d] border border-gray-800 rounded-sm overflow-hidden">
                                     <div class="p-3">
                                         <code class="text-gray-500 text-xs block font-mono"># Solution: Install it first!</code>
@@ -328,7 +328,7 @@
                             <i data-lucide="alert-triangle" class="w-4 h-4 text-signal mt-1 flex-shrink-0"></i>
                             <div>
                                 <div class="text-signal font-mono text-xs font-bold mb-1">ImportError: cannot import name 'DataFrame' from 'pandas'</div>
-                                <p class="text-gray-400 text-xs mb-2">The module exists, but doesn't have the thing you're trying to import.</p>
+                                <p class="text-gray-400 text-base mb-2">The module exists, but doesn't have the thing you're trying to import.</p>
                                 <div class="bg-[#0d0d0d] border border-gray-800 rounded-sm overflow-hidden">
                                     <div class="p-3">
                                         <code class="text-gray-500 text-xs block font-mono"># Check spelling and documentation</code>
@@ -342,7 +342,7 @@
                             <i data-lucide="refresh-cw" class="w-4 h-4 text-signal mt-1 flex-shrink-0"></i>
                             <div>
                                 <div class="text-signal font-mono text-xs font-bold mb-1">Circular Import Error</div>
-                                <p class="text-gray-400 text-xs mb-2">File A imports File B, File B imports File A. Python gets confused.</p>
+                                <p class="text-gray-400 text-base mb-2">File A imports File B, File B imports File A. Python gets confused.</p>
                                 <div class="bg-[#0d0d0d] border border-gray-800 rounded-sm overflow-hidden">
                                     <div class="p-3">
                                         <code class="text-gray-500 text-xs block font-mono"># Solution: Reorganize your code</code>
@@ -356,7 +356,7 @@
                             <i data-lucide="file-warning" class="w-4 h-4 text-signal mt-1 flex-shrink-0"></i>
                             <div>
                                 <div class="text-signal font-mono text-xs font-bold mb-1">You named your file pandas.py</div>
-                                <p class="text-gray-400 text-xs mb-2">Never name your files the same as libraries! Python imports YOUR file instead.</p>
+                                <p class="text-gray-400 text-base mb-2">Never name your files the same as libraries! Python imports YOUR file instead.</p>
                                 <div class="bg-[#0d0d0d] border border-gray-800 rounded-sm overflow-hidden">
                                     <div class="p-3">
                                         <code class="text-gray-500 text-xs block font-mono"># Don't: pandas.py, requests.py, flask.py</code>
@@ -374,35 +374,35 @@
                         <i data-lucide="search" class="w-5 h-5"></i>
                         HOW PYTHON FINDS YOUR MODULES
                     </h4>
-                    <p class="text-gray-300 text-sm font-mono mb-6">When you type <code class="text-ice">import something</code>, Python searches in this order:</p>
+                    <p class="text-gray-300 text-lg font-mono mb-6">When you type <code class="text-ice">import something</code>, Python searches in this order:</p>
 
                     <div class="space-y-4">
                         <div class="flex gap-3">
                             <span class="text-ice text-lg font-bold font-mono">01</span>
                             <div>
                                 <div class="text-gray-300 font-mono text-sm font-bold mb-1">Current Directory</div>
-                                <p class="text-gray-400 text-xs">The folder where your script is running</p>
+                                <p class="text-gray-400 text-base">The folder where your script is running</p>
                             </div>
                         </div>
                         <div class="flex gap-3">
                             <span class="text-ice text-lg font-bold font-mono">02</span>
                             <div>
                                 <div class="text-gray-300 font-mono text-sm font-bold mb-1">PYTHONPATH Environment Variable</div>
-                                <p class="text-gray-400 text-xs">Custom directories you've told Python to check</p>
+                                <p class="text-gray-400 text-base">Custom directories you've told Python to check</p>
                             </div>
                         </div>
                         <div class="flex gap-3">
                             <span class="text-ice text-lg font-bold font-mono">03</span>
                             <div>
                                 <div class="text-gray-300 font-mono text-sm font-bold mb-1">Standard Library Locations</div>
-                                <p class="text-gray-400 text-xs">Where Python installed its built-in modules</p>
+                                <p class="text-gray-400 text-base">Where Python installed its built-in modules</p>
                             </div>
                         </div>
                         <div class="flex gap-3">
                             <span class="text-ice text-lg font-bold font-mono">04</span>
                             <div>
                                 <div class="text-gray-300 font-mono text-sm font-bold mb-1">Site-Packages (pip installed libraries)</div>
-                                <p class="text-gray-400 text-xs">Where pip installs external libraries</p>
+                                <p class="text-gray-400 text-base">Where pip installs external libraries</p>
                             </div>
                         </div>
                     </div>
@@ -425,7 +425,7 @@
                         <i data-lucide="help-circle" class="w-5 h-5"></i>
                         DEMYSTIFYING: if __name__ == "__main__"
                     </h4>
-                    <p class="text-gray-300 text-sm font-mono mb-6">This confuses EVERYONE at first. Here's what it means:</p>
+                    <p class="text-gray-300 text-lg font-mono mb-6">This confuses EVERYONE at first. Here's what it means:</p>
 
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
                         <div class="bg-panel border border-white/10 p-4">
@@ -438,7 +438,7 @@
                                     <code class="text-gray-400 text-xs block font-mono"># Output: __main__</code>
                                 </div>
                             </div>
-                            <p class="text-gray-400 text-xs font-mono">Python sets __name__ to "__main__"</p>
+                            <p class="text-gray-400 text-base font-mono">Python sets __name__ to "__main__"</p>
                         </div>
 
                         <div class="bg-panel border border-white/10 p-4">
@@ -451,7 +451,7 @@
                                     <code class="text-gray-400 text-xs block font-mono"># "my_script"</code>
                                 </div>
                             </div>
-                            <p class="text-gray-400 text-xs font-mono">Python sets __name__ to the module name</p>
+                            <p class="text-gray-400 text-base font-mono">Python sets __name__ to the module name</p>
                         </div>
                     </div>
 
@@ -471,7 +471,7 @@
                                 <code class="text-gray-500 text-xs block font-mono"># 2. Import it: from data_processor import process_data</code>
                             </div>
                         </div>
-                        <p class="text-gray-300 text-xs font-mono mt-3">Use this pattern to make your scripts reusable as modules!</p>
+                        <p class="text-gray-300 text-base font-mono mt-3">Use this pattern to make your scripts reusable as modules!</p>
                     </div>
                 </div>
 
@@ -581,8 +581,8 @@
                                     <code class="text-gray-500 text-xs block font-mono mt-2"># Full path from project root</code>
                                 </div>
                             </div>
-                            <p class="text-gray-400 text-xs font-mono mb-2"><span class="text-acid font-bold">BENEFIT:</span> Clear, unambiguous</p>
-                            <p class="text-gray-500 text-xs font-mono"><span class="text-ice font-bold">USE:</span> Preferred in most cases</p>
+                            <p class="text-gray-400 text-base font-mono mb-2"><span class="text-acid font-bold">BENEFIT:</span> Clear, unambiguous</p>
+                            <p class="text-gray-500 text-base font-mono"><span class="text-ice font-bold">USE:</span> Preferred in most cases</p>
                         </div>
 
                         <div class="bg-panel border border-white/10 p-6">
@@ -597,8 +597,8 @@
                                     <code class="text-gray-500 text-xs block font-mono mt-2"># .. = go up one directory</code>
                                 </div>
                             </div>
-                            <p class="text-gray-400 text-xs font-mono mb-2"><span class="text-ice font-bold">BENEFIT:</span> Portable modules</p>
-                            <p class="text-gray-500 text-xs font-mono"><span class="text-signal font-bold">WARNING:</span> Can be confusing</p>
+                            <p class="text-gray-400 text-base font-mono mb-2"><span class="text-ice font-bold">BENEFIT:</span> Portable modules</p>
+                            <p class="text-gray-500 text-base font-mono"><span class="text-signal font-bold">WARNING:</span> Can be confusing</p>
                         </div>
                     </div>
 
@@ -614,7 +614,7 @@
                             <i data-lucide="x-circle" class="w-5 h-5 text-signal"></i>
                             <h5 class="font-display text-sm text-signal">WITHOUT PROPER IMPORTS</h5>
                         </div>
-                        <p class="text-gray-400 text-sm font-mono leading-relaxed">
+                        <p class="text-gray-400 text-lg font-mono leading-relaxed">
                             Going to EVERY hardware store in town to buy individual screws, ONE AT A TIME, every time you need them. You're recreating tools you already own because you can't find them.
                         </p>
                     </div>
@@ -624,7 +624,7 @@
                             <i data-lucide="check-circle" class="w-5 h-5 text-acid"></i>
                             <h5 class="font-display text-sm text-acid">WITH PROPER IMPORTS</h5>
                         </div>
-                        <p class="text-gray-400 text-sm font-mono leading-relaxed">
+                        <p class="text-gray-400 text-lg font-mono leading-relaxed">
                             Having a well-organized toolbox. You know exactly where each tool is, you grab what you need when you need it, and you can borrow tools from neighbors (libraries) when necessary.
                         </p>
                     </div>
@@ -641,42 +641,42 @@
                     <div class="space-y-4 max-w-3xl mx-auto">
                         <div class="flex items-start gap-3 p-3 bg-panel/50 border border-white/10">
                             <span class="text-acid text-xl font-bold font-mono flex-shrink-0">01</span>
-                            <p class="text-gray-300 text-sm font-mono">
+                            <p class="text-gray-300 text-lg font-mono">
                                 <span class="text-acid font-bold">ALL IMPORTS AT THE TOP.</span> Put them at the beginning of your file, not scattered throughout.
                             </p>
                         </div>
 
                         <div class="flex items-start gap-3 p-3 bg-panel/50 border border-white/10">
                             <span class="text-ice text-xl font-bold font-mono flex-shrink-0">02</span>
-                            <p class="text-gray-300 text-sm font-mono">
+                            <p class="text-gray-300 text-lg font-mono">
                                 <span class="text-ice font-bold">AVOID STAR IMPORTS.</span> <code class="text-signal">from x import *</code> makes code hard to debug.
                             </p>
                         </div>
 
                         <div class="flex items-start gap-3 p-3 bg-panel/50 border border-white/10">
                             <span class="text-signal text-xl font-bold font-mono flex-shrink-0">03</span>
-                            <p class="text-gray-300 text-sm font-mono">
+                            <p class="text-gray-300 text-lg font-mono">
                                 <span class="text-signal font-bold">ONE IMPORT PER LINE.</span> Makes it easier to read and track down issues.
                             </p>
                         </div>
 
                         <div class="flex items-start gap-3 p-3 bg-panel/50 border border-white/10">
                             <span class="text-acid text-xl font-bold font-mono flex-shrink-0">04</span>
-                            <p class="text-gray-300 text-sm font-mono">
+                            <p class="text-gray-300 text-lg font-mono">
                                 <span class="text-acid font-bold">GROUP YOUR IMPORTS.</span> Standard library first, then third-party, then your own modules.
                             </p>
                         </div>
 
                         <div class="flex items-start gap-3 p-3 bg-panel/50 border border-white/10">
                             <span class="text-ice text-xl font-bold font-mono flex-shrink-0">05</span>
-                            <p class="text-gray-300 text-sm font-mono">
+                            <p class="text-gray-300 text-lg font-mono">
                                 <span class="text-ice font-bold">DON'T NAME FILES AFTER LIBRARIES.</span> Never create pandas.py, requests.py, etc.
                             </p>
                         </div>
 
                         <div class="flex items-start gap-3 p-3 bg-panel/50 border border-white/10">
                             <span class="text-signal text-xl font-bold font-mono flex-shrink-0">06</span>
-                            <p class="text-gray-300 text-sm font-mono">
+                            <p class="text-gray-300 text-lg font-mono">
                                 <span class="text-signal font-bold">USE STANDARD ALIASES.</span> <code class="text-ice">import pandas as pd</code>, <code class="text-ice">import numpy as np</code> - everyone knows these.
                             </p>
                         </div>
