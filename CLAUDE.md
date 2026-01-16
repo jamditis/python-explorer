@@ -383,3 +383,20 @@ For issues or feature requests:
 ---
 
 **Remember**: Always read `.clinerules` and `.clinerules-lessons` before making changes. They contain critical patterns and lessons learned that will save you time and prevent bugs!
+
+
+---
+
+## Multi-machine workflow
+
+This repo is developed across multiple machines (MacBook, work Windows PC, home Windows PC). GitHub is the source of truth.
+
+**Before switching machines:**
+```bash
+git add . && git commit -m "WIP" && git push
+```
+
+**After switching machines:**
+```bash
+git pull
+```
