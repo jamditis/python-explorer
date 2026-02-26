@@ -1,0 +1,23 @@
+# Python Explorer
+
+> A searchable database of Python libraries and their uses.
+
+URL: https://jamditis.github.io/python-explorer/
+Author: Joe Amditis
+License: MIT
+Repository: https://github.com/jamditis/python-explorer
+
+Python Explorer is an interactive directory of 345+ Python libraries across
+nine domains: Web, Data Science, Machine Learning, DevOps, Automation, Design,
+Media, Visualization, and more. It includes fuzzy search, natural language
+filtering, and curated collections.
+
+Key features:
+- Fuzzy search powered by Fuse.js across library names and descriptions
+- Natural language search with "I have" and "I want to" guided dropdowns
+- Live analytics with domain distribution and category breakdown charts
+- Side-by-side library comparison tool
+- Curated journalism and media toolkit with 39 tagged libraries
+- 10 featured collections including Data Journalism Toolkit
+- Export filtered results as requirements.txt
+- Zero build process, pure static site served from CDN
