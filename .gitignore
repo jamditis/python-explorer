@@ -34,3 +34,7 @@ Thumbs.db
 # Temp
 *.tmp
 *.log
+
+# Windows artifacts
+desktop.ini
+nul
