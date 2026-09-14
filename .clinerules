@@ -175,12 +175,7 @@ python3 -m http.server 3000
 ### Commit Messages
 - Use descriptive, imperative mood ("Add feature" not "Added feature")
 - Include bullet points for multiple changes
-- Always include Claude Code signature:
-```
-🤖 Generated with [Claude Code](https://claude.com/claude-code)
-
-Co-Authored-By: Claude <noreply@anthropic.com>
-```
+- Do not add AI authorship signatures or trailers.
 
 ### Branch Strategy
 - Push directly to `main` for this project

@@ -1,5 +1,7 @@
 # CLAUDE.md
 
+Track active work in [python-explorer maintenance](https://github.com/users/jamditis/projects/30).
+
 
 ## GitHub Actions suspended (account-wide)
 
@@ -299,6 +301,8 @@ function renderGrid() {
 ## Git Workflow
 
 ### Commit Format
+
+Do not add AI authorship signatures or trailers.
 ```
 Brief imperative summary
 
@@ -306,9 +310,6 @@ Brief imperative summary
 - Another change
 - More details
 
-🤖 Generated with [Claude Code](https://claude.com/claude-code)
-
-Co-Authored-By: Claude <noreply@anthropic.com>
 ```
 
 ### Deployment

@@ -1,5 +1,7 @@
 # Python Explorer
 
+Track active work in [python-explorer maintenance](https://github.com/users/jamditis/projects/30).
+
 ![Python Explorer](style/og-image.png)
 
 ## An interactive directory of Python libraries for journalists and developers
@@ -125,7 +127,6 @@ python3 tools/integrate_libraries.py
 - **Charts**: Chart.js 3.9.1
 - **Icons**: Lucide Icons
 - **Fonts**: Google Fonts (Chakra Petch, Share Tech Mono)
-- **AI Enhancement**: Claude Code (description generation)
 
 ## 🤝 Contributing
 
